@@ -215,7 +215,7 @@ The attribute specifies the serializer type that must be applied to a setting or
 This attribute indicates that the current class element is a setting and can be loaded/saved/deleted.  
 It is applied to a class member.
 
-***class Settings&lt;T&gt;*** (*Advexp.Settings.dll for iOS, Android and PCL*)  
+***class Settings<T>*** (*Advexp.Settings.dll for iOS, Android and PCL*)  
 The class specifies that its inheritor is a settings class and adds the appropriate functionality to the methods set.
 
 ***class SettingsConfiguration*** (*Advexp.Settings.dll for iOS and Android*)  
@@ -259,6 +259,3 @@ PCL projects
 You can also download the NuGet component "Advexp.Settings Local" from the site <https://www.nuget.org/packages/Advexp.Settings.Local>
 
 Please send your questions, suggestions and impressions to <components@advexp.net> with the subject "Advexp.Settings"
-
-
-

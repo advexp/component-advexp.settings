@@ -49,17 +49,14 @@
     <Reference Include="System" />
     <Reference Include="Mono.Android" />
     <Reference Include="System.Core" />
-    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.6\lib\MonoAndroid10\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
-    </Reference>
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.6\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.7\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.6\lib\MonoAndroid10\Advexp.Settings.Utils.PCL.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.7\lib\MonoAndroid10\Advexp.Settings.Utils.PCL.dll</HintPath>
     </Reference>
     <Reference Include="SharpSerializer.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.6\lib\MonoAndroid10\SharpSerializer.PCL.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.7\lib\MonoAndroid10\SharpSerializer.PCL.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

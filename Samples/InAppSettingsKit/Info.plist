@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>InAppSettingsKit Settings</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0</string>
+	<string>2.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
@@ -41,13 +41,13 @@
 	<string></string>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>Main</string>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcons.appiconset</string>
-	<key>CFBundleVersion</key>
-	<string>3</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.AdvexpSettings.Samples.InAppSettingsKit</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>CFBundleVersion</key>
+	<string>4</string>
 </dict>
 </plist>

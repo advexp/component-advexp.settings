@@ -11,7 +11,7 @@
     <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
     <AssemblyName>Sample.LocalSettings.iOS</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
-    <ReleaseVersion>2.0</ReleaseVersion>
+    <ReleaseVersion>2.1</ReleaseVersion>
     <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhoneSimulator\Debug\Sample</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
@@ -28,7 +28,6 @@
     <MtouchArch>i386</MtouchArch>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchLink>None</MtouchLink>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -44,7 +43,6 @@
     <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchArch>i386</MtouchArch>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchLink>None</MtouchLink>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
@@ -63,7 +61,6 @@
     <IpaPackageName>
     </IpaPackageName>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -81,7 +78,6 @@
     <IpaPackageName>
     </IpaPackageName>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
@@ -89,20 +85,10 @@
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.Core" />
-    <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.7\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.7\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpSerializer.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.7\lib\Xamarin.iOS10\SharpSerializer.PCL.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -119,24 +105,14 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-60%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-72.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-72%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-76.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-76%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small-50.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small-50%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small-40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small-40%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.87.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.120.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.180.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.167.png" />
+    <ProjectReference Include="..\..\..\Advexp.Settings\iOS\Advexp.Settings.iOS.csproj">
+      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
+      <Name>Advexp.Settings.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Advexp.Settings\PCL.Utils\Advexp.Settings.Utils.PCL.csproj">
+      <Project>{8A697A13-71A1-46B1-93E5-1C42DF20BE1A}</Project>
+      <Name>Advexp.Settings.Utils.PCL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -157,5 +133,24 @@
     <BundleResource Include="Resources\Settings.bundle\Root.plist">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.57.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.114.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.50.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.100.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.72.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.144.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.167.png" />
   </ItemGroup>
 </Project>

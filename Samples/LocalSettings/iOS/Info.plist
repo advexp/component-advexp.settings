@@ -12,7 +12,7 @@
 	<key>MinimumOSVersion</key>
 	<string>10.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0</string>
+	<string>2.1</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.AdvexpSettings.Samples.Local</string>
 	<key>UIDeviceFamily</key>
@@ -32,10 +32,10 @@
 	<key>CFBundleName</key>
 	<string>Local Settings</string>
 	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcons.appiconset</string>
-	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>CFBundleVersion</key>
+	<string>4</string>
 </dict>
 </plist>

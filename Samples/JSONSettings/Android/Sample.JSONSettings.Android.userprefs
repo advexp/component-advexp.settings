@@ -1,9 +1,0 @@
-﻿<Properties StartupConfiguration="{E4F67FB2-ABEE-4D66-8CA6-E22FED1EF0D9}|Default">
-  <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Sample.JSONSettings.Android PreferredExecutionTarget="Android.MyEmulator" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-</Properties>

@@ -9,3 +9,4 @@ Bin/PCL/Debug
 Bin/iOS/iPhoneSimulator
 Samples/PCL-iOS/App/bin
 Advexp.Settings.userprefs
+Resource.designer.cs

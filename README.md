@@ -373,9 +373,10 @@ All library parameters can be set through the *SettingsConfiguration* static cla
 - **Android:** ***KeyStoreFileProtectionPassword*** - the password used to protect KeyStore file. The default value is *null*
 - **Android:** ***KeyStoreFileName*** - KeyStore file name. The default value is *null*. In this case file name is “.keystore”
 - ***Serializer*** - determines the library level serializer. The default value is *null*  
-- ***AdvancedConfiguration.SharpSerializerSettings*** - parameters of the **SharpSerializer** serializer which are used for saving settings
+- ***AdvancedConfiguration.SharpSerializerSettings*** - parameters of the *SharpSerializer* serializer which are used for saving settings
 - ***RegisterSettingsAttribute*** - a method designed for registering the settings indicator attribute
-- ***RegisterSettingsPlugin*** - a method designed for the registration of plugins, for example, **CognitoSyncSettingsPlugin**
+- ***RegisterSettingsPlugin*** - a method designed for the registration of plugins, for example, *CognitoSyncSettingsPlugin*
+- **EnableFormatMigration** - enable or disable previous version support. The default value is *false*
 
 ######JSON Settings plugin
 

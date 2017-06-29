@@ -16,7 +16,7 @@ namespace TDD
             SettingsConfiguration.KeyStoreFileProtectionPassword = "password";
             SettingsConfiguration.KeyStoreFileName = "keystore";
             #endif // __ANDROID__
-            SettingsConfiguration.DisableFormatMigration = false;
+            SettingsConfiguration.EnableFormatMigration = true;
         }
 
         //------------------------------------------------------------------------------

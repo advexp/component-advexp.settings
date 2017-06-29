@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>TDD</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.AdvexpSettings.Samples.TDD</string>
+	<string>com.AdvexpSettings.TDD</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
@@ -36,12 +36,12 @@
 	<key>CFBundleName</key>
 	<string>TDD</string>
 	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcons.appiconset</string>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0</string>
-	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>2.1</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>CFBundleVersion</key>
+	<string>4</string>
 </dict>
 </plist>

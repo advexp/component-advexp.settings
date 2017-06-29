@@ -15,9 +15,10 @@
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <AssemblyName>TDD.Android</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <ReleaseVersion>2.0</ReleaseVersion>
-    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <ReleaseVersion>2.1</ReleaseVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidTlsProvider></AndroidTlsProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +34,12 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <AndroidSupportedAbis>armeabi-v7a</AndroidSupportedAbis>
+    <BundleAssemblies></BundleAssemblies>
+    <AndroidStoreUncompressedFileExtensions></AndroidStoreUncompressedFileExtensions>
+    <MandroidI18n></MandroidI18n>
+    <JavaMaximumHeapSize></JavaMaximumHeapSize>
+    <AndroidFastDeploymentType></AndroidFastDeploymentType>
+    <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -45,29 +52,19 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <AndroidSupportedAbis>armeabi;armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
     <DebugType>full</DebugType>
+    <JavaOptions></JavaOptions>
+    <AndroidKeyStore></AndroidKeyStore>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Mono.Android" />
     <Reference Include="Xamarin.Android.NUnitLite" />
-    <Reference Include="System.Core" />
-    <Reference Include="Advexp.Settings_V1">
-      <HintPath>..\TDD.References\V1\Android\Advexp.Settings_V1.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings">
-      <HintPath>..\TDD.References\Android\Advexp.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\TDD.References\Android\Advexp.Settings.Utils.PCL.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpSerializer.PCL">
-      <HintPath>..\TDD.References\Android\SharpSerializer.PCL.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
-      <HintPath>..\TDD.References\Plugins\PCL\Release\JSONSettings\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="Advexp.Settings_V1">
+      <HintPath>..\References\Android\Advexp.Settings_V1.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -197,6 +194,20 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Advexp.Settings\Plugins\JSONSettings\Plugin.JSONSettings.PCL.csproj">
+      <Project>{150F8545-A3DC-4ED0-B279-D6223666905A}</Project>
+      <Name>Plugin.JSONSettings.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Advexp.Settings\Android\Advexp.Settings.Android.csproj">
+      <Project>{29EB96CB-9287-4740-AEE3-859265DD32BC}</Project>
+      <Name>Advexp.Settings.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Advexp.Settings\PCL.Utils\Advexp.Settings.Utils.PCL.csproj">
+      <Project>{8A697A13-71A1-46B1-93E5-1C42DF20BE1A}</Project>
+      <Name>Advexp.Settings.Utils.PCL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Folder Include="UnitTests\JSONTest\" />
   </ItemGroup>

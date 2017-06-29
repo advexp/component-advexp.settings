@@ -4,7 +4,7 @@
 <dict>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)com.AdvexpSettings.Samples.TDD</string>
+		<string>$(AppIdentifierPrefix)com.AdvexpSettings.TDD</string>
 	</array>
 </dict>
 </plist>

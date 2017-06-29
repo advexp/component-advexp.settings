@@ -43,7 +43,6 @@ namespace TDD
         public void Setup()
         {
             SettingsConfiguration.TDDData.SerializerAction += SerializerAction;
-            SettingsConfiguration.DisableFormatMigration = true;
         }
 
         //------------------------------------------------------------------------------

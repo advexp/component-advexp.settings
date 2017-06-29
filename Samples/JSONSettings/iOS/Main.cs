@@ -9,7 +9,6 @@ namespace Sample.JSONSettings.iOS
         static void Main(string[] args)
         {
             Advexp.SettingsBaseConfiguration.SettingsNamePattern = "{ClassName}.{FieldName}";
-            Advexp.SettingsBaseConfiguration.DisableFormatMigration = true;
             Advexp.SettingsBaseConfiguration.RegisterSettingsPlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
 
             JSONSettingsConfiguration.JsonSerializerSettings.Formatting = 

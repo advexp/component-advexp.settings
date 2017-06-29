@@ -9,7 +9,6 @@ namespace Sample.Assembly.PCL
         static AssemblyClass()
         {
             SettingsBaseConfiguration.SettingsNamePattern = "{ClassName}.{FieldName}";
-            SettingsBaseConfiguration.DisableFormatMigration = true;
 
             SettingsBaseConfiguration.RegisterSettingsPlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
 

@@ -51,20 +51,20 @@ namespace Sample.CognitoSyncSettings.Android
 
             LoginManager.Instance.RegisterCallback(m_CallbackManager, new FacebookCallback<LoginResult>()
             {
-            	HandleSuccess = loginResult =>
-            	{
-            		var accessToken = loginResult.AccessToken;
-            		UpdateCredentials(accessToken.Token);
+                HandleSuccess = loginResult =>
+                {
+                    var accessToken = loginResult.AccessToken;
+                    UpdateCredentials(accessToken.Token);
                     SynchronizeSettings();
-            	},
-            	HandleCancel = () =>
-            	{
-            		UpdateCredentials(string.Empty);
-            	},
-            	HandleError = loginError =>
-            	{
-            		UpdateCredentials(string.Empty);
-            	}
+                },
+                HandleCancel = () =>
+                {
+                    UpdateCredentials(string.Empty);
+                },
+                HandleError = loginError =>
+                {
+                    UpdateCredentials(string.Empty);
+                }
             });
             LoginManager.Instance.LogInWithReadPermissions(this, new List<string> { "public_profile" });
 
@@ -90,6 +90,7 @@ namespace Sample.CognitoSyncSettings.Android
             }
             else
             {
+                CognitoSyncSettingsConfiguration.Credentials.Clear();
                 CognitoSyncSettingsConfiguration.Credentials.AddLogin(Constants.CognitoSyncProviderName, token);
             }
         }
@@ -105,6 +106,7 @@ namespace Sample.CognitoSyncSettings.Android
         public void SynchronizeSettings()
         {
             var plugin = CognitoSyncSettings.GetPlugin<ICognitoSyncSettingsPlugin>();
+            var dsName = plugin.DatasetName;
             plugin.SynchronizeDataset();
             AndHUD.Shared.Show(this, "Synchronizing dataset...");
         }

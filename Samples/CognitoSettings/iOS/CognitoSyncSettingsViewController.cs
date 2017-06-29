@@ -4,6 +4,7 @@ using Amazon.CognitoSync.SyncManager;
 using MonoTouch.Dialog;
 using UIKit;
 using System.Collections.Generic;
+using Facebook.LoginKit;
 
 namespace Sample.CognitoSyncSettings.iOS
 {
@@ -25,6 +26,36 @@ namespace Sample.CognitoSyncSettings.iOS
 
                     sse.Tapped += delegate {
                         ((AppDelegate)UIApplication.SharedApplication.Delegate).Continue(new LoginViewController());
+                    };
+
+                    Root.Add(new Section() {
+                        sse
+                    });
+                }
+            }
+        }
+
+        public Boolean AddLogoutButton
+        {
+            set
+            {
+                if (value)
+                {
+                    var sse = new StyledStringElement ("Logout");
+
+                    sse.Tapped += delegate {
+                        
+                        LoginManager login = new LoginManager();
+                        login.LogOut();
+
+                        ((AppDelegate)UIApplication.SharedApplication.Delegate).Continue(new SettingsViewController
+                        { 
+                            AddLoginButton = true,
+                            AddLogoutButton = false,
+                            AddSyncInProgressLabel = false,
+                            EnableSettingsReload = false,
+                            AddSyncDatasetButton = false,
+                        });
                     };
 
                     Root.Add(new Section() {

@@ -39,13 +39,13 @@ namespace Sample.CognitoSyncSettings.Android
             CognitoSyncSettingsConfiguration.Credentials = new CognitoAWSCredentials(Constants.CognitoSyncIdentityPoolId, 
                                                         Constants.CognitoSyncIdentityRegion);
 
-            // plugins are persistant and next call return the same object
+            // plugins are persistant and next call will return the same object
             var plugin = CognitoSyncSettings.GetPlugin<ICognitoSyncSettingsPlugin>();
 
             plugin.OnSyncSuccess += (object sender, SyncSuccessEventArgs e) => 
             {
                 ICognitoSyncEventsListerner listerner;
-                //lock(m_CognitoSyncListerner)
+                lock(m_CognitoSyncListerner)
                 {
                     listerner = m_CognitoSyncListerner;
                 }
@@ -58,7 +58,7 @@ namespace Sample.CognitoSyncSettings.Android
             plugin.OnSyncFailure += (object sender, SyncFailureEventArgs e) => 
             {
                 ICognitoSyncEventsListerner listerner;
-                //lock(m_CognitoSyncListerner)
+                lock(m_CognitoSyncListerner)
                 {
                     listerner = m_CognitoSyncListerner;
                 }

@@ -20,6 +20,8 @@ namespace Sample.CognitoSyncSettings.iOS
             base.ViewDidLoad();
 
             LoginManager login = new LoginManager();
+            login.LoginBehavior = LoginBehavior.Web;
+            login.LogOut();
             login.LogInWithReadPermissions(readPermissions.ToArray(), null, delegate(LoginManagerLoginResult result, NSError error)
             {
                 if (error != null)
@@ -49,6 +51,7 @@ namespace Sample.CognitoSyncSettings.iOS
                     appDelegate.Continue(new SettingsViewController
                     {
                         AddLoginButton = false,
+                        AddLogoutButton = true,
                         AddSyncInProgressLabel = true,
                         EnableSettingsReload = true,
                         AddSyncDatasetButton = true,
@@ -66,10 +69,11 @@ namespace Sample.CognitoSyncSettings.iOS
         {
             if (String.IsNullOrEmpty(token))
             {
-                CognitoSyncSettingsConfiguration.Credentials.RemoveLogin(Constants.CognitoSyncProviderName);
+                CognitoSyncSettingsConfiguration.Credentials.Clear();
             }
             else
             {
+                CognitoSyncSettingsConfiguration.Credentials.Clear();
                 CognitoSyncSettingsConfiguration.Credentials.AddLogin(Constants.CognitoSyncProviderName, token);
             }
         }

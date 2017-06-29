@@ -9,7 +9,6 @@
     <RootNamespace>InAppSettingsKitSample</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>Sample.InAppSettingsKit.iOS</AssemblyName>
-    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhoneSimulator\Debug\Sample.InAppSettingsKit</BaseIntermediateOutputPath>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ReleaseVersion>2.1</ReleaseVersion>
@@ -19,7 +18,6 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\..\..\Bin\iOS\iPhoneSimulator\Debug\Sample.InAppSettingsKit</OutputPath>
-    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhoneSimulator\Debug\Sample.InAppSettingsKit</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -35,7 +33,6 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <Optimize>true</Optimize>
     <OutputPath>..\..\..\Bin\iOS\iPhoneSimulator\Release\Sample.InAppSettingsKit</OutputPath>
-    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhoneSimulator\Release\Sample.InAppSettingsKit</BaseIntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -51,7 +48,6 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\..\..\Bin\iOS\iPhone\Debug\Sample.InAppSettingsKit</OutputPath>
-    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhone\Debug\Sample.InAppSettingsKit</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -68,7 +64,6 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <Optimize>true</Optimize>
     <OutputPath>..\..\..\Bin\iOS\iPhone\Release\Sample.InAppSettingsKit</OutputPath>
-    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhone\Release\Sample.InAppSettingsKit</BaseIntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>

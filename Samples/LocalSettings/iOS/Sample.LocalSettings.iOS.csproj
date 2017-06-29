@@ -12,14 +12,12 @@
     <AssemblyName>Sample.LocalSettings.iOS</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <ReleaseVersion>2.1</ReleaseVersion>
-    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhoneSimulator\Debug\Sample</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\..\..\Bin\iOS\iPhoneSimulator\Debug\Sample</OutputPath>
-    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhoneSimulator\Debug\Sample</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -35,7 +33,6 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <Optimize>true</Optimize>
     <OutputPath>..\..\..\Bin\iOS\iPhoneSimulator\Release\Sample</OutputPath>
-    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhoneSimulator\Release\Sample</BaseIntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -51,7 +48,6 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\..\..\Bin\iOS\iPhone\Debug\Sample</OutputPath>
-    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhone\Debug\Sample</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -68,7 +64,6 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <Optimize>true</Optimize>
     <OutputPath>..\..\..\Bin\iOS\iPhone\Release\Sample</OutputPath>
-    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhone\Release\Sample</BaseIntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>

@@ -26,7 +26,6 @@ namespace TDD
 		
 		public static void UpdateIdValues()
 		{
-			global::Advexp.Resource.String.library_name = global::TDD.Resource.String.library_name;
 			global::Advexp_V1.Resource.String.library_name = global::TDD.Resource.String.library_name;
 			global::Xamarin.Android.NUnitLite.Resource.Id.OptionHostName = global::TDD.Resource.Id.OptionHostName;
 			global::Xamarin.Android.NUnitLite.Resource.Id.OptionPort = global::TDD.Resource.Id.OptionPort;

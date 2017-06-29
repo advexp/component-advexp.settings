@@ -19,7 +19,7 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ReleaseVersion>2.1</ReleaseVersion>
+    <ReleaseVersion>2.0</ReleaseVersion>
     <AndroidTlsProvider></AndroidTlsProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -52,6 +52,18 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.1.0\lib\MonoAndroid10\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.1.0\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.1.0\lib\MonoAndroid10\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSerializer.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.1.0\lib\MonoAndroid10\SharpSerializer.PCL.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -81,18 +93,4 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Android\Advexp.Settings.Android.csproj">
-      <Project>{29EB96CB-9287-4740-AEE3-859265DD32BC}</Project>
-      <Name>Advexp.Settings.Android</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\PCL.Utils\Advexp.Settings.Utils.PCL.csproj">
-      <Project>{8A697A13-71A1-46B1-93E5-1C42DF20BE1A}</Project>
-      <Name>Advexp.Settings.Utils.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\JSONSettings\Plugin.JSONSettings.PCL.csproj">
-      <Project>{150F8545-A3DC-4ED0-B279-D6223666905A}</Project>
-      <Name>Plugin.JSONSettings.PCL</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>

@@ -11,3 +11,6 @@ Samples/PCL-iOS/App/bin
 Advexp.Settings.userprefs
 Resource.designer.cs
 Samples/CognitoSettings/Android/bin
+Bin/iOS/iPhone
+Samples/CognitoSettings/iOS/bin/iPhone
+Samples/CognitoSettings/iOS/bin/iPhoneSimulator

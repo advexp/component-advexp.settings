@@ -123,6 +123,9 @@
     <Reference Include="SharpSerializer.PCL">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.2\lib\Xamarin.iOS10\SharpSerializer.PCL.dll</HintPath>
     </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\..\..\packages\Xamarin.Facebook.iOS.4.19.0\lib\Xamarin.iOS10\Facebook.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -168,8 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="facebookios">
-      <InstallationInProgress>True</InstallationInProgress>
-      <Version>4.24.0.0</Version>
+      <Version>4.19.0.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

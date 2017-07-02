@@ -9,12 +9,6 @@ namespace TDD
     public class DefaulValueTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
-        public void Setup()
-        {
-        }
-
-        //------------------------------------------------------------------------------
         object GetTypeDefaultValue<T>(T value)
         {
             if(typeof(T).GetTypeInfo().IsValueType)

@@ -10,12 +10,6 @@ namespace TDD
     public class ExternalSharedPreferencesTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
-        public void Setup()
-        {
-        }
-
-        //------------------------------------------------------------------------------
         [Test]
         public void Test()
         {

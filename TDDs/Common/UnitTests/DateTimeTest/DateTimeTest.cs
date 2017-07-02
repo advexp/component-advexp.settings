@@ -9,12 +9,6 @@ namespace TDD
     public class DateTimeTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
-        public void Setup()
-        {
-        }
-
-        //------------------------------------------------------------------------------
         void Test(ref DateTime value, DateTime refValue)
         {
             value = refValue;

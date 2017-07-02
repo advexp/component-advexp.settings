@@ -15,7 +15,7 @@
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <AssemblyName>TDD.Android</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <ReleaseVersion>2.0</ReleaseVersion>
+    <ReleaseVersion>2.1</ReleaseVersion>
     <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AndroidTlsProvider></AndroidTlsProvider>
@@ -187,9 +187,6 @@
       <Link>UnitTests\FormatMigration\DifferentTypesSettings_V1.cs</Link>
     </Compile>
     <Compile Include="KeyChainUtils.cs" />
-    <Compile Include="..\Common\UnitTests\MultithreadingTest\MultithreadingTest.cs">
-      <Link>UnitTests\MultithreadingTest\MultithreadingTest.cs</Link>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />

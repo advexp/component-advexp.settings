@@ -8,12 +8,6 @@ namespace TDD
     public class SerializerCreationTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
-        public void Setup()
-        {
-        }
-
-        //------------------------------------------------------------------------------
         [TestFixtureTearDown]
         public void Cleanup()
         {

@@ -18,12 +18,6 @@ namespace TDD
     [TestFixture]
     public class ActionsTest
     {
-        //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
-        public void Setup()
-        {
-        }
-
         #if __ANDROID__
 
         //------------------------------------------------------------------------------

@@ -6,12 +6,6 @@ namespace TDD
     [TestFixture]
     public class NullValueTest
     {
-        //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void Test()
         {

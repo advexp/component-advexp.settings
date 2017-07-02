@@ -9,13 +9,6 @@ namespace TDD
     public class CollectionsTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
-        public void Setup()
-        {
-        }
-
-
-        //------------------------------------------------------------------------------
         [Test]
         public void Test()
         {

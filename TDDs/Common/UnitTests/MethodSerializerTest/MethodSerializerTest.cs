@@ -8,12 +8,6 @@ namespace TDD
     public class MethodSerializerTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
-        public void Setup()
-        {
-        }
-
-        //------------------------------------------------------------------------------
         public void CleanUpSettingsParams(MethodSerializerSettings settings)
         {
             settings.m_SettingWasLoaded1 = false;

@@ -9,7 +9,7 @@
     <RootNamespace>TDD</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>TDD.iOS</AssemblyName>
-    <ReleaseVersion>2.0</ReleaseVersion>
+    <ReleaseVersion>2.1</ReleaseVersion>
     <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
@@ -49,7 +49,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\..\Bin\iOS\iPhone\Debug\TDD</OutputPath>
-    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <DefineConstants>__UNIFIED__;DEBUG;__MOBILE__;__IOS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -230,9 +230,6 @@
     </Compile>
     <Compile Include="..\Common\UnitTests\FormatMigration\FormatMigrationTest.cs">
       <Link>UnitTests\FormatMigration\FormatMigrationTest.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\UnitTests\MultithreadingTest\MultithreadingTest.cs">
-      <Link>UnitTests\MultithreadingTest\MultithreadingTest.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

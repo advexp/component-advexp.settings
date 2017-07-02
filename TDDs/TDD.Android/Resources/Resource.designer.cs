@@ -26,8 +26,6 @@ namespace TDD
 		
 		public static void UpdateIdValues()
 		{
-			global::Advexp.Resource.String.library_name = global::TDD.Resource.String.library_name;
-			global::Advexp_V1.Resource.String.library_name = global::TDD.Resource.String.library_name;
 			global::Xamarin.Android.NUnitLite.Resource.Id.OptionHostName = global::TDD.Resource.Id.OptionHostName;
 			global::Xamarin.Android.NUnitLite.Resource.Id.OptionPort = global::TDD.Resource.Id.OptionPort;
 			global::Xamarin.Android.NUnitLite.Resource.Id.OptionRemoteServer = global::TDD.Resource.Id.OptionRemoteServer;
@@ -50,6 +48,8 @@ namespace TDD
 			global::Xamarin.Android.NUnitLite.Resource.Layout.results = global::TDD.Resource.Layout.results;
 			global::Xamarin.Android.NUnitLite.Resource.Layout.test_result = global::TDD.Resource.Layout.test_result;
 			global::Xamarin.Android.NUnitLite.Resource.Layout.test_suite = global::TDD.Resource.Layout.test_suite;
+			global::Advexp_V1.Resource.String.library_name = global::TDD.Resource.String.library_name;
+			global::Advexp.Resource.String.library_name = global::TDD.Resource.String.library_name;
 		}
 		
 		public partial class Attribute

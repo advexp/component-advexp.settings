@@ -8,9 +8,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDD.Android", "TDDs\TDD.Android\TDD.Android.csproj", "{E745B033-4422-4C8C-B34D-2401A00382A1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{39FCFDDB-4997-4B81-B374-81E9EFD9B5B7}"
-	ProjectSection(SolutionItems) = preProject
-		Samples\Advexp.Settings.sln = Samples\Advexp.Settings.sln
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.LocalSettings.iOS", "Samples\LocalSettings\iOS\Sample.LocalSettings.iOS.csproj", "{4F15E09F-0E7D-4D37-A514-C74D6573825A}"
 EndProject
@@ -274,17 +271,46 @@ Global
 		$24.IncludeInstanceMembers = True
 		$24.IncludeStaticEntities = True
 		$0.VersionControlPolicy = $26
+		$26.inheritsSet = Mono
 		$0.DotNetNamingPolicy = $27
+		$27.DirectoryNamespaceAssociation = None
+		$27.ResourceNamePolicy = FileFormatDefault
 		$0.StandardHeader = $28
+		$28.IncludeInNewFiles = True
 		$0.TextStylePolicy = $29
 		$29.scope = text/plain
+		$29.FileWidth = 120
+		$29.TabsToSpaces = False
+		$29.inheritsSet = VisualStudio
+		$29.inheritsScope = text/plain
 		$0.CSharpFormattingPolicy = $30
 		$30.scope = text/x-csharp
+		$30.IndentSwitchSection = True
+		$30.NewLinesForBracesInProperties = True
+		$30.NewLinesForBracesInAccessors = True
+		$30.NewLinesForBracesInAnonymousMethods = True
+		$30.NewLinesForBracesInControlBlocks = True
+		$30.NewLinesForBracesInAnonymousTypes = True
+		$30.NewLinesForBracesInObjectCollectionArrayInitializers = True
+		$30.NewLinesForBracesInLambdaExpressionBody = True
+		$30.NewLineForElse = True
+		$30.NewLineForCatch = True
+		$30.NewLineForFinally = True
+		$30.NewLineForMembersInObjectInit = True
+		$30.NewLineForMembersInAnonymousTypes = True
+		$30.NewLineForClausesInQuery = True
+		$30.SpacingAfterMethodDeclarationName = False
+		$30.SpaceAfterMethodCallName = False
+		$30.SpaceBeforeOpenSquareBracket = False
+		$30.inheritsSet = Mono
+		$30.inheritsScope = text/x-csharp
 		$0.TextStylePolicy = $31
 		$31.inheritsSet = null
 		$31.scope = application/xml
 		$0.XmlFormattingPolicy = $32
 		$32.scope = application/xml
+		$32.inheritsSet = Mono
+		$32.inheritsScope = application/xml
 		description = Settings for iOS or Android application
 		version = 2.0
 		outputpath = Bin

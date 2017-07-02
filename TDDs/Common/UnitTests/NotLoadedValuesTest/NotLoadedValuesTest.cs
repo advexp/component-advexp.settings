@@ -8,12 +8,6 @@ namespace TDD
     public class NotLoadedValueTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
-        public void Setup()
-        {
-        }
-
-        //------------------------------------------------------------------------------
         [Test]
         public void Test()
         {

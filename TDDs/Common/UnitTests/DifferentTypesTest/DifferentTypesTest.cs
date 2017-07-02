@@ -9,12 +9,6 @@ namespace TDD
     public class DifferentTypesTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
-        public void Setup()
-        {
-        }
-
-        //------------------------------------------------------------------------------
         public static void CompareSettings(object settings, object refSettings)
         {
             var members = settings.GetType().GetMembers(

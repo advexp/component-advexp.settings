@@ -147,9 +147,6 @@
     <Reference Include="Advexp.CognitoSyncSettings.Plugin.PCL">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.2\lib\MonoAndroid10\Advexp.CognitoSyncSettings.Plugin.PCL.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.2\lib\MonoAndroid10\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
-    </Reference>
     <Reference Include="Advexp.Settings">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.2\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
     </Reference>

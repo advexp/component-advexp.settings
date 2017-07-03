@@ -312,7 +312,7 @@ Global
 		$32.inheritsSet = Mono
 		$32.inheritsScope = application/xml
 		description = Settings for iOS or Android application
-		version = 2.0
+		version = 2.1
 		outputpath = Bin
 	EndGlobalSection
 EndGlobal

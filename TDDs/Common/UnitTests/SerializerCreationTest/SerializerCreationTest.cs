@@ -8,6 +8,13 @@ namespace TDD
     public class SerializerCreationTest
     {
         //------------------------------------------------------------------------------
+        [TestFixtureSetUp]
+        public void Setup()
+        {
+            SettingsConfiguration.EnableFormatMigration = false;
+        }
+
+        //------------------------------------------------------------------------------
         [TestFixtureTearDown]
         public void Cleanup()
         {

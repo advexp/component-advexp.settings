@@ -8,6 +8,13 @@ namespace TDD
     public class JSONTest
     {
         //------------------------------------------------------------------------------
+        [TestFixtureSetUp]
+        public void Setup()
+        {
+            SettingsConfiguration.EnableFormatMigration = false;
+        }
+
+        //------------------------------------------------------------------------------
         [Test]
         public void Test()
         {

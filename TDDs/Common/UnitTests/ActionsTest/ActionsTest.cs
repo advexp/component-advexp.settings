@@ -18,6 +18,13 @@ namespace TDD
     [TestFixture]
     public class ActionsTest
     {
+        //------------------------------------------------------------------------------
+        [TestFixtureSetUp]
+        public void Setup()
+        {
+            SettingsConfiguration.EnableFormatMigration = false;
+        }
+
         #if __ANDROID__
 
         //------------------------------------------------------------------------------

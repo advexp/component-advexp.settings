@@ -6,6 +6,14 @@ namespace TDD
     [TestFixture]
     public class NullValueTest
     {
+        //------------------------------------------------------------------------------
+        [TestFixtureSetUp]
+        public void Setup()
+        {
+            SettingsConfiguration.EnableFormatMigration = false;
+        }
+
+        //------------------------------------------------------------------------------
         [Test]
         public void Test()
         {

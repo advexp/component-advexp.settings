@@ -8,6 +8,13 @@ namespace TDD
     public class NotLoadedValueTest
     {
         //------------------------------------------------------------------------------
+        [TestFixtureSetUp]
+        public void Setup()
+        {
+            SettingsConfiguration.EnableFormatMigration = false;
+        }
+
+        //------------------------------------------------------------------------------
         [Test]
         public void Test()
         {

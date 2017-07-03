@@ -9,6 +9,13 @@ namespace TDD
     public class CollectionsTest
     {
         //------------------------------------------------------------------------------
+        [TestFixtureSetUp]
+        public void Setup()
+        {
+            SettingsConfiguration.EnableFormatMigration = false;
+        }
+
+        //------------------------------------------------------------------------------
         [Test]
         public void Test()
         {

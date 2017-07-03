@@ -9,6 +9,13 @@ namespace TDD
     public class DefaulValueTest
     {
         //------------------------------------------------------------------------------
+        [TestFixtureSetUp]
+        public void Setup()
+        {
+            SettingsConfiguration.EnableFormatMigration = false;
+        }
+
+        //------------------------------------------------------------------------------
         object GetTypeDefaultValue<T>(T value)
         {
             if(typeof(T).GetTypeInfo().IsValueType)

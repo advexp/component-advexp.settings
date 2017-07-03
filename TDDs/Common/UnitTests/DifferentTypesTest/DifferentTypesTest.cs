@@ -9,6 +9,13 @@ namespace TDD
     public class DifferentTypesTest
     {
         //------------------------------------------------------------------------------
+        [TestFixtureSetUp]
+        public void Setup()
+        {
+            SettingsConfiguration.EnableFormatMigration = false;
+        }
+
+        //------------------------------------------------------------------------------
         public static void CompareSettings(object settings, object refSettings)
         {
             var members = settings.GetType().GetMembers(

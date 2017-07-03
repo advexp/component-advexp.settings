@@ -65,18 +65,6 @@
     <Reference Include="Advexp.Settings_V1">
       <HintPath>..\References\Android\Advexp.Settings_V1.dll</HintPath>
     </Reference>
-    <Reference Include="SharpSerializer.PCL">
-      <HintPath>..\References\Android\SharpSerializer.PCL.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\References\Android\Advexp.Settings.Utils.PCL.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings">
-      <HintPath>..\References\Android\Advexp.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
-      <HintPath>..\References\Android\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -187,6 +175,9 @@
       <Link>UnitTests\FormatMigration\DifferentTypesSettings_V1.cs</Link>
     </Compile>
     <Compile Include="KeyChainUtils.cs" />
+    <Compile Include="..\Common\UnitTests\MultithreadingTest\MultithreadingTest.cs">
+      <Link>UnitTests\MultithreadingTest\MultithreadingTest.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />
@@ -202,6 +193,20 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Advexp.Settings\Plugins\JSONSettings\Plugin.JSONSettings.PCL.csproj">
+      <Project>{150F8545-A3DC-4ED0-B279-D6223666905A}</Project>
+      <Name>Plugin.JSONSettings.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Advexp.Settings\Android\Advexp.Settings.Android.csproj">
+      <Project>{29EB96CB-9287-4740-AEE3-859265DD32BC}</Project>
+      <Name>Advexp.Settings.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Advexp.Settings\PCL.Utils\Advexp.Settings.Utils.PCL.csproj">
+      <Project>{8A697A13-71A1-46B1-93E5-1C42DF20BE1A}</Project>
+      <Name>Advexp.Settings.Utils.PCL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Folder Include="UnitTests\JSONTest\" />
   </ItemGroup>

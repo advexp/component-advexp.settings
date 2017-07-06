@@ -4,26 +4,26 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
 
         <CheckBoxPreference
-                android:key="checkbox"
+                android:key="v2.checkbox"
                 android:title="@string/title_checkbox_preference"
                 android:summary="@string/summary_checkbox_preference"
                 android:defaultValue="true" />
 
         <SwitchPreference
-                android:key="switch"
+                android:key="v2.switch"
                 android:title="@string/title_switch_preference"
                 android:summary="@string/summary_switch_preference"
                 android:defaultValue="false" />
 
         <EditTextPreference
-                android:key="edittext"
+                android:key="v2.edittext"
                 android:title="@string/title_edittext_preference"
                 android:summary="@string/summary_edittext_preference"
                 android:dialogTitle="@string/dialog_title_edittext_preference"
                 android:defaultValue="@string/edittext_default_value" />
 
         <ListPreference
-                android:key="enum"
+                android:key="v2.enum"
                 android:title="@string/title_enum_preference"
                 android:summary="@string/summary_enum_preference"
                 android:dialogTitle="@string/dialog_title_enum_preference"

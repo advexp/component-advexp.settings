@@ -115,19 +115,16 @@
       <HintPath>..\..\..\packages\Xamarin.Facebook.iOS.4.19.0\lib\Xamarin.iOS10\Facebook.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.CognitoSyncSettings.Plugin.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.2\lib\Xamarin.iOS10\Advexp.CognitoSyncSettings.Plugin.PCL.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.2\lib\Xamarin.iOS10\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.4\lib\Xamarin.iOS10\Advexp.CognitoSyncSettings.Plugin.PCL.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.4\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.4\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
     </Reference>
     <Reference Include="SharpSerializer.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.2\lib\Xamarin.iOS10\SharpSerializer.PCL.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.4\lib\Xamarin.iOS10\SharpSerializer.PCL.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

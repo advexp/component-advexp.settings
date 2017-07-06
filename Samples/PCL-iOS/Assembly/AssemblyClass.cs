@@ -6,19 +6,21 @@ namespace Sample.Assembly.PCL
     public static class AssemblyClass
     {
         //------------------------------------------------------------------------------
-        static AssemblyClass()
+        public static void InitializeAndLoadSettings()
         {
             SettingsBaseConfiguration.SettingsNamePattern = "{ClassName}.{FieldName}";
 
             SettingsBaseConfiguration.RegisterSettingsPlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
 
-            JSONSettingsConfiguration.JsonSerializerSettings.Formatting = 
+            JSONSettingsConfiguration.JsonSerializerSettings.Formatting =
                 Newtonsoft.Json.Formatting.Indented;
 
             JSONSettingsConfiguration.JsonSerializerSettings.Converters.
                                      Add(new Newtonsoft.Json.Converters.StringEnumConverter());
 
             JSONSettingsConfiguration.PluginSettings.SkipSecureValues = false;
+
+            AssemblyClass.LoadSettings();
         }
 
         //------------------------------------------------------------------------------

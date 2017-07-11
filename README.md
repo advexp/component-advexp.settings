@@ -2,7 +2,7 @@
 
 ####Details
 
-Create cross-platform settings and make them accessible in your iOS or Android application. Ability to save the settings locally or to the cloud and sync them across the different devices by using the [Amazon Cognito Sync] (http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service
+Create cross-platform settings and make them accessible in your iOS or Android application. Ability to save the settings locally or to the cloud and sync them across the different devices by using the [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service
 
 - **iOS**: Storing settings in a normal form using *NSUserDefaults*
 - **iOS**: Storing settings in an encrypted form using Keychain
@@ -88,11 +88,11 @@ Samples and Unit Tests can be downloaded from this site.
             
             Advexp.CognitoSyncSettings.Plugin.
                 CognitoSyncSettingsConfiguration.Credentials = 
-                    new CognitoAWSCredentials(“MyIdentityPoolId”, Amazon.RegionEndpoint.USEast1);
+                    new CognitoAWSCredentials("MyIdentityPoolId", Amazon.RegionEndpoint.USEast1);
 
             Advexp.CognitoSyncSettings.Plugin.
                 CognitoSyncSettingsConfiguration.Credentials.AddLogin(
-                    "MySyncProviderName", “MyAccessToken”);
+                    "MySyncProviderName", "MyAccessToken");
 
             Settings.LoadSettings();
 
@@ -223,13 +223,13 @@ Then specify the plugin parameters:
     };
 
     CognitoSyncSettingsConfiguration.Credentials = 
-        new CognitoAWSCredentials(“MyIdentityPoolId”, RegionEndpoint.USEast1);
+        new CognitoAWSCredentials("MyIdentityPoolId", RegionEndpoint.USEast1);
 
 Also, you need to assign an authorization token to the relevant plugin parameter:
 
     :::csharp
     CognitoSyncSettingsConfiguration.Credentials.AddLogin(
-        "MyProviderName", “MyAccessToken”);
+        "MyProviderName", "MyAccessToken");
 
 As an authorization server you can use Amazon, Facebook, Twitter, Digits, Google or any other identity provider compatible with OpenID Connect. For more detailed information, see [Amazon Cognito’s documentation](http://docs.aws.amazon.com/cognito/latest/developerguide/getting-started.html)
 
@@ -310,7 +310,7 @@ The attribute specifies the serializer type that must be applied to a setting or
 This attribute indicates that the current class element is a setting and can be loaded/saved/deleted.  
 It is applied to a class member.
 
-***class Settings&lt;T&gt;*** (Advexp.Settings.dll for iOS, Android and PCL)  
+***class Settings\<T\>*** (Advexp.Settings.dll for iOS, Android and PCL)  
 The class specifies that its inheritor is a settings class and adds the appropriate functionality to the methods set.
 
 ***class SettingsConfiguration*** (Advexp.Settings.dll for iOS and Android)  

@@ -20,7 +20,7 @@ namespace Sample.App.iOS
         {
             Window = new UIWindow (UIScreen.MainScreen.Bounds);
 
-            AssemblyClass.InitializeAndLoadSettings();
+            AssemblyClass.LoadSettings();
 
             var rootElement = new RootElement ("Advexp.Settings PCL-iOS sample");
             var jsonSettingsElement = new MultilineElement(AssemblyClass.GetJSON());

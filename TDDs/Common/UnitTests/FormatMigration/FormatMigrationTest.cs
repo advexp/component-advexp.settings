@@ -12,10 +12,10 @@ namespace TDD
         [TestFixtureSetUp]
         public void Setup()
         {
-            #if __ANDROID__
+#if __ANDROID__
             SettingsConfiguration.KeyStoreFileProtectionPassword = "password";
             SettingsConfiguration.KeyStoreFileName = "keystore";
-            #endif // __ANDROID__
+#endif // __ANDROID__
             SettingsConfiguration.EnableFormatMigration = true;
         }
 
@@ -35,7 +35,7 @@ namespace TDD
             DifferentTypesTest.CompareSettings(loadedSettings_V2, savedSettings_V1);
         }
 
-        #if __IOS__
+#if __IOS__
         //------------------------------------------------------------------------------
         [Test]
         public void SecureTest_V1_V2()
@@ -51,7 +51,7 @@ namespace TDD
 
             DifferentTypesTest.CompareSettings(loadedSettings_V2, savedSettings_V1);
         }
-        #endif // __IOS__
+#endif // __IOS__
     }
 }
 

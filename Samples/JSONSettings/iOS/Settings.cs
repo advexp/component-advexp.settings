@@ -22,7 +22,7 @@ namespace Sample.JSONSettings.iOS
         [Setting]
         public static bool Bool {get; set;}
 
-        [Setting(Secure = true, Default = "default text")]
+        [Setting(Default = "default text")]
         public static string String {get; set;}
 
         [Setting]

@@ -25,7 +25,7 @@ namespace TDD
             SettingsConfiguration.EnableFormatMigration = false;
         }
 
-        #if __ANDROID__
+#if __ANDROID__
 
         //------------------------------------------------------------------------------
         static string Android_GetValueFromKeyChain(string sKey)
@@ -46,12 +46,12 @@ namespace TDD
             return stringValue;
         }
 
-        #endif // __ANDROID__
+#endif // __ANDROID__
 
         //------------------------------------------------------------------------------
         static public string GetSecureStringValue(string sKey)
         {
-            #if __IOS__
+#if __IOS__
 
             string sService = SettingsConfiguration.EncryptionServiceID;
 
@@ -70,26 +70,26 @@ namespace TDD
             // Something went wrong.
             return null;
 
-            #endif // __IOS__
+#endif // __IOS__
 
-            #if __ANDROID__
+#if __ANDROID__
 
 
             var value = Android_GetValueFromKeyChain(sKey);
 
             return value;
 
-            #endif // __ANDROID__
+#endif // __ANDROID__
         }
 
         //------------------------------------------------------------------------------
         static public string GetLocalStringValue(string sKey
-                                          #if __ANDROID__
+#if __ANDROID__
                                           , ISharedPreferences prefs = null
-                                          #endif // __ANDROID__
+#endif // __ANDROID__
                                          )
         {
-            #if __ANDROID__
+#if __ANDROID__
 
             if (prefs == null)
             {
@@ -105,16 +105,16 @@ namespace TDD
 
             return sValue;
 
-            #endif // __ANDROID__
+#endif // __ANDROID__
 
-            #if __IOS__
+#if __IOS__
 
             var prefs = NSUserDefaults.StandardUserDefaults;
             string sValue = prefs.StringForKey(sKey);
 
             return sValue;
 
-            #endif // __IOS__
+#endif // __IOS__
         }
 
         //------------------------------------------------------------------------------

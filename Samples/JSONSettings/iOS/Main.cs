@@ -17,8 +17,6 @@ namespace Sample.JSONSettings.iOS
             JSONSettingsConfiguration.JsonSerializerSettings.Converters.
                 Add(new Newtonsoft.Json.Converters.StringEnumConverter());
 
-            JSONSettingsConfiguration.PluginSettings.SkipSecureValues = false;
-
             // if you want to use a different Application Delegate class from "AppDelegate"
             // you can specify it here.
             UIApplication.Main(args, null, "AppDelegate");

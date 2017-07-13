@@ -31,25 +31,6 @@ namespace TDD
 
             DifferentTypesTest.CompareSettings(loadedSettings, refSettings);
         }
-
-        //------------------------------------------------------------------------------
-        [Test]
-        public void SecureTest()
-        {
-            JSONSettingsConfiguration.PluginSettings.SkipSecureValues = false;
-
-            var refSettings = new DifferentTypesSecureSettings();
-
-            var refSettingsPlugin = refSettings.GetObjectPlugin<IJSONSettingsPlugin>();
-            var refJsonSettings = refSettingsPlugin.Settings;
-
-            var loadedSettings = new DifferentTypesSecureSettings();
-
-            var loadedSettingsPlugin = loadedSettings.GetObjectPlugin<IJSONSettingsPlugin>();
-            loadedSettingsPlugin.Settings = refJsonSettings;
-
-            DifferentTypesTest.CompareSettings(loadedSettings, refSettings);
-        }
     }
 }
 

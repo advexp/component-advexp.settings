@@ -14,3 +14,10 @@ Samples/CognitoSettings/Android/bin
 Bin/iOS/iPhone
 Samples/CognitoSettings/iOS/bin/iPhone
 Samples/CognitoSettings/iOS/bin/iPhoneSimulator
+Samples/PCL-iOS/Assembly/bin
+TDDs/TDD.iOS/bin
+Samples/InAppSettingsKit/bin
+Samples/JSONSettings/Android/bin
+Samples/JSONSettings/iOS/bin
+Samples/LocalSettings/Android/bin
+Samples/LocalSettings/iOS/bin

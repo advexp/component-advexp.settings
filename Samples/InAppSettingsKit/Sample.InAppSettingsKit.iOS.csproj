@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\Bin\iOS\iPhoneSimulator\Debug\Sample.InAppSettingsKit</OutputPath>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
     <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -32,7 +32,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\Bin\iOS\iPhoneSimulator\Release\Sample.InAppSettingsKit</OutputPath>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -47,7 +47,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\Bin\iOS\iPhone\Debug\Sample.InAppSettingsKit</OutputPath>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
     <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -63,7 +63,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\Bin\iOS\iPhone\Release\Sample.InAppSettingsKit</OutputPath>
+    <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -83,17 +83,14 @@
     <Reference Include="InAppSettingsKit">
       <HintPath>..\..\Components\InAppSettingsKit-2.6.0.0\lib\ios-unified\InAppSettingsKit.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
-      <HintPath>..\..\packages\Advexp.Settings.Local.2.1.2\lib\Xamarin.iOS10\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
-    </Reference>
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\packages\Advexp.Settings.Local.2.1.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.1.3\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\..\packages\Advexp.Settings.Local.2.1.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.1.3\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
     </Reference>
     <Reference Include="SharpSerializer.PCL">
-      <HintPath>..\..\packages\Advexp.Settings.Local.2.1.2\lib\Xamarin.iOS10\SharpSerializer.PCL.dll</HintPath>
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.1.3\lib\Xamarin.iOS10\SharpSerializer.PCL.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

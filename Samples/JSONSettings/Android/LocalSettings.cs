@@ -25,7 +25,7 @@ namespace Sample.JSONSettings.Android
         [Setting(Name = "switch")]
         public static Boolean Switch {get; set;}
 
-        [Setting(Name = "edittext", Secure = true, Default = "default text")]
+        [Setting(Name = "edittext", Default = "default text")]
         public static String TextPreference{get; set;}
 
         [Setting(Name = "enum")]

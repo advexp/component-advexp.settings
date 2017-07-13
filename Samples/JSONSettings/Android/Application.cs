@@ -29,8 +29,6 @@ namespace Sample.JSONSettings.Android
                 Newtonsoft.Json.Formatting.Indented;
             JSONSettingsConfiguration.JsonSerializerSettings.Converters.
                                      Add(new Newtonsoft.Json.Converters.StringEnumConverter());
-
-            JSONSettingsConfiguration.PluginSettings.SkipSecureValues = false;
         }
     }
 }

@@ -1,5 +1,7 @@
 ###Advexp.Settings
 
+Settings for Xamarin
+
 ####Details
 
 Create cross-platform settings and make them accessible in your iOS or Android application. Ability to save the settings locally or to the cloud and sync them across the different devices by using the [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service

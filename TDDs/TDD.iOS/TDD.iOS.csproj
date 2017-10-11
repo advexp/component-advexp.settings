@@ -24,7 +24,7 @@
     <ConsolePause>false</ConsolePause>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchArch>i386</MtouchArch>
+    <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
     <MtouchFloat32>false</MtouchFloat32>
@@ -42,7 +42,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchArch>i386</MtouchArch>
+    <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
@@ -58,7 +58,7 @@
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <IpaPackageName>
     </IpaPackageName>
     <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
@@ -76,7 +76,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <IpaPackageName>
     </IpaPackageName>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -91,14 +91,17 @@
     <Reference Include="Advexp.Settings_V1">
       <HintPath>..\References\iOS\Advexp.Settings_V1.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.Settings">
-      <HintPath>..\References\iOS\Advexp.Settings.dll</HintPath>
-    </Reference>
     <Reference Include="Advexp.JSONSettings.Plugin.PCL">
       <HintPath>..\References\iOS\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\References\iOS\Advexp.Settings.dll</HintPath>
+    </Reference>
     <Reference Include="Advexp.Settings.Utils.PCL">
       <HintPath>..\References\iOS\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSerializer.PCL">
+      <HintPath>..\References\iOS\SharpSerializer.PCL.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
@@ -234,6 +237,12 @@
     <Compile Include="..\Common\UnitTests\FormatMigration\FormatMigrationTest.cs">
       <Link>UnitTests\FormatMigration\FormatMigrationTest.cs</Link>
     </Compile>
+    <Compile Include="..\Common\UnitTests\Issues\2\Issue2Settings.cs">
+      <Link>UnitTests\Issues\2\Issue2Settings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\Issues\2\Issue2Test.cs">
+      <Link>UnitTests\Issues\2\Issue2Test.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -257,11 +266,5 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.76.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.152.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.167.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <XamarinComponentReference Include="json.net">
-      <Version>7.0.1</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
   </ItemGroup>
 </Project>

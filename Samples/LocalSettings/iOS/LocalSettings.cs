@@ -49,11 +49,11 @@ namespace Sample.LocalSettings.iOS
         [Setting (Name = "date", Default = "2009-06-15T13:45:30.0000000Z")]
         public static DateTime Date { get; set; }
 
-        // In this case, the automatic setting name in storage will be
-        // "Sample.LocalSettings.Bluetooth"
-        // The name pattern can be changed using the SettingsConfiguration.SettingsNamePattern property
-        // The default pattern name is: "{NamespaceName}.{ClassName}.{FieldName}"
-        [Setting (Default = false)]
+		// In this case, the automatic setting name in storage will be
+		// "Sample.LocalSettings.iOS.LocalSettings.Bluetooth"
+		// The name pattern can be changed using the SettingsConfiguration.SettingsNamePattern property
+		// The default pattern name is: "{NamespaceName}.{ClassName}.{FieldName}"
+		[Setting (Default = false)]
         public static bool Bluetooth { get; set; }
 
         [Setting (Name = "locationServices", Default = true)]

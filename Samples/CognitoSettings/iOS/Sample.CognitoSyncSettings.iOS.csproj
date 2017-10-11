@@ -22,7 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>i386</MtouchArch>
+    <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
@@ -37,7 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignKey>iPhone Developer</CodesignKey>
@@ -49,7 +49,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>i386</MtouchArch>
+    <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <CodesignKey>iPhone Developer</CodesignKey>
     <SkipValidatePackageReferences>true</SkipValidatePackageReferences>
@@ -65,7 +65,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchFloat32>true</MtouchFloat32>
     <MtouchDebug>true</MtouchDebug>
@@ -83,6 +83,9 @@
     </Reference>
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\..\..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\..\..\packages\Xamarin.Facebook.iOS.4.26.0\lib\Xamarin.iOS10\Facebook.dll</HintPath>
     </Reference>
     <Reference Include="PCLStorage.Abstractions">
       <HintPath>..\..\..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
@@ -114,20 +117,17 @@
     <Reference Include="AWSSDK.CognitoSync">
       <HintPath>..\..\..\packages\AWSSDK.CognitoSync.3.1.1.0\lib\Xamarin.iOS10\AWSSDK.CognitoSync.dll</HintPath>
     </Reference>
-    <Reference Include="Facebook">
-      <HintPath>..\..\..\packages\Xamarin.Facebook.iOS.4.19.0\lib\Xamarin.iOS10\Facebook.dll</HintPath>
-    </Reference>
     <Reference Include="Advexp.CognitoSyncSettings.Plugin.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.5\lib\Xamarin.iOS10\Advexp.CognitoSyncSettings.Plugin.PCL.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.6\lib\Xamarin.iOS10\Advexp.CognitoSyncSettings.Plugin.PCL.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.5\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.6\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.5\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.6\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
     </Reference>
     <Reference Include="SharpSerializer.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.5\lib\Xamarin.iOS10\SharpSerializer.PCL.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.1.6\lib\Xamarin.iOS10\SharpSerializer.PCL.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -173,15 +173,14 @@
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.167.png" />
   </ItemGroup>
   <ItemGroup>
+    <XamarinComponentReference Include="facebookios">
+      <Version>4.26.0.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
     <XamarinComponentReference Include="aws-cognitosync-sdk">
       <Version>3.1.1.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
-    <XamarinComponentReference Include="facebookios">
-      <Version>4.19.0.0</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
   </ItemGroup>
-  <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Import Project="..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
 </Project>

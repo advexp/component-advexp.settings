@@ -37,7 +37,7 @@ namespace InAppSettingsKitSample
         public static bool AutoBrightness {get; set;}
 
         // In this case, the automatic setting name in storage will be
-        // "Sample.LocalSettings.Bluetooth"
+        // "InAppSettingsKitSample.AdvexpSettings.Bluetooth"
         // The name pattern can be changed using the SettingsConfiguration.SettingsNamePattern property
         // The default pattern name is: "{NamespaceName}.{ClassName}.{FieldName}"
         [Setting]

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Advexp.CognitoSyncSettings.Plugin;
 using Amazon.CognitoSync.SyncManager;
-using Amazon.CognitoIdentity;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -33,8 +32,6 @@ namespace Sample.CognitoSyncSettings.Android
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            FacebookSdk.SdkInitialize(this.ApplicationContext);
 
             Context context = global::Android.App.Application.Context;
             PreferenceManager.SetDefaultValues(context, Resource.Xml.preferences, false);

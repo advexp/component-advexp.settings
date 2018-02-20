@@ -65,6 +65,15 @@
     <Reference Include="Advexp.Settings_V1">
       <HintPath>..\References\Android\Advexp.Settings_V1.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\References\Android\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
+      <HintPath>..\References\Android\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\References\Android\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

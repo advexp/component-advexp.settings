@@ -8,8 +8,6 @@ namespace Sample.Assembly.PCL
         //------------------------------------------------------------------------------
         static AssemblyClass()
         {
-            SettingsBaseConfiguration.SettingsNamePattern = "{ClassName}.{FieldName}";
-
             SettingsBaseConfiguration.RegisterSettingsPlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
 
             JSONSettingsConfiguration.JsonSerializerSettings.Formatting = 
@@ -22,7 +20,7 @@ namespace Sample.Assembly.PCL
         //------------------------------------------------------------------------------
         public static string GetJSON()
         {
-            return Settings.GetPlugin<IJSONSettingsPlugin>().Settings;
+            return Settings.GetPlugin<IJSONSettingsPlugin>().SaveSettingsToJSON();
         }
 
         //------------------------------------------------------------------------------

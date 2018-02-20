@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Bluetooth</string>
+			<key>File</key>
+			<string>Bluetooth</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Location Services</string>
+			<key>Key</key>
+			<string>D.v2.SampleDynamicSettingsiOS.DynamicSettings.locationServices</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>DefaultValue</key>
+			<real>0</real>
+			<key>Title</key>
+			<string>Auto-Lock</string>
+			<key>Key</key>
+			<string>D.v2.SampleDynamicSettingsiOS.DynamicSettings.autoLock</string>
+			<key>Values</key>
+			<array>
+				<string>Never</string>
+				<string>OneMinute</string>
+				<string>TwoMinutes</string>
+				<string>ThreeMinutes</string>
+				<string>FourMinutes</string>
+				<string>FiveMinutes</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Never</string>
+				<string>1 Minute</string>
+				<string>2 Minute</string>
+				<string>3 Minute</string>
+				<string>4 Minute</string>
+				<string>5 Minute</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>DefaultValue</key>
+			<integer>0</integer>
+			<key>Title</key>
+			<string>Home Button</string>
+			<key>Key</key>
+			<string>D.v2.SampleDynamicSettingsiOS.DynamicSettings.homeButtonDoubleClick</string>
+			<key>Values</key>
+			<array>
+				<string>Home</string>
+				<string>Search</string>
+				<string>PhoneFavorite</string>
+				<string>Camera</string>
+				<string>iPod</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Home</string>
+				<string>Search</string>
+				<string>Phone favorites</string>
+				<string>Camera</string>
+				<string>iPod</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -33,6 +33,8 @@ namespace Sample.CognitoSyncSettings.Android
         {
             base.OnCreate(savedInstanceState);
 
+            FacebookSdk.SdkInitialize(this.ApplicationContext);
+
             Context context = global::Android.App.Application.Context;
             PreferenceManager.SetDefaultValues(context, Resource.Xml.preferences, false);
 
@@ -102,10 +104,10 @@ namespace Sample.CognitoSyncSettings.Android
         //------------------------------------------------------------------------------
         public void SynchronizeSettings()
         {
-            var plugin = CognitoSyncSettings.GetPlugin<ICognitoSyncSettingsPlugin>();
-            var dsName = plugin.DatasetName;
-            plugin.SynchronizeDataset();
             AndHUD.Shared.Show(this, "Synchronizing dataset...");
+
+            var plugin = CognitoSyncSettings.GetPlugin<ICognitoSyncSettingsPlugin>();
+            plugin.SynchronizeDataset();
         }
 
         //------------------------------------------------------------------------------
@@ -130,16 +132,20 @@ namespace Sample.CognitoSyncSettings.Android
         //------------------------------------------------------------------------------
         public void OnSyncSuccess (object sender, SyncSuccessEventArgs e)
         {
-            AndHUD.Shared.Dismiss (this);
-            Application.SynchronizationContext.Post(new SendOrPostCallback((o) => {
+            RunOnUiThread(() =>
+            {
+                AndHUD.Shared.Dismiss(this);
                 UpdatePropertiesText();
-            }), null);
+            });
         }
 
         //------------------------------------------------------------------------------
         public void OnSyncFailure (object sender, SyncFailureEventArgs e)
         {
-            AndHUD.Shared.ShowErrorWithStatus(this, "Synchronization error: " + e.Exception.Message, MaskType.Black, TimeSpan.FromSeconds(5));
+            RunOnUiThread(() =>
+            {
+                AndHUD.Shared.ShowErrorWithStatus(this, "Synchronization error: " + e.Exception.Message, MaskType.Black, TimeSpan.FromSeconds(5));
+            });
         }
     }
 

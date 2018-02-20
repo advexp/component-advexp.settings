@@ -2,6 +2,7 @@
 using UIKit;
 using MonoTouch.Dialog;
 using Advexp.JSONSettings.Plugin;
+using Advexp.LocalDynamicSettings.Plugin;
 using System;
 
 namespace Sample.JSONSettings.iOS
@@ -23,10 +24,17 @@ namespace Sample.JSONSettings.iOS
 
             Settings.LoadSettings();
 
-            var rootElement = new RootElement ("Advexp.Settings JSON sample");
-          
+            var dynamicTextSettingName = "dynamic_string";
+
+            var ds = Settings.GetPlugin<ILocalDynamicSettingsPlugin>();
+            ds.SetSetting(dynamicTextSettingName, Settings.String);
+
             var plugin = Settings.GetPlugin<IJSONSettingsPlugin>();
-            var jsonSettingsElement = new MultilineElement(plugin.Settings);
+            var json = plugin.SaveSettingsToJSON();
+
+            var rootElement = new RootElement("Advexp.Settings JSON sample");
+
+            var jsonSettingsElement = new MultilineElement(json);
 
             var boolElement = new BooleanElement("bool value", Settings.Bool);
             boolElement.ValueChanged += (object sender, System.EventArgs e) => 
@@ -42,6 +50,8 @@ namespace Sample.JSONSettings.iOS
             stringElement.Changed += (object sender, EventArgs e) => 
             {
                 Settings.String = stringElement.Value;
+
+                ds.SetSetting(dynamicTextSettingName, stringElement.Value);
 
                 UpdateJSON(rootElement, jsonSettingsElement);
                 Settings.SaveSetting(s => Settings.String);
@@ -98,7 +108,9 @@ namespace Sample.JSONSettings.iOS
         {
             var plugin = Settings.GetPlugin<IJSONSettingsPlugin>();
 
-            element.Caption = plugin.Settings;
+            var json = plugin.SaveSettingsToJSON();
+            element.Caption = json;
+
             rootElement.Reload(element, UITableViewRowAnimation.Automatic);
         }
     }

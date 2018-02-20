@@ -5,6 +5,7 @@ using MonoTouch.Dialog;
 using UIKit;
 using System.Collections.Generic;
 using Facebook.LoginKit;
+using Advexp.DynamicSettings.Plugin;
 
 namespace Sample.CognitoSyncSettings.iOS
 {
@@ -118,6 +119,10 @@ namespace Sample.CognitoSyncSettings.iOS
         //------------------------------------------------------------------------------
         RootElement CreateRoot()
         {
+            // IDynamicSettingsPlugin ds = CognitoSyncSettings.GetPlugin<ICognitoSyncSettingsPlugin>() as IDynamicSettingsPlugin;
+            // You can use CognitoSync dynamic settings
+            // Just cast plugin interface to IDynamicSettingsPlugin
+
             var info = new MultilineElement("See Sample.CognitoSyncSettings.Android for more details");
 
             m_boolElement = new BooleanElement("Bool value", CognitoSyncSettings.Boolean);

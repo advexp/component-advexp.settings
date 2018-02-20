@@ -5,6 +5,7 @@ using Android.OS;
 using Android.Preferences;
 using Android.Content;
 using Advexp.JSONSettings.Plugin;
+using Advexp.LocalDynamicSettings.Plugin;
 
 namespace Sample.JSONSettings.Android
 {
@@ -40,9 +41,10 @@ namespace Sample.JSONSettings.Android
             LocalSettings.LoadSettings();
 
             var plugin = LocalSettings.GetPlugin<IJSONSettingsPlugin>();
+
             TextView textView = (TextView)s_TextView.Target;
 
-            String jsonText = plugin.Settings;
+            String jsonText = plugin.SaveSettingsToJSON();
             textView.Text = jsonText;
         }
     }

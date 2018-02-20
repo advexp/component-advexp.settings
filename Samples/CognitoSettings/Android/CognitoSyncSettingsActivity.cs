@@ -36,6 +36,10 @@ namespace Sample.CognitoSyncSettings.Android
             //------------------------------------------------------------------------------
             public override void OnCreate (Bundle savedInstanceState)
             {
+                // IDynamicSettingsPlugin ds = CognitoSyncSettings.GetPlugin<ICognitoSyncSettingsPlugin>() as IDynamicSettingsPlugin;
+                // You can use CognitoSync dynamic settings
+                // Just cast plugin interface to IDynamicSettingsPlugin
+
                 base.OnCreate (savedInstanceState);
 
                 AddPreferencesFromResource (Resource.Xml.preferences);

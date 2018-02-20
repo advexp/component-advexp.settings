@@ -12,7 +12,7 @@
 			<key>Key</key>
 			<string>v2.airplaneMode</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Type</key>

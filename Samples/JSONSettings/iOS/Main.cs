@@ -8,7 +8,7 @@ namespace Sample.JSONSettings.iOS
         // This is the main entry point of the application.
         static void Main(string[] args)
         {
-            Advexp.SettingsBaseConfiguration.SettingsNamePattern = "{ClassName}.{FieldName}";
+            //Advexp.SettingsBaseConfiguration.SettingsNamePattern = "{ClassName}{Delimeter}{FieldName}";
             Advexp.SettingsBaseConfiguration.RegisterSettingsPlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
 
             JSONSettingsConfiguration.JsonSerializerSettings.Formatting = 

@@ -30,7 +30,7 @@ namespace Sample.LocalSettings.iOS
         //------------------------------------------------------------------------------
         public LocalSettingsController() : base(null, true)
         {
-            LocalSettings.LoadSettings();
+            //LocalSettings.LoadSettings();
 
             this.Root = CreateRoot();
 

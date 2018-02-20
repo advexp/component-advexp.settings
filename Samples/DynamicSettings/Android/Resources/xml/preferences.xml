@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <CheckBoxPreference
+                android:key="D.v2.SampleDynamicSettingsAndroid.DynamicSettings.checkbox"
+                android:title="@string/title_checkbox_preference"
+                android:summary="@string/summary_checkbox_preference" />
+
+        <SwitchPreference
+                android:key="D.v2.SampleDynamicSettingsAndroid.DynamicSettings.switch"
+                android:title="@string/title_switch_preference"
+                android:summary="@string/summary_switch_preference" />
+
+        <EditTextPreference
+                android:key="D.v2.SampleDynamicSettingsAndroid.DynamicSettings.edittext"
+                android:title="@string/title_edittext_preference"
+                android:summary="@string/summary_edittext_preference"
+                android:dialogTitle="@string/dialog_title_edittext_preference" />
+
+        <ListPreference
+                android:key="D.v2.SampleDynamicSettingsAndroid.DynamicSettings.enum"
+                android:title="@string/title_enum_preference"
+                android:summary="@string/summary_enum_preference"
+                android:dialogTitle="@string/dialog_title_enum_preference"
+                android:entries="@array/enum_preference_entries"
+                android:entryValues="@array/enum_preference_entry_values" />
+</PreferenceScreen>
+

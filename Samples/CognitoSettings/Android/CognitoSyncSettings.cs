@@ -21,11 +21,11 @@ namespace Sample.CognitoSyncSettings.Android
     [CognitoSyncDatasetInfo(Name = "CognitoSyncSettings")]
     class CognitoSyncSettings : Advexp.Settings<CognitoSyncSettings>
     {
-		[CognitoSyncSetting(Name = "CognitoSyncSettings.Boolean")]
+        [CognitoSyncSetting(Name = "CognitoSyncSettings.Boolean")]
         public static Boolean Boolean;
-		[CognitoSyncSetting(Name = "CognitoSyncSettings.Text")]
+        [CognitoSyncSetting(Name = "CognitoSyncSettings.Text")]
         public static String Text;
-		[CognitoSyncSetting(Name = "CognitoSyncSettings.Enum")]
+        [CognitoSyncSetting(Name = "CognitoSyncSettings.Enum")]
         public static EEnumValues Enum;
     }
 }

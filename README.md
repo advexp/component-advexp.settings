@@ -4,13 +4,13 @@ Settings for Xamarin
 
 ####Details
 
-Create cross-platform settings and make them accessible in your iOS or Android application.
+Create cross-platform settings and make them accessible in your iOS or Android application natively.
 
 - **iOS**: Storing settings in a normal form using *NSUserDefaults*
 - **iOS**: Storing settings in an encrypted form using Keychain
 - **Android**: Using *SharedPreferences* to store settings in a normal form
 - **Android**: Using KeyStore to save confidential settings in an encrypted form
-- Saving settings as dynamic parameters
+- Storing settings as dynamic parameters (*name* - *value* pairs)
 - Using user storage for settings
 - Using any build-in or user-defined types which can be saved as a setting
 - **iOS**: Ability to link settings from Advexp.Settings with settings from the Settings App
@@ -176,7 +176,7 @@ You can assign a default settings value which will be used for various exception
 
 #####Dynamic settings
 
-Dynamic settings are parameters of the \<key, value> type.  Where "key" is the text name of the setting, and "value" is the value of any system or user-defined type.  Local dynamic settings can be accessed via the *ILocalDynamicSettingsPlugin* interface of the corresponding plugin:
+Dynamic settings are parameters of the *name* - *value* pairs.  Where "name" is the text name of the setting, and "value" is the value of any system or user-defined type.  Local dynamic settings can be accessed via the *ILocalDynamicSettingsPlugin* interface of the corresponding plugin:
 
     var lds = MySettingsClass.GetPlugin<ILocalDynamicSettingsPlugin>();
 

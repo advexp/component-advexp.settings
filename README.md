@@ -122,7 +122,7 @@ Specify those settings in the definition of this class that are required by your
 You can use the class fields instead of properties. For example:
 
     :::csharp
-    [CognitoSyncSetting(Name = "StringSetting")]
+    [Setting(Name = "StringSetting")]
     public static String StringSetting;
 
 The settings do not have to be static. In that case, they can be accessed through the *Instance* static property or through the class object which you manage independently.
@@ -135,8 +135,7 @@ Call the appropriate method in order to perform the desired actions.
 
 #####Using user-defined types as settings
 
-The library allows the use of any user-defined types which can be saved as settings. User-defined types do not require modification and addition of special attributes. Usage case - CustomObjectTest in TDD projects on the site 
-<https://bitbucket.org/advexp/component-advexp.settings>. 
+The library allows the use of any user-defined types which can be saved as settings. User-defined types do not require modification and addition of special attributes. Usage case - CustomObjectTest in TDD projects on this site. 
 Serializing settings is done via the [SharpSerializer](http://sharpserializer.com/en/index.html) library.
 The serializer settings can be modified by using the following parameter:
 *SettingsBaseConfiguration.AdvancedConfiguration.SharpSerializerSettings*

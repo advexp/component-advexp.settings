@@ -4,7 +4,7 @@ Settings for Xamarin
 
 ####Details
 
-Create cross-platform settings and make them accessible in your iOS or Android application natively.
+Create cross-platform settings and make them accessible in your iOS or Android projects natively.
 
 - **iOS**: Storing settings in a normal form using *NSUserDefaults*
 - **iOS**: Storing settings in an encrypted form using Keychain

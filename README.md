@@ -182,60 +182,63 @@ Dynamic settings are parameters of the *name* - *value* pairs.  Where "name" is 
 
 This plugin is built into the library and does not require registration.
 
-To manipulate dynamic settings, the following methods are available:
+To manipulate dynamic settings, the following methods are available.
+
+Load, save or delete all dynamic settings:
 
     void LoadSettings();
     void SaveSettings();
     void DeleteSettings();
         
-Load, save or delete all dynamic settings.
 
+Load, save, or delete a dynamic setting with a specific name:
 
     void LoadSetting(string settingName);
     void SaveSetting(string settingName);
     void DeleteSetting(string settingName);
 
-Load, save, or delete a dynamic setting with a specific name.
 
+Determine whether a dynamic setting with a specific name is contained in the collection:
 
     bool Contains(string settingName);
 
-Determine whether a dynamic setting with a specific name is contained in the collection
 
+Set the order of the dynamic settings. By default, the order of the settings corresponds to the order at which they have been added to the collection. But you can change it to any other. If you input null into this function, the order will be reset to the original one. If a setting name from the collection isn't present in the installed sequence order, then this setting will not be listed. The custom and default orders of the dynamic settings are saved and will be restored the next time the dynamic parameters are loaded.
+An example of use can be found in the TDD project (UnitTests/DynamicSettings/DynamicSettingsTest.TestDynamicSettingsCustomOrder):
 
     void SetSettingsOrder(IEnumerable<string> settingsOrder);
 
-Set the order of the dynamic settings. By default, the order of the settings corresponds to the order at which they have been added to the collection. But you can change it to any other. If you input null into this function, the order will be reset to the original one. If a setting name from the collection isn't present in the installed sequence order, then this setting will not be listed. The custom and default orders of the dynamic settings are saved and will be restored the next time the dynamic parameters are loaded.
-An example of use can be found in the TDD project (UnitTests/DynamicSettings/DynamicSettingsTest.TestDynamicSettingsCustomOrder)
 
+Get the dynamic setting value for a specific name and bring it to the T type.
+For example, if the text "10" was saved as the dynamic setting, then an attempt to get a value of int type returns a number 10 of int type:
 
     T GetSetting<T>(string settingName);
 
-Get the dynamic setting value for a specific name and bring it to the T type.
-For example, if the text "10" was saved as the dynamic setting, then an attempt to get a value of int type returns a number 10 of int type
 
+Set or add (if the setting is not in the collection) a dynamic setting:
 
     void SetSetting<T>(string settingName, T settingValue);
 
-Set or add (if the setting is not in the collection) a dynamic setting
 
+Set the default values. This value will be returned if there is no dynamic setting in the collection. Reset all default values by inputting null into the function.
+An example of use can be found in the TDD project (UnitTests/DynamicSettings/DynamicSettingsTest.TestDefaultValues):
 
     void SetDefaultSettings(IDictionary<string, object> defaultSettings);
 
-Set the default values. This value will be returned if there is no dynamic setting in the collection. Reset all default values by inputting null into the function.
-An example of use can be found in the TDD project (UnitTests/DynamicSettings/DynamicSettingsTest.TestDefaultValues)
 
+
+Listing of all the settings in the collection:
 
     IEnumerator<string> GetEnumerator();
 
-Listing of all the settings in the collection. The following action is valid:
-
+ The following action is valid:
+ 
     var lds = MySettingsClass.GetPlugin<ILocalDynamicSettingsPlugin>();
     foreach(var dynamicSettingName in lds)
     {
     }
     
-Get the number of dynamic settings in the collection.
+Get the number of dynamic settings in the collection:
 
     int Count { get; }
 

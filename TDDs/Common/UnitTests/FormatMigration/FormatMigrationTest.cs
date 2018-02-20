@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Advexp;
 using NUnit.Framework;
@@ -23,6 +23,8 @@ namespace TDD
         [Test]
         public void LocalTest_V1_V2()
         {
+            var tddHandler = new TDDHandler();
+
             DifferentTypesLocalSettings_V1.DeleteSettings();
             DifferentTypesLocalSettings.DeleteSettings();
 
@@ -33,6 +35,8 @@ namespace TDD
             loadedSettings_V2.LoadObjectSettings();
 
             DifferentTypesTest.CompareSettings(loadedSettings_V2, savedSettings_V1);
+
+            tddHandler.CheckErrors();
         }
 
 #if __IOS__
@@ -40,6 +44,8 @@ namespace TDD
         [Test]
         public void SecureTest_V1_V2()
         {
+            var tddHandler = new TDDHandler();
+
             DifferentTypesSecureSettings_V1.DeleteSettings();
             DifferentTypesSecureSettings.DeleteSettings();
 
@@ -50,6 +56,8 @@ namespace TDD
             loadedSettings_V2.LoadObjectSettings();
 
             DifferentTypesTest.CompareSettings(loadedSettings_V2, savedSettings_V1);
+
+            tddHandler.CheckErrors();
         }
 #endif // __IOS__
     }

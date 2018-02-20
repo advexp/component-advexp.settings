@@ -63,8 +63,7 @@ namespace TDD
         public static char NextChar(this Random rng)
         {
             string chars = "$%#@!*abcdefghijklmnopqrstuvwxyz1234567890?;:ABCDEFGHIJKLMNOPQRSTUVWXYZ^&";
-            Random rand = new Random();
-            int num = rand.Next(0, chars.Length -1);
+            int num = rng.Next(0, chars.Length -1);
             return chars[num];
         }
     }

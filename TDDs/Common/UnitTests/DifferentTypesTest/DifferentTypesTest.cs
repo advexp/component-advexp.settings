@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Reflection;
 using Advexp;
 using NUnit.Framework;
@@ -84,6 +84,8 @@ namespace TDD
         [Test]
         public void LocalTest()
         {
+            var tddHandler = new TDDHandler();
+
             var savedSettings = new DifferentTypesLocalSettings();
             savedSettings.SaveObjectSettings();
 
@@ -91,12 +93,16 @@ namespace TDD
             loadedSettings.LoadObjectSettings();
 
             CompareSettings(loadedSettings, savedSettings);
+
+            tddHandler.CheckErrors();
         }
 
         //------------------------------------------------------------------------------
         [Test]
         public void SecureTest()
         {
+            var tddHandler = new TDDHandler();
+
             var savedSettings = new DifferentTypesSecureSettings();
             savedSettings.SaveObjectSettings();
 
@@ -104,6 +110,8 @@ namespace TDD
             loadedSettings.LoadObjectSettings();
 
             CompareSettings(loadedSettings, savedSettings);
+
+            tddHandler.CheckErrors();
         }
     }
 }

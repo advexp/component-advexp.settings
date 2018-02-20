@@ -98,7 +98,7 @@ namespace TDD
             {
                 var value = rand.NextInt32();
                 m_List.Add(value);
-            };
+            }
 
 			m_FooList = new List<Foo>();
             for(int i=0, iCount=10; i<iCount; i++)
@@ -201,7 +201,7 @@ namespace TDD
             {
                 var value = rand.NextInt32();
                 m_List.Add(value);
-            };
+            }
 
             m_FooList = new List<Foo>();
             for(int i=0, iCount=10; i<iCount; i++ )

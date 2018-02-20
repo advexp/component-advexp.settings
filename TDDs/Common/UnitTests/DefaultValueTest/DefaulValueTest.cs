@@ -31,6 +31,8 @@ namespace TDD
         [Test]
         public void Test()
         {
+            var tddHandler = new TDDHandler();
+
             DefaultValueSettings.DeleteSettings();
 
             DefaultValueSettings.LoadSetting(s => DefaultValueSettings.IntValue);
@@ -61,6 +63,8 @@ namespace TDD
             DefaultValueSettings.LoadSetting(s => DefaultValueSettings.TypeDefaultValue);
             Assert.AreEqual(GetTypeDefaultValue(DefaultValueSettings.TypeDefaultValue),
                             DefaultValueSettings.TypeDefaultValue);
+
+            tddHandler.CheckErrors();
         }
     }
 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using NUnit.Framework;
 using Advexp;
@@ -19,6 +19,8 @@ namespace TDD
         [Test]
         public void Test()
         {
+            var tddHandler = new TDDHandler();
+
             const Int32 iterations = 10000;
 
             InitializeCollections(iterations);
@@ -74,6 +76,8 @@ namespace TDD
 
                 // Check secure hash set
                 Assert.IsTrue(CollectionsSettings.SecureIntSet.Contains(i));
+
+                tddHandler.CheckErrors();
             }
         }
 

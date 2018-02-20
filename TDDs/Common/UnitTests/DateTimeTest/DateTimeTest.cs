@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Advexp;
 using NUnit.Framework;
 using System.Globalization;
@@ -34,6 +34,8 @@ namespace TDD
         [Test]
         public void DefaultValueTest()
         {
+            var tddHandler = new TDDHandler();
+
             // this local DateTime value was specified in the settings
             DateTime localDateTime = DateTime.ParseExact(DateTimeSettings.DefaultDateTimeLocalStringValue, 
                                                  "o", CultureInfo.InvariantCulture,
@@ -68,22 +70,32 @@ namespace TDD
             // Check consistency
             Assert.AreEqual(DateTimeKind.Utc, DateTimeSettings.DateTimeUtcValue.Kind);
             Assert.AreEqual(utcDateTime, DateTimeSettings.DateTimeUtcValue);
+
+            tddHandler.CheckErrors();
         }
 
         //------------------------------------------------------------------------------
         [Test]
         public void Test()
         {
+            var tddHandler = new TDDHandler();
+
             Test(ref DateTimeSettings.DateTime, DateTime.Now);
             Test(ref DateTimeSettings.DateTime, DateTime.UtcNow);
+
+            tddHandler.CheckErrors();
         }
 
         //------------------------------------------------------------------------------
         [Test]
         public void SecureTest()
         {
+            var tddHandler = new TDDHandler();
+
             Test(ref DateTimeSettings.SecureDateTime, DateTime.Now);
             Test(ref DateTimeSettings.SecureDateTime, DateTime.UtcNow);
+
+            tddHandler.CheckErrors();
         }
     }
 }

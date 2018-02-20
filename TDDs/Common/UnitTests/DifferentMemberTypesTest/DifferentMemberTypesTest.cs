@@ -18,6 +18,8 @@ namespace TDD
         [Test]
         public void Test()
         {
+            var tddHandler = new TDDHandler();
+
             Random rand = new MyRandom();
 
             var randInt1 = rand.NextInt32();
@@ -46,6 +48,8 @@ namespace TDD
             Assert.True(DifferentMemberTypesLocalSettings.StaticProperty == randInt2);
             Assert.True(DifferentMemberTypesLocalSettings.Instance.m_memberField == randInt3);
             Assert.True(DifferentMemberTypesLocalSettings.Instance.MemberProperty == randInt4);
+
+            tddHandler.CheckErrors();
         }
     }
 

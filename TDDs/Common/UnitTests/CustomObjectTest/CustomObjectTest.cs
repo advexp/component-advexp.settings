@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using NUnit.Framework;
 using Advexp;
 
@@ -18,6 +18,8 @@ namespace TDD
         [Test]
         public void Test()
         {
+            var tddHandler = new TDDHandler();
+
             CustomObjectSettings.FooClassInstance = new FooClass();
             CustomObjectSettings.SecureFooClassInstance = new FooClass();
 
@@ -52,6 +54,8 @@ namespace TDD
             Assert.IsTrue(typeof(FooClass) == CustomObjectSettings.SecureFooClassInstance.GetType());
             Assert.AreEqual(CustomObjectSettings.SecureFooClassInstance.IntValue, secureFooValue);
             Assert.AreEqual(CustomObjectSettings.SecureFooEnumValue, secureFooEnumValue);
+
+            tddHandler.CheckErrors();
         }
     }
 }

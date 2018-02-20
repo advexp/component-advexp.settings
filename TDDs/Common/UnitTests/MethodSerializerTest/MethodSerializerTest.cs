@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Advexp;
 using NUnit.Framework;
 
@@ -21,12 +21,16 @@ namespace TDD
             settings.m_SettingWasSaved1 = false;
             settings.m_SettingWasDeleted1 = false;
             settings.m_SettingWasSynchronized1 = false;
+            settings.m_SettingWasContains1 = false;
+
             settings.m_arNames1.Clear();
 
             settings.m_SettingWasLoaded2 = false;
             settings.m_SettingWasSaved2 = false;
             settings.m_SettingWasDeleted2 = false;
             settings.m_SettingWasSynchronized2 = false;
+            settings.m_SettingWasContains2 = false;
+
             settings.m_arNames2.Clear();
         }
 
@@ -56,6 +60,8 @@ namespace TDD
         [Test]
         public void Test()
         {
+            var tddHandler = new TDDHandler();
+
             var settings = MethodSerializerSettings.Instance;
 
             CleanUpSettingsParams(settings);
@@ -78,6 +84,8 @@ namespace TDD
                     settings);
             Compare(settings.m_SettingWasSynchronized1, settings.m_SettingWasSynchronized2,
                                 settings);
+
+            tddHandler.CheckErrors();
         }
     }
 }

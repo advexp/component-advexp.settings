@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Advexp;
 
 namespace TDD
@@ -17,6 +17,8 @@ namespace TDD
         [Test]
         public void Test()
         {
+            var tddHandler = new TDDHandler();
+
             const string strValue = "test";
 
             NullValueSettings.NullValue = null;
@@ -40,6 +42,8 @@ namespace TDD
 
             Assert.IsTrue(strValue == NullValueSettings.SecureNormalValue);
             Assert.IsNull(NullValueSettings.SecureNullValue);
+
+            tddHandler.CheckErrors();
         }
     }
 }

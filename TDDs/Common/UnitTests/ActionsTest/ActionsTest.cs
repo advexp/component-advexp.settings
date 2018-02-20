@@ -1,4 +1,4 @@
-using Advexp;
+﻿using Advexp;
 using NUnit.Framework;
 
 #if __IOS__
@@ -121,6 +121,8 @@ namespace TDD
         [Test]
         public void LocalTest()
         {
+            var tddHandler = new TDDHandler();
+
             const string key = "v2.foo";
             const string value = "FooStringValue";
 
@@ -138,12 +140,16 @@ namespace TDD
             string loadedNullNSUserDefaultsValue = GetLocalStringValue(key);
             Assert.IsNull(loadedNullNSUserDefaultsValue);
             Assert.IsNull(ActionsTestSettings.LocalFooString);
+
+            tddHandler.CheckErrors();
         }
 
         //------------------------------------------------------------------------------
         [Test]
         public void SecureTest()
         {
+            var tddHandler = new TDDHandler();
+
             const string secureKey = "v2.secureFoo";
             const string secureValue = "SecureFooStringValue";
 
@@ -162,6 +168,8 @@ namespace TDD
             string loadedNullSecureValue = ActionsTest.GetSecureStringValue(secureKey);
             Assert.IsNull(loadedNullSecureValue);
             Assert.IsNull(ActionsTestSettings.SecureFooString);
+
+            tddHandler.CheckErrors();
         }
     }
 }

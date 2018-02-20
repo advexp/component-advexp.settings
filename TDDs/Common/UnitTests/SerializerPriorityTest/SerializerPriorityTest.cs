@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Advexp;
 using NUnit.Framework;
@@ -62,6 +62,8 @@ namespace TDD
         //------------------------------------------------------------------------------
         void Test(string func, TDDData.SerializerActions action)
         {
+            var tddHandler = new TDDHandler();
+
             { // library serializer
                 SettingsConfiguration.Serializer = new LibrarySerializer();
                 Invoke(typeof(SimpleSettings), func);
@@ -301,6 +303,8 @@ namespace TDD
                 CheckSerializerActionUsage(actions);
                 CheckActionSecurityUsage(securityFlags);
             }
+
+            tddHandler.CheckErrors();
         }
 
         //------------------------------------------------------------------------------

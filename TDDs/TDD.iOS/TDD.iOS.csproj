@@ -9,9 +9,10 @@
     <RootNamespace>TDD</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>TDD.iOS</AssemblyName>
-    <ReleaseVersion>2.1</ReleaseVersion>
+    <ReleaseVersion></ReleaseVersion>
     <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,7 +30,6 @@
     <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
     <MtouchFloat32>false</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-<MtouchSdkVersion></MtouchSdkVersion>
 <DeviceSpecificBuild>false</DeviceSpecificBuild>
 <MtouchFastDev>true</MtouchFastDev>
   </PropertyGroup>
@@ -91,18 +91,6 @@
     <Reference Include="Advexp.Settings_V1">
       <HintPath>..\References\iOS\Advexp.Settings_V1.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
-      <HintPath>..\References\iOS\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings">
-      <HintPath>..\References\iOS\Advexp.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\References\iOS\Advexp.Settings.Utils.PCL.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpSerializer.PCL">
-      <HintPath>..\References\iOS\SharpSerializer.PCL.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -110,6 +98,8 @@
   <ItemGroup>
     <Folder Include="Properties\" />
     <Folder Include="UnitTests\JSONTest\" />
+    <Folder Include="UnitTests\MultithreadingTest\" />
+    <Folder Include="UnitTests\SettingsNamePatternTest\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -243,28 +233,51 @@
     <Compile Include="..\Common\UnitTests\Issues\2\Issue2Test.cs">
       <Link>UnitTests\Issues\2\Issue2Test.cs</Link>
     </Compile>
+    <Compile Include="..\Common\UnitTests\ContainsTest\ContainsTest.cs">
+      <Link>UnitTests\ContainsTest\ContainsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DynamicSettings\DynamicSettings.cs">
+      <Link>UnitTests\DynamicSettings\DynamicSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DynamicSettings\DynamicSettingsTest.cs">
+      <Link>UnitTests\DynamicSettings\DynamicSettingsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\ListExtention.cs">
+      <Link>ListExtention.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTestHandler.cs">
+      <Link>UnitTestHandler.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ProjectReference Include="..\..\Advexp.Settings\Plugins\JSONSettings\Plugin.JSONSettings.PCL.csproj">
+      <Project>{150F8545-A3DC-4ED0-B279-D6223666905A}</Project>
+      <Name>Plugin.JSONSettings.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Advexp.Settings\PCL.Utils\Advexp.Settings.Utils.PCL.csproj">
+      <Project>{8A697A13-71A1-46B1-93E5-1C42DF20BE1A}</Project>
+      <Name>Advexp.Settings.Utils.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Advexp.Settings\iOS\Advexp.Settings.iOS.csproj">
+      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
+      <Name>Advexp.Settings.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.60.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.58.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.87.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.80.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.120.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.57.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.114.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.180.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.50.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.100.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.72.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.144.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.29.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.76.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.152.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.1024.png" />
   </ItemGroup>
 </Project>

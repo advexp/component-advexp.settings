@@ -21,7 +21,9 @@ namespace TDD.Android
 
             SettingsConfiguration.KeyStoreFileProtectionPassword = "password";
             SettingsConfiguration.KeyStoreFileName = "keystore";
-            SettingsConfiguration.EncryptionServiceID = "Advexp.Settings.TDD";
+            SettingsBaseConfiguration.EncryptionServiceID = "Advexp.Settings.TDD";
+
+            SettingsBaseConfiguration.LogLevel = LogLevel.Error;
 
             SettingsBaseConfiguration.RegisterSettingsPlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
         }

@@ -30,7 +30,7 @@ namespace TDD
         }
 
         //------------------------------------------------------------------------------
-        public bool Migrate(string newVersionSettingName, bool secure, out object value)
+        public bool Contains(string settingName, bool secure)
         {
             throw new NotImplementedException();
         }

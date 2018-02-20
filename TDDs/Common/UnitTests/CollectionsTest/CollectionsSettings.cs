@@ -6,7 +6,7 @@ namespace TDD
 {
     public class CollectionsSettings : Advexp.Settings<TDD.CollectionsSettings>
     {
-        [Setting]
+        [Setting(Name = "CollectionsSettings.IntList")]
         public static List<Int32> IntList {get; set;}
 
         [Setting]

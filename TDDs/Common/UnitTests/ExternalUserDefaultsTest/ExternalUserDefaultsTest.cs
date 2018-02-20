@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Foundation;
 using NUnit.Framework;
 using Advexp;
@@ -19,6 +19,8 @@ namespace TDD
         [Test]
         public void Test()
         {
+            var tddHandler = new TDDHandler();
+
             const String stringValue = "external string value";
             const Int32 int32Value = 12345;
 
@@ -42,6 +44,8 @@ namespace TDD
 
             Assert.AreEqual(ExternalUserDefaultsSettings.IntValue, int32Value);
             Assert.AreEqual(ExternalUserDefaultsSettings.StringValue, stringValue);
+
+            tddHandler.CheckErrors();
         }
     }
 }

@@ -18,6 +18,8 @@ namespace TDD
         [Test]
         public void Test()
         {
+            var tddHandler = new TDDHandler();
+
             String refString = "Test";
             DateTime refDateTime = DateTime.Now;
             Int32 refInt32 = 10;
@@ -41,6 +43,8 @@ namespace TDD
             Assert.AreEqual(refString, NotLoadedValuesSettings.SecureStringValue);
             Assert.AreEqual(refDateTime, NotLoadedValuesSettings.SecureDateTimeValue);
             Assert.AreEqual(refInt32, NotLoadedValuesSettings.SecureInt32Value);
+
+            tddHandler.CheckErrors();
         }
     }
 }

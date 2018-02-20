@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Advexp;
 using NUnit.Framework;
 
@@ -35,6 +35,8 @@ namespace TDD
         //------------------------------------------------------------------------------
         void Test(String func)
         {
+            var tddHandler = new TDDHandler();
+
             { // library serializer
                 LibrarySerializer.s_CreationCount = 0;
 
@@ -90,6 +92,8 @@ namespace TDD
                 Assert.IsTrue(FieldSerializer.s_CreationCount == 1);
                 Assert.IsTrue(LibrarySerializer.s_CreationCount == 1);
             }
+
+            tddHandler.CheckErrors();
         }
 
         //------------------------------------------------------------------------------

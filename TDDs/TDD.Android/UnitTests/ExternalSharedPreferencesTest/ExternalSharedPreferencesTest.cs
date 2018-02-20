@@ -20,6 +20,8 @@ namespace TDD
         [Test]
         public void Test()
         {
+            var logHandler = new TDDHandler();
+
             const String stringKeyName = "v2.string";
             const String intKeyName = "v2.int";
 
@@ -50,6 +52,8 @@ namespace TDD
 
             Assert.AreEqual(ExternalSharedPreferencesSettings.IntValue, intValue);
             Assert.AreEqual(ExternalSharedPreferencesSettings.StringValue, stringValue);
+
+            logHandler.CheckErrors();
         }
     }
 }

@@ -5,26 +5,28 @@ using NUnit.Framework;
 
 namespace TDD
 {
-    [MethodSerializer("ClassSerializerLoad", "ClassSerializerSave", "ClassSerializerDelete", "ClassSerializerSynchronize")]
+    [MethodSerializer("ClassSerializerLoad", "ClassSerializerSave", "ClassSerializerDelete", "ClassSerializerSynchronize", "ClassSerializerContains")]
     public class MethodSerializerSettings : Advexp.Settings<TDD.MethodSerializerSettings>
     {
         public Boolean m_SettingWasLoaded1 = false;
         public Boolean m_SettingWasSaved1 = false;
         public Boolean m_SettingWasDeleted1 = false;
         public Boolean m_SettingWasSynchronized1 = false;
+        public Boolean m_SettingWasContains1 = false;
         public List<String> m_arNames1 = new List<String>();
 
         public Boolean m_SettingWasLoaded2 = false;
         public Boolean m_SettingWasSaved2 = false;
         public Boolean m_SettingWasDeleted2 = false;
         public Boolean m_SettingWasSynchronized2 = false;
+        public Boolean m_SettingWasContains2 = false;
         public List<String> m_arNames2 = new List<String>();
 
         [Setting]
         public static Int32 Int32Value {get; set;}
 
         [Setting]
-        [MethodSerializer("SettingSerializerLoad", "SettingSerializerSave", "SettingSerializerDelete", "SettingSerializerSynchronize")]
+        [MethodSerializer("SettingsSerializerLoad", "SettingsSerializerSave", "SettingsSerializerDelete", "SettingsSerializerSynchronize", "SettingsSetializerContains")]
         public static String StringValue {get; set;}
 
         //------------------------------------------------------------------------------
@@ -66,7 +68,13 @@ namespace TDD
         }
 
         //------------------------------------------------------------------------------
-        public bool SettingSerializerLoad(string settingName, bool secure, out object value)
+        public bool ClassSerializerContains(string settingName)
+        {
+            return true;
+        }
+
+        //------------------------------------------------------------------------------
+        public bool SettingsSerializerLoad(string settingName, bool secure, out object value)
         {
             Assert.IsFalse(m_SettingWasLoaded2);
             m_SettingWasLoaded2 = true;
@@ -79,7 +87,7 @@ namespace TDD
         }
 
         //------------------------------------------------------------------------------
-        public void SettingSerializerSave(string settingName, bool secure, object value)
+        public void SettingsSerializerSave(string settingName, bool secure, object value)
         {
             Assert.IsFalse(m_SettingWasSaved2);
             m_SettingWasSaved2 = true;
@@ -88,7 +96,7 @@ namespace TDD
         }
 
         //------------------------------------------------------------------------------
-        public void SettingSerializerDelete(string settingName, bool secure)
+        public void SettingsSerializerDelete(string settingName, bool secure)
         {
             Assert.IsFalse(m_SettingWasDeleted2);
             m_SettingWasDeleted2 = true;
@@ -97,10 +105,16 @@ namespace TDD
         }
 
         //------------------------------------------------------------------------------
-        public void SettingSerializerSynchronize()
+        public void SettingsSerializerSynchronize()
         {
             Assert.IsFalse(m_SettingWasSynchronized2);
             m_SettingWasSynchronized2 = true;
+        }
+
+        //------------------------------------------------------------------------------
+        public bool SettingsSetializerContains(string settingName)
+        {
+            return true;
         }
     }
 }

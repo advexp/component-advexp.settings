@@ -203,10 +203,15 @@ Determine whether a dynamic setting with a specific name is contained in the col
     bool Contains(string settingName);
 
 
-Set the order of the dynamic settings. By default, the order of the settings corresponds to the order at which they have been added to the collection. But you can change it to any other. If you input null into this function, the order will be reset to the original one. If a setting name from the collection isn't present in the installed sequence order, then this setting will not be listed. The custom and default orders of the dynamic settings are saved and will be restored the next time the dynamic parameters are loaded.
+Set the order of the dynamic settings. By default, the order of the settings corresponds to the order at which they have been added to the collection. But you can change it to any other. If you input *null* into this function, the order will be reset to the original one. If a setting name from the collection isn't present in the installed sequence order, then this setting will not be listed. The custom and default orders of the dynamic settings are saved and will be restored the next time the dynamic parameters are loaded.
 An example of use can be found in the TDD project (UnitTests/DynamicSettings/DynamicSettingsTest.TestDynamicSettingsCustomOrder):
 
     void SetSettingsOrder(IEnumerable<string> settingsOrder);
+
+
+Set or add (if the setting is not in the collection) a dynamic setting:
+
+    void SetSetting<T>(string settingName, T settingValue);
 
 
 Get the dynamic setting value for a specific name and bring it to the T type.
@@ -215,16 +220,10 @@ For example, if the text "10" was saved as the dynamic setting, then an attempt 
     T GetSetting<T>(string settingName);
 
 
-Set or add (if the setting is not in the collection) a dynamic setting:
-
-    void SetSetting<T>(string settingName, T settingValue);
-
-
-Set the default values. This value will be returned if there is no dynamic setting in the collection. Reset all default values by inputting null into the function.
+Set the default values. This value will be returned if there is no dynamic setting in the collection. Reset all default values by inputting *null* into the function.
 An example of use can be found in the TDD project (UnitTests/DynamicSettings/DynamicSettingsTest.TestDefaultValues):
 
     void SetDefaultSettings(IDictionary<string, object> defaultSettings);
-
 
 
 Listing of all the settings in the collection:

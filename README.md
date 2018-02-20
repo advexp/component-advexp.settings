@@ -4,45 +4,35 @@ Settings for Xamarin
 
 ####Details
 
-Create cross-platform settings and make them accessible in your iOS or Android application. Ability to save the settings locally or to the cloud and sync them across the different devices by using the [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service
+Create cross-platform settings and make them accessible in your iOS or Android application.
 
 - **iOS**: Storing settings in a normal form using *NSUserDefaults*
 - **iOS**: Storing settings in an encrypted form using Keychain
 - **Android**: Using *SharedPreferences* to store settings in a normal form
 - **Android**: Using KeyStore to save confidential settings in an encrypted form
-- Using the [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service to save the settings to the cloud and sync them across the different devices
+- Saving settings as dynamic parameters
 - Using user storage for settings
 - Using any build-in or user-defined types which can be saved as a setting
 - **iOS**: Ability to link settings from Advexp.Settings with settings from the Settings App
 - **iOS**: The possibility of using [InAppSettingsKit](https://components.xamarin.com/view/InAppSettingsKit) along with Advexp.Settings. Both for creating fully functional GUI of the app settings and for locating them in the Settings App and accessing them from C# code.
 - Using library in PCL projects
-- Saving or loading settings by using JSON. In this case, the additional component [Json.NET](https://components.xamarin.com/view/json.net) is used
+- Saving or loading settings by using JSON. In this case, the additional package [Json.NET](https://www.nuget.org/packages/newtonsoft.json) is used.
 
 NuGet package “Advexp.Settings Local” you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Local>
  
 NuGet package “Advexp.Settings Cloud”, evaluation version, you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Cloud.Evaluation>
- 
-"Advexp.Settings Local" component for Xamarin you can find here:  
-<https://components.xamarin.com/view/advexp-settings-local>
 
-"Advexp.Settings Cloud" full version component for Xamarin you can find here:  
-<https://components.xamarin.com/view/advexp-settings-cloud>
+Samples, Unit Tests and additional information you can find on this site.
 
-Samples and Unit Tests can be downloaded from this site.
+To purchase "Advexp.Settings Cloud", send a request to <components@advexp.net>
 
 #####Example of a settings declaration
 
     :::csharp
-    [Advexp.CognitoSyncSettings.Plugin.
-     CognitoSyncDatasetInfo(Name = "MyCognitoSyncDatasetName")]
     class Settings : Advexp.Settings<Settings>
     {
-        [Advexp.CognitoSyncSettings.Plugin.
-         CognitoSyncSetting(Name = "CognitoSyncSettings.Boolean", Default = false)]
-        public static Boolean CognitoSyncBoolean {get; set;}
-
         [Advexp.
          Setting(Name = "IntSetting", Default = 3)]
         public static Int32 IntSetting {get; set;}
@@ -58,10 +48,7 @@ Samples and Unit Tests can be downloaded from this site.
         public static DateTime SecureDateTimeSetting {get; set;}
 
         // In this case, the automatic setting name in storage will be
-        // "{NamespaceName}.{ClassName}.{FieldName}"
-        // The name pattern can be changed 
-        // using the SettingsConfiguration.SettingsNamePattern property
-        // The default pattern name is: "{NamespaceName}.{ClassName}.{FieldName}"
+        // "NamespaceName.ClassName.FieldName"
         [Advexp.
          Setting]
         public static String SettingWithAutoName {get; set;}
@@ -75,32 +62,8 @@ Samples and Unit Tests can be downloaded from this site.
     {
         static void Main(string[] args)
         {
-            Advexp.
-                SettingsBaseConfiguration.RegisterSettingsPlugin
-                <
-                    Advexp.CognitoSyncSettings.Plugin.ICognitoSyncSettingsPlugin,
-                    Advexp.CognitoSyncSettings.Plugin.CognitoSyncSettingsPlugin
-                >();
-                    
-            Advexp.CognitoSyncSettings.Plugin.
-                CognitoSyncSettingsConfiguration.Config = new AmazonCognitoSyncConfig()
-                {
-                    RegionEndpoint = Amazon.RegionEndpoint.USEast1
-                };
-            
-            Advexp.CognitoSyncSettings.Plugin.
-                CognitoSyncSettingsConfiguration.Credentials = 
-                    new CognitoAWSCredentials("MyIdentityPoolId", Amazon.RegionEndpoint.USEast1);
-
-            Advexp.CognitoSyncSettings.Plugin.
-                CognitoSyncSettingsConfiguration.Credentials.AddLogin(
-                    "MySyncProviderName", "MyAccessToken");
-
             Settings.LoadSettings();
 
-            // Will be saved to Amazon Cognito Sync
-            // and will be available for syncing to another device
-            Settings.CognitoSyncBoolean = true;
             // Will be saved to NSUserDefaults for iOS 
             // and to SharedPreferences for Android
             Settings.IntSetting = 5;
@@ -111,14 +74,23 @@ Samples and Unit Tests can be downloaded from this site.
 
             Settings.SaveSettings();
 
-            // If needed, you can force the Cognito Sync container 
-            // to perform synchronization
-            var plugin = Settings.GetPlugin<ICognitoSyncSettingsPlugin>();
-            plugin.SynchronizeDataset();
+            // Dynamic settings
+        
+            var lds = Settings.
+              GetPlugin<Advexp.LocalDynamicSettings.Plugin.ILocalDynamicSettingsPlugin>();
+        
+            lds.LoadSettings();
+
+            lds.SetSetting("dynamic_setting_name1", "value1");
+            lds.SetSetting("dynamic_setting_name2", false);
+            lds.SetSetting("dynamic_setting_name3", DateTime.Now);
+
+            lds.SaveSettings();
+
+            var dt = lds.GetSetting<DateTime>("dynamic_setting_name3");
         }
     }
 
-The evaluation version of the component does not allow specifying the name of the Cognito Sync dataset and uses the name "Advexp.Settings.Evaluation"
 
 ####Getting Started
 #####Create settings
@@ -135,9 +107,6 @@ Create a new class with the name "Settings" (for example) and inherit it as foll
 Specify those settings in the definition of this class that are required by your application. They should be accompanied by required attributes:
 
     :::csharp
-    [CognitoSyncSetting(Name = "CognitoSyncSettings.Boolean", Default = false)]
-    public static Boolean CognitoSyncBoolean {get; set;}
-
     [Setting(Name = "IntSetting", Default = 3)]
     public static Int32 IntSetting {get; set;}
 
@@ -157,6 +126,9 @@ You can use the class fields instead of properties. For example:
     public static String StringSetting;
 
 The settings do not have to be static. In that case, they can be accessed through the *Instance* static property or through the class object which you manage independently.
+
+Also, you can use dynamic parameters as saved settings. Their use is described below.
+
 
 Call the appropriate method in order to perform the desired actions.
 
@@ -204,42 +176,78 @@ You can use proprietary attributes to specify settings. To do this, you need to 
 You can assign a default settings value which will be used for various exceptional cases, inability to load or when deleting. This is done with the help of the *SettingBaseAttribute.Default* property. This property can be assigned any type of value allowed in C# during attribute initialization or the *DefaulValueMode.TypeDefaultValue* value. In this case, the default value will be the value used by default for this type in C#. Many parameters can also be assigned by using a string value. For example, the default value for the DateTime setting type can be assigned as a string “2009-06-15T13:45:30.0000000Z”. In case the *Default* property has not been set up, then to delete the settings or in various exceptional cases (for example, inability to convert the loaded value into a setting type), the default value utilized for this type in C# will be used; in the case of inability to load, the setting value will remains unchanged.
 
 
-#####Syncing settings by using Amazon Cognito Sync
+#####Dynamic settings
 
-To add this ability, you need to install the [AWSSDK - Amazon Cognito Sync](https://components.xamarin.com/view/aws-cognitosync-sdk) component in your project, add the Advexp.CognitoSyncSettings.Plugin.PCL assembly to the dependencies, and register the plugin:
+Dynamic settings are parameters of the \<key, value> type.  Where "key" is the text name of the setting, and "value" is the value of any system or user-defined type.  Local dynamic settings can be accessed via the *ILocalDynamicSettingsPlugin* interface of the corresponding plugin:
 
-    :::csharp
-    SettingsBaseConfiguration.
-        RegisterSettingsPlugin<ICognitoSyncSettingsPlugin, CognitoSyncSettingsPlugin>();
+    var lds = MySettingsClass.GetPlugin<ILocalDynamicSettingsPlugin>();
 
-Create the needed Identity pool in the Amazon Cognito management console.
-Add the CognitoSyncDatasetInfoAttribute attribute to the settings class definition
-and specify there the name of the dataset to which this class will pertain.
+This plugin is built into the library and does not require registration.
 
-Then specify the plugin parameters:
+To manipulate dynamic settings, the following methods are available:
 
-    :::csharp
-    CognitoSyncSettingsConfiguration.Config = new AmazonCognitoSyncConfig()
+    void LoadSettings();
+    void SaveSettings();
+    void DeleteSettings();
+        
+Load, save or delete all dynamic settings.
+
+
+    void LoadSetting(string settingName);
+    void SaveSetting(string settingName);
+    void DeleteSetting(string settingName);
+
+Load, save, or delete a dynamic setting with a specific name.
+
+
+    bool Contains(string settingName);
+
+Determine whether a dynamic setting with a specific name is contained in the collection
+
+
+    void SetSettingsOrder(IEnumerable<string> settingsOrder);
+
+Set the order of the dynamic settings. By default, the order of the settings corresponds to the order at which they have been added to the collection. But you can change it to any other. If you input null into this function, the order will be reset to the original one. If a setting name from the collection isn't present in the installed sequence order, then this setting will not be listed. The custom and default orders of the dynamic settings are saved and will be restored the next time the dynamic parameters are loaded.
+An example of use can be found in the TDD project (UnitTests/DynamicSettings/DynamicSettingsTest.TestDynamicSettingsCustomOrder)
+
+
+    T GetSetting<T>(string settingName);
+
+Get the dynamic setting value for a specific name and bring it to the T type.
+For example, if the text "10" was saved as the dynamic setting, then an attempt to get a value of int type returns a number 10 of int type
+
+
+    void SetSetting<T>(string settingName, T settingValue);
+
+Set or add (if the setting is not in the collection) a dynamic setting
+
+
+    void SetDefaultSettings(IDictionary<string, object> defaultSettings);
+
+Set the default values. This value will be returned if there is no dynamic setting in the collection. Reset all default values by inputting null into the function.
+An example of use can be found in the TDD project (UnitTests/DynamicSettings/DynamicSettingsTest.TestDefaultValues)
+
+
+    IEnumerator<string> GetEnumerator();
+
+Listing of all the settings in the collection. The following action is valid:
+
+    var lds = MySettingsClass.GetPlugin<ILocalDynamicSettingsPlugin>();
+    foreach(var dynamicSettingName in lds)
     {
-        RegionEndpoint = RegionEndpoint.USEast1
-    };
+    }
+    
+Get the number of dynamic settings in the collection.
 
-    CognitoSyncSettingsConfiguration.Credentials = 
-        new CognitoAWSCredentials("MyIdentityPoolId", RegionEndpoint.USEast1);
+    int Count { get; }
 
-Also, you need to assign an authorization token to the relevant plugin parameter:
 
-    :::csharp
-    CognitoSyncSettingsConfiguration.Credentials.AddLogin(
-        "MyProviderName", "MyAccessToken");
+Examples of using dynamic settings can be seen in the corresponding example (Samples/DynamicSettings) or in the TDD project (TDD/UnitTests/DynamicSettings)
 
-As an authorization server you can use Amazon, Facebook, Twitter, Digits, Google or any other identity provider compatible with OpenID Connect. For more detailed information, see [Amazon Cognito’s documentation](http://docs.aws.amazon.com/cognito/latest/developerguide/getting-started.html)
-
-The evaluation version of the component does not allow specifying the name of the Cognito Sync dataset and uses the name "Advexp.Settings.Evaluation"
 
 #####Saving and loading settings by using JSON
 
-To add this capability, you need to install the [Json.NET](https://components.xamarin.com/view/json.net) component in your project, add the **Advexp.JSONSettings.Plugin.PCL** assembly to the dependencies, and register the plugin:
+To add this capability, you need to install the [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json) nuget package, add the **Advexp.JSONSettings.Plugin.PCL** assembly to the dependencies, and register the plugin:
 
     :::csharp
 	SettingsBaseConfiguration.
@@ -261,12 +269,12 @@ You can load or save settings in JSON format by using the plugin object.
 Save settings in JSON format:
 
     :::csharp
-	var jsonSettings = jsonPlugin.Settings;
+	var jsonSettings = jsonPlugin.SaveSettingsToJSON();
 
 Load settings from JSON:
 
     :::csharp
-	jsonPlugin.Settings = jsonSettings;
+	jsonPlugin.LoadSettingsFromJSON(jsonSettings);
 
 The JSON parser parameters may be modified by using the parameter:  
 *JSONSettingsConfiguration.JsonSerializerSettings*
@@ -302,6 +310,7 @@ Method prototypes are:
 Returns true if downloaded successfully, otherwise false  
 *void Save(string settingName, bool secure, object value);*  
 *void Delete(string settingName, bool secure);*  
+*void Contains(string settingName, bool secure);*  
 *void Synchronize();*  
 This attribute can be applied to a class or to a member of a class.
 
@@ -312,7 +321,7 @@ The attribute specifies the serializer type that must be applied to a setting or
 This attribute indicates that the current class element is a setting and can be loaded/saved/deleted.  
 It is applied to a class member.
 
-***class Settings<T\>*** (Advexp.Settings.dll for iOS, Android and PCL)  
+***class Settings\<T>*** (Advexp.Settings.dll for iOS, Android and PCL)  
 The class specifies that its inheritor is a settings class and adds the appropriate functionality to the methods set.
 
 ***class SettingsConfiguration*** (Advexp.Settings.dll for iOS and Android)  
@@ -329,6 +338,12 @@ Example - ExternalSaredPreferencesTest in the Android TDD project, which can be 
 ***class AdvancedConfiguration*** (Advexp.Settings.Utils.PCL.dll)  
 Extended library configuration parameters. Objects of this type belong to the *SettingsBaseConfiguration* class.
 
+######Dynamic Settings plugin
+
+***interface ILocalDynamicSettingsPlugin*** (Advexp.Settings.Utils.PCL.dll)  
+Interface definition of the Dynamic Settings plugin
+
+
 ######JSON Settings plugin
 
 ***interface IJSONSettingsPlugin*** (Advexp.JSONSettings.Plugin.PCL)  
@@ -342,26 +357,6 @@ Static class. It contains parameters that define the JSON Settings plugin config
 
 ***class PluginSettings*** (Advexp.JSONSettings.Plugin.PCL)  
 Class which contains the JSON Settings plugin parameters. Objects of this type belong to the JSONSettingsConfiguration class.
-
-######Cognito Sync Settings plugin
-
-***class CognitoSyncSettingsConfiguration*** (Advexp.CognitoSyncSettings.Plugin.PCL)  
-Static class. It contains parameters that define the Cognito Sync Settings plugin configuration
-
-***class CognitoSyncSettingAttribute*** (Advexp.CognitoSyncSettings.Plugin.PCL)  
-This attribute indicates that the current class element is a setting and can be loaded/saved/deleted using Amazon Cognito Sync service. It is applied to a class member
-
-***interface ICognitoSyncSettingsPlugin*** (Advexp.CognitoSyncSettings.Plugin.PCL)
-Interface definition of the Cognito Sync Settings plugin
-
-***class CognitoSyncSettingsPlugin*** (Advexp.CognitoSyncSettings.Plugin.PCL)
-Implementation of the Cognito Sync Settings plugin
-
-***class CognitoSyncDatasetInfoAttribute*** (Advexp.CognitoSyncSettings.Plugin.PCL)
-Attribute which defines to which dataset the settings class belongs. It is applied to a class
-
-***class CognitoSyncSerializer*** (Advexp.CognitoSyncSettings.Plugin.PCL)
-Settings serializer for the Amazon Cognito Sync service
 
 #####Library configuration
 
@@ -379,6 +374,7 @@ All library parameters can be set through the *SettingsConfiguration* static cla
 - ***RegisterSettingsAttribute*** - a method designed for registering the settings indicator attribute
 - ***RegisterSettingsPlugin*** - a method designed for the registration of plugins, for example, *CognitoSyncSettingsPlugin*
 - **EnableFormatMigration** - enable or disable previous version support. The default value is *false*
+- **LogLevel** - set log level
 
 ######JSON Settings plugin
 
@@ -386,11 +382,6 @@ All JSON Settings plugin parameters can be set through the JSONSettingsConfigura
 ***JsonSerializerSettings*** - The JSON parser parameters  
 ***PluginSettings*** - The JSON Settings plugin parameters
 
-######Cognito Sync Settings plugin
-
-All Cognito Sync Settings plugin parameters can be set through the *CognitoSyncSettingsConfiguration* static class. These manipulations should be produced before the other library functions are first used.  
-***Config*** - Configuration for accessing Amazon Cognito Sync service  
-***Credentials*** - Temporary, short-lived session credentials. Depending on configured Logins, credentials may be authenticated or unauthenticated.
 
 ####Supported platforms
 
@@ -404,13 +395,9 @@ NuGet package “Advexp.Settings Local” you can download from the site:
  
 NuGet package “Advexp.Settings Cloud”, evaluation version, you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Cloud.Evaluation>
- 
-"Advexp.Settings Local" component for Xamarin you can find here:  
-<https://components.xamarin.com/view/advexp-settings-local>
 
-"Advexp.Settings Cloud" full version component for Xamarin you can find here:  
-<https://components.xamarin.com/view/advexp-settings-cloud>
+Samples, Unit Tests and additional information you can find on this site.
 
-Samples and Unit Tests can be downloaded from this site.
+To purchase "Advexp.Settings Cloud", send a request to <components@advexp.net>
 
 Please send your questions, suggestions and impressions to <components@advexp.net> with the subject "Advexp.Settings"

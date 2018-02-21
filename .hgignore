@@ -24,3 +24,5 @@ Samples/LocalSettings/iOS/bin
 Samples/old
 TDDs/old
 Bin/Android/Release/TDD
+Samples/DynamicSettings/Android/bin
+Samples/DynamicSettings/iOS/bin

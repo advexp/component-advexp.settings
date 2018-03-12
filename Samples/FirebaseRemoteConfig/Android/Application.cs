@@ -29,8 +29,8 @@ namespace Sample.FirebaseRemoteConfig.Android
             //Advexp.FirebaseRemoteConfig.Plugin.
             //      FirebaseRemoteConfigConfiguration.ExpirationDuration = 60;
 
-            Advexp.FirebaseRemoteConfig.Plugin.
-                  FirebaseRemoteConfigConfiguration.RemoteConfigDefaultsId = Resource.Xml.remote_config_defaults;
+            //Advexp.FirebaseRemoteConfig.Plugin.
+            //      FirebaseRemoteConfigConfiguration.RemoteConfigDefaultsId = Resource.Xml.remote_config_defaults;
 
             Advexp.
                 SettingsBaseConfiguration.RegisterSettingsPlugin

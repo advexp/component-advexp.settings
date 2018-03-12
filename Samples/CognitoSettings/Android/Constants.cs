@@ -1,5 +1,4 @@
-﻿using System;
-using Amazon;
+﻿using Amazon;
 
 namespace Sample.CognitoSyncSettings.Android
 {
@@ -14,4 +13,3 @@ namespace Sample.CognitoSyncSettings.Android
         public static readonly RegionEndpoint CognitoSyncRegion = RegionEndpoint.USEast1;
     }
 }
-

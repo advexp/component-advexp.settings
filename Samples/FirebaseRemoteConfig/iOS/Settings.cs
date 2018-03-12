@@ -51,8 +51,5 @@ namespace Sample.FirebaseRemoteConfig
 
         [FirebaseRemoteConfig(Name = "FirebaseRemoteConfig_CustomObject", Default = null)]
         public static CustomObject CustomObject { get; set; }
-
-        [Setting(Name = "Test", Default = "test value")]
-        public static String Test { get; set; }
     }
 }

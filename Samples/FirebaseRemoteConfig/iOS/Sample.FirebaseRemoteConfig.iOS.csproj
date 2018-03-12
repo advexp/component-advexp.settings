@@ -99,6 +99,18 @@
     <Reference Include="Firebase.RemoteConfig">
       <HintPath>..\..\..\packages\Xamarin.Firebase.iOS.RemoteConfig.2.0.3.1\lib\Xamarin.iOS10\Firebase.RemoteConfig.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.iOS">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\portable-net45+wp80+win8+wpa81\Plugins\Advexp.FirebaseRemoteConfig.Plugin.PCL.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -138,24 +150,6 @@
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
     <BundleResource Include="RemoteConfigDefaults.plist" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Advexp.Settings\iOS\Advexp.Settings.iOS.csproj">
-      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
-      <Name>Advexp.Settings.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\PCL.Utils\Advexp.Settings.Utils.PCL.csproj">
-      <Project>{8A697A13-71A1-46B1-93E5-1C42DF20BE1A}</Project>
-      <Name>Advexp.Settings.Utils.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\FirebaseRemoteConfig\iOS\Plugin.FirebaseRemoteConfig.iOS.csproj">
-      <Project>{688D74C5-628F-4912-B109-1E400DC3A208}</Project>
-      <Name>Plugin.FirebaseRemoteConfig.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\FirebaseRemoteConfig\PCL\Plugin.FirebaseRemoteConfig.PCL.csproj">
-      <Project>{EFCE355B-D4E8-40EE-9E3B-C6327E69F3E1}</Project>
-      <Name>Plugin.FirebaseRemoteConfig.PCL</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets')" />

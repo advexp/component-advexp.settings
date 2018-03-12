@@ -82,6 +82,18 @@
     <Reference Include="Xamarin.Firebase.Config">
       <HintPath>..\..\..\packages\Xamarin.Firebase.Config.60.1142.0\lib\MonoAndroid80\Xamarin.Firebase.Config.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\MonoAndroid10\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\portable-net45+wp80+win8+wpa81\Plugins\Advexp.FirebaseRemoteConfig.Plugin.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.Android">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\MonoAndroid10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -111,24 +123,6 @@
   </ItemGroup>
   <ItemGroup>
     <GoogleServicesJson Include="google-services.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Android\Advexp.Settings.Android.csproj">
-      <Project>{29EB96CB-9287-4740-AEE3-859265DD32BC}</Project>
-      <Name>Advexp.Settings.Android</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\PCL.Utils\Advexp.Settings.Utils.PCL.csproj">
-      <Project>{8A697A13-71A1-46B1-93E5-1C42DF20BE1A}</Project>
-      <Name>Advexp.Settings.Utils.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\FirebaseRemoteConfig\Android\Plugin.FirebaseRemoteConfig.Android.csproj">
-      <Project>{DE58DA42-D567-4BCD-A5D5-0057A278B3D4}</Project>
-      <Name>Plugin.FirebaseRemoteConfig.Android</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\FirebaseRemoteConfig\PCL\Plugin.FirebaseRemoteConfig.PCL.csproj">
-      <Project>{EFCE355B-D4E8-40EE-9E3B-C6327E69F3E1}</Project>
-      <Name>Plugin.FirebaseRemoteConfig.PCL</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Android.Support.Annotations.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\..\..\packages\Xamarin.Android.Support.Annotations.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />

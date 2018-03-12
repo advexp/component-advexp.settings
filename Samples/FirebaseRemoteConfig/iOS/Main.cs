@@ -25,9 +25,9 @@ namespace Sample.FirebaseRemoteConfig.iOS
             //Advexp.FirebaseRemoteConfig.Plugin.
             //      FirebaseRemoteConfigConfiguration.ExpirationDuration = 60;
 
-            Advexp.FirebaseRemoteConfig.Plugin.
-                  FirebaseRemoteConfigConfiguration.RemoteConfigDefaultsPlistFileName = 
-                  "RemoteConfigDefaults";
+            //Advexp.FirebaseRemoteConfig.Plugin.
+            //      FirebaseRemoteConfigConfiguration.RemoteConfigDefaultsPlistFileName = 
+            //      "RemoteConfigDefaults";
 
             Advexp.
                 SettingsBaseConfiguration.RegisterSettingsPlugin
@@ -35,8 +35,6 @@ namespace Sample.FirebaseRemoteConfig.iOS
                     Advexp.FirebaseRemoteConfig.Plugin.IFirebaseRemoteConfigPlugin,
                     Advexp.FirebaseRemoteConfig.Plugin.FirebaseRemoteConfigPlugin
                 >();
-
-            Settings.SaveSettings();
 
             // if you want to use a different Application Delegate class from "AppDelegate"
             // you can specify it here.

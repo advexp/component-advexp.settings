@@ -43,20 +43,6 @@
     <Compile Include="AdvexpTasks.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\PCL\Advexp.Settings.PCL.csproj">
-      <Project>{0FD6F8DD-B2E4-4783-8666-ACE191E541A5}</Project>
-      <Name>Advexp.Settings.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\PCL.Utils\Advexp.Settings.Utils.PCL.csproj">
-      <Project>{8A697A13-71A1-46B1-93E5-1C42DF20BE1A}</Project>
-      <Name>Advexp.Settings.Utils.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\Plugins\CognitoSyncSettings\Plugin.CognitoSyncSettings.PCL.csproj">
-      <Project>{517D1B56-97A1-4255-8E7E-A243E160182A}</Project>
-      <Name>Plugin.CognitoSyncSettings.PCL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +84,15 @@
     </Reference>
     <Reference Include="AWSSDK.CognitoSync">
       <HintPath>..\..\..\..\packages\AWSSDK.CognitoSync.3.3.1.26\lib\portable-net45+win8+wpa81+wp8\AWSSDK.CognitoSync.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\portable-net45+wp80+win8+wpa81\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\portable-net45+wp80+win8+wpa81\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.CognitoSyncSettings.Plugin.PCL">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\portable-net45+wp80+win8+wpa81\Plugins\Advexp.CognitoSyncSettings.Plugin.PCL.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

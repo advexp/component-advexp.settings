@@ -106,6 +106,12 @@
     <Reference Include="AWSSDK.CognitoSync">
       <HintPath>..\..\..\..\packages\AWSSDK.CognitoSync.3.3.1.26\lib\MonoAndroid10\AWSSDK.CognitoSync.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\MonoAndroid10\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -141,10 +147,6 @@
     <ProjectReference Include="..\TODOListPortableLibrary\TODOList.PCL.csproj">
       <Project>{71ff347c-68e8-4469-a644-bbc20a19dd6b}</Project>
       <Name>TODOList.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\Android\Advexp.Settings.Android.csproj">
-      <Project>{29EB96CB-9287-4740-AEE3-859265DD32BC}</Project>
-      <Name>Advexp.Settings.Android</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

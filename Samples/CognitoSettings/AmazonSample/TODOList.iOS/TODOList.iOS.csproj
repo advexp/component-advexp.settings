@@ -83,7 +83,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Info.plist" />
     <None Include="packages.config" />
-    <Compile Include="DynamicSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoTouch.Dialog-1" />
@@ -127,6 +126,18 @@
     <Reference Include="AWSSDK.CognitoSync">
       <HintPath>..\..\..\..\packages\AWSSDK.CognitoSync.3.3.1.26\lib\Xamarin.iOS10\AWSSDK.CognitoSync.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.PCL">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\portable-net45+wp80+win8+wpa81\Plugins\Advexp.FirebaseRemoteConfig.Plugin.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.iOS">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Entitlements.plist" />
@@ -135,18 +146,6 @@
     <ProjectReference Include="..\TODOListPortableLibrary\TODOList.PCL.csproj">
       <Project>{71ff347c-68e8-4469-a644-bbc20a19dd6b}</Project>
       <Name>TODOList.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\iOS\Advexp.Settings.iOS.csproj">
-      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
-      <Name>Advexp.Settings.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\Plugins\CognitoSyncSettings\Plugin.CognitoSyncSettings.PCL.csproj">
-      <Project>{517D1B56-97A1-4255-8E7E-A243E160182A}</Project>
-      <Name>Plugin.CognitoSyncSettings.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\PCL.Utils\Advexp.Settings.Utils.PCL.csproj">
-      <Project>{8A697A13-71A1-46B1-93E5-1C42DF20BE1A}</Project>
-      <Name>Advexp.Settings.Utils.PCL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

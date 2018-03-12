@@ -34,19 +34,6 @@ namespace Sample.FirebaseRemoteConfig.Assembly.PCL
 
     class Settings : Advexp.Settings<Settings>
     {
-        //static Settings()
-        //{
-        //    var customObject = new CustomObject();
-        //    customObject.Enum = EEnumValues.Five;
-        //    customObject.List = new List<int>();
-        //    for (int a = 0; a < 10; a++)
-        //    {
-        //        customObject.List.Add(a);
-        //    }
-
-        //    Settings.CustomObject = customObject;
-        //}
-
         [FirebaseRemoteConfig(Name = "FirebaseRemoteConfig_String", Default = "default string value")]
         public static string String {get; set;}
 

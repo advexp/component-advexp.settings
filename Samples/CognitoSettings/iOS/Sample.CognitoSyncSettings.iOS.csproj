@@ -115,6 +115,15 @@
     <Reference Include="Facebook">
       <HintPath>..\..\..\packages\Xamarin.Facebook.iOS.4.27.1\lib\Xamarin.iOS10\Facebook.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.CognitoSyncSettings.Plugin.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\portable-net45+wp80+win8+wpa81\Plugins\Advexp.CognitoSyncSettings.Plugin.PCL.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -153,19 +162,5 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.152.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.167.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.1024.png" />    
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Advexp.Settings\iOS\Advexp.Settings.iOS.csproj">
-      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
-      <Name>Advexp.Settings.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\PCL.Utils\Advexp.Settings.Utils.PCL.csproj">
-      <Project>{8A697A13-71A1-46B1-93E5-1C42DF20BE1A}</Project>
-      <Name>Advexp.Settings.Utils.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\CognitoSyncSettings\Plugin.CognitoSyncSettings.PCL.csproj">
-      <Project>{517D1B56-97A1-4255-8E7E-A243E160182A}</Project>
-      <Name>Plugin.CognitoSyncSettings.PCL</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

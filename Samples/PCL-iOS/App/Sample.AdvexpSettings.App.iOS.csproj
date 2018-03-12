@@ -89,10 +89,17 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="MonoTouch.Dialog-1" />
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -104,10 +111,6 @@
     <ProjectReference Include="..\Assembly\Sample.AdvexpSettings.Assembly.PCL.csproj">
       <Project>{18594BDC-2E45-488A-92EB-0C6F8298A2D9}</Project>
       <Name>Sample.AdvexpSettings.Assembly.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\iOS\Advexp.Settings.iOS.csproj">
-      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
-      <Name>Advexp.Settings.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -84,17 +84,10 @@
     <Reference Include="InAppSettingsKit">
       <HintPath>References\InAppSettingsKit.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.Settings">
-      <HintPath>..\..\packages\Advexp.Settings.Local.2.2.1\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\..\packages\Advexp.Settings.Local.2.2.1\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -155,5 +148,15 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.152.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.167.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.1024.png" />    
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Advexp.Settings\iOS\Advexp.Settings.iOS.csproj">
+      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
+      <Name>Advexp.Settings.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Advexp.Settings\PCL.Utils\Advexp.Settings.Utils.PCL.csproj">
+      <Project>{8A697A13-71A1-46B1-93E5-1C42DF20BE1A}</Project>
+      <Name>Advexp.Settings.Utils.PCL</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

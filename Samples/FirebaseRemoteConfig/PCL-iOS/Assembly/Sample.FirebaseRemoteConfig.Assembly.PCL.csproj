@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{24B6A217-5224-46B3-BD9C-C1ADBB0DB141}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sample.FirebaseRemoteConfig.Assembly.PCL</RootNamespace>
+    <AssemblyName>Sample.AdvexpSettings.Assembly.PCL</AssemblyName>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ReleaseVersion></ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="AssemblyClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\portable-net45+wp80+win8+wpa81\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\portable-net45+wp80+win8+wpa81\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.PCL">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\portable-net45+wp80+win8+wpa81\Plugins\Advexp.FirebaseRemoteConfig.Plugin.PCL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>

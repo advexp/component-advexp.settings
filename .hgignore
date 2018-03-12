@@ -26,3 +26,10 @@ TDDs/old
 Bin/Android/Release/TDD
 Samples/DynamicSettings/Android/bin
 Samples/DynamicSettings/iOS/bin
+Samples/CognitoSettings/AmazonSample/TODOList.Android/bin
+Samples/CognitoSettings/AmazonSample/TODOList.iOS/bin
+Samples/CognitoSettings/AmazonSample/TODOListPortableLibrary/bin
+Samples/FirebaseRemoteConfig/Android/bin
+Samples/FirebaseRemoteConfig/PCL-iOS/App/bin
+Samples/FirebaseRemoteConfig/iOS/bin
+Samples/FirebaseRemoteConfig/PCL-iOS/Assembly/bin

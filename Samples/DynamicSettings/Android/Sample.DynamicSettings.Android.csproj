@@ -54,10 +54,10 @@
     <Reference Include="Mono.Android" />
     <Reference Include="System.Core" />
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.1\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.2\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.1\lib\MonoAndroid10\Advexp.Settings.Utils.PCL.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.2\lib\MonoAndroid10\Advexp.Settings.Utils.PCL.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

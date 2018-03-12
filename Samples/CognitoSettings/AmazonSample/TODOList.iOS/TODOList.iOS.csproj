@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{E9B6060E-8A4C-4208-AEC1-8EA427722206}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TODOList.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>TODOList</AssemblyName>
+    <ReleaseVersion></ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>True</MtouchDebug>
+    <CodesignProvision></CodesignProvision>
+    <CodesignResourceRules />
+    <CodesignExtraArgs />
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
+    <MtouchI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="LoginViewController.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="TODOViewController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Info.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoTouch.Dialog-1" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Facebook">
+      <HintPath>..\..\..\..\packages\Xamarin.Facebook.iOS.4.27.1\lib\Xamarin.iOS10\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions">
+      <HintPath>..\..\..\..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage">
+      <HintPath>..\..\..\..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\..\..\..\packages\SQLitePCLRaw.core.1.0.1\lib\Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.sqlite3">
+      <HintPath>..\..\..\..\packages\SQLitePCLRaw.provider.sqlite3.ios_unified.1.0.1\lib\Xamarin.iOS10\SQLitePCLRaw.provider.sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\..\..\..\packages\SQLitePCLRaw.bundle_green.1.0.1\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="Validation">
+      <HintPath>..\..\..\..\packages\Validation.2.0.6.15003\lib\portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto">
+      <HintPath>..\..\..\..\packages\PCLCrypto.1.0.2.15130\lib\Xamarin.iOS\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>..\..\..\..\packages\AWSSDK.Core.3.3.19\lib\Xamarin.iOS10\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SecurityToken">
+      <HintPath>..\..\..\..\packages\AWSSDK.SecurityToken.3.3.3.3\lib\Xamarin.iOS10\AWSSDK.SecurityToken.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CognitoIdentity">
+      <HintPath>..\..\..\..\packages\AWSSDK.CognitoIdentity.3.3.2.17\lib\Xamarin.iOS10\AWSSDK.CognitoIdentity.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CognitoSync">
+      <HintPath>..\..\..\..\packages\AWSSDK.CognitoSync.3.3.1.26\lib\Xamarin.iOS10\AWSSDK.CognitoSync.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.PCL">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\portable-net45+wp80+win8+wpa81\Plugins\Advexp.FirebaseRemoteConfig.Plugin.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.iOS">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.2.2\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TODOListPortableLibrary\TODOList.PCL.csproj">
+      <Project>{71ff347c-68e8-4469-a644-bbc20a19dd6b}</Project>
+      <Name>TODOList.PCL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.1024.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  </Project>

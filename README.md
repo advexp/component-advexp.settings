@@ -1,23 +1,23 @@
 ###Advexp.Settings
 
-Settings for Xamarin
+Cross-platform app settings for Xamarin
 
 ####Details
 
-Create cross-platform settings and make them accessible in your iOS or Android application natively. Ability to save settings locally or to the cloud and sync them across different devices by using the [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service. Ability to remotely configure your app by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).
+Create cross-platform app settings and make them accessible in your iOS or Android applications natively. Ability to save settings locally or to the cloud and sync them across different devices by using the [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service. Ability to remotely configure your app by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).
 
 - **iOS**: Storing settings in a normal form using *NSUserDefaults*
 - **iOS**: Storing settings in an encrypted form using Keychain
 - **Android**: Using *SharedPreferences* to store settings in a normal form
 - **Android**: Using KeyStore to save confidential settings in an encrypted form
 - Saving settings as dynamic parameters (name - value pairs)
-- Using the [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service to save the settings to the cloud and sync them across the different devices
-- Using the [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/) service to remotely configure your app
+- Using the [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service to save settings to the cloud and sync them across different devices
+- **iOS**, **Android**: Using the [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/) service to remotely configure your mobile app
 - Using user storage for settings
 - Using any build-in or user-defined types which can be saved as a setting
 - **iOS**: Ability to link settings from Advexp.Settings with settings from the Settings App
-- **iOS**: The possibility of using [InAppSettingsKit](https://components.xamarin.com/view/InAppSettingsKit) along with Advexp.Settings. Both for creating fully functional GUI of the app settings and for locating them in the Settings App and accessing them from C# code.
-- Using library in PCL projects
+- **iOS**: The possibility of using [InAppSettingsKit](https://www.nuget.org/packages/Xamarin.InAppSettingsKit/) along with Advexp.Settings. Both for creating fully functional GUI of the app settings and for locating them in the Settings App and accessing them from C# code.
+- Using library in NetStandard/PCL projects
 - Saving or loading settings by using JSON. In this case, the additional NuGet package [Json.NET](https://www.nuget.org/packages/newtonsoft.json) is used
 
 NuGet package “Advexp.Settings Local” you can download from the site:  
@@ -33,35 +33,30 @@ To purchase "Advexp.Settings Cloud", send a request to <components@advexp.net>
 #####Example of settings declaration
 
     :::csharp
-    [Advexp.CognitoSyncSettings.Plugin.
-     CognitoSyncDatasetInfo(Name = "MyCognitoSyncDatasetName")]
-     class Settings : Advexp.Settings<Settings>
-     {
-         [CognitoSyncSetting(Name = "CognitoSyncSettings.Boolean", 
-                        Default = false)]
-         public static Boolean CognitoSyncBoolean {get; set;}
-	
-         [FirebaseRemoteConfig(Name = “Firebase.StringConfiguration”, 
-                        Default = “default string configuration”)]
-         public static String StringConfiguration {get; set;}
-	
-         [Setting(Name = "IntSetting", Default = 3)]
-         public static Int32 IntSetting {get; set;}
-	
-         [Setting(Name = "NonStaticStringSetting", 
-                        Default = "default string value")]
-         public String NonStaticStringSetting {get; set;}
-	
-         [Setting(Name = "SecureDateTimeSetting", 
-                      Secure = true, 
-                      Default = "2009-06-15T13:45:30.0000000Z")]
-         public static DateTime SecureDateTimeSetting {get; set;}
- 
-         // In this case, the automatic setting name in storage will be
-         // "NamespaceName.ClassName.FieldName"
-         [Setting]
-         public static String SettingWithAutoName {get; set;}
-     }
+    [CognitoSyncDatasetInfo(Name = "MyCognitoSyncDatasetName")]
+    class Settings : Advexp.Settings<Settings>
+    {
+        [CognitoSyncSetting(Name = "CognitoSync.Boolean", Default = false)]
+        public static Boolean CognitoSync {get; set;}
+    
+       [FirebaseRemoteConfig(Name = “FirebaseRemoteConfig.String”, 
+                     Default = “default string configuration”)]
+        public static String FirebaseRemoteConfig {get; set;}
+    
+        [Setting(Name = "Local.Setting", Default = 3)]
+        public static Int32 LocalSetting {get; set;}
+    
+        [Setting(Name = "Local.SecureSetting", 
+                     Secure = true, 
+                     Default = "2009-06-15T13:45:30.0000000Z")]
+        public static DateTime LocalSecureSetting {get; set;}
+     
+        // In this case, the automatic setting name in storage will be
+        // "{NamespaceName}.{ClassName}.{FieldName}"
+        [Setting]
+        public static String SettingWithAutoName {get; set;}
+    }
+
 
 #####Example of settings usage
 
@@ -70,89 +65,54 @@ To purchase "Advexp.Settings Cloud", send a request to <components@advexp.net>
     {
         static void Main(string[] args)
         {
-                Advexp.
-                    SettingsBaseConfiguration.RegisterSettingsPlugin
-                    <
-                        Advexp.CognitoSyncSettings.Plugin.ICognitoSyncSettingsPlugin, 
-                        Advexp.CognitoSyncSettings.Plugin.CognitoSyncSettingsPlugin
-                    >();
-
-                Advexp.
-                    SettingsBaseConfiguration.RegisterSettingsPlugin
-                    <
-                        Advexp.FirebaseRemoteConfig.Plugin.IFirebaseRemoteConfigPlugin,
-                        Advexp.FirebaseRemoteConfig.Plugin.FirebaseRemoteConfigPlugin
-                    >();
-
-            Advexp.CognitoSyncSettings.Plugin.
-                CognitoSyncSettingsConfiguration.Config = new AmazonCognitoSyncConfig()
-                {
-                    RegionEndpoint = RegionEndpoint.USEast1
-                };
-
-            Advexp.CognitoSyncSettings.Plugin.
-                CognitoSyncSettingsConfiguration.Credentials = 
-                    new CognitoAWSCredentials(“MyIdentityPoolId”, RegionEndpoint.USEast1);
-
-            Advexp.CognitoSyncSettings.Plugin.
-                CognitoSyncSettingsConfiguration.Credentials.AddLogin(
-                    "MySyncProviderName", “MyAccessToken”);
-
+             // Setup CognitoSyncSettings plugin and it params
+             // Setup FirebaseRemoteConfig plugin and it params
+    
             // Will be saved to Amazon Cognito Sync
             // and will be available for syncing to another device
-            Settings.CognitoSyncBoolean = true;
+            Settings.CognitoSync = true;
             // Will be saved to NSUserDefaults for iOS and to SharedPreferences for Android
-            Settings.IntSetting = 5;
-            Settings.Instance.NonStaticStringSetting = "Data1";
+            Settings.LocalSetting = 5;
             Settings.SettingWithAutoName = "Data2";
             // Will be saved to Keychain for iOS and to KeyStore for Android
-            Settings.SecureDateTimeSetting = DateTime.Now;
-
+            Settings.LocalSecureSetting = DateTime.Now;
+    
             Settings.SaveSettings();
-
-            // If needed, you can force the Cognito Sync container to perform synchronization
-            var cognitoSyncPlugin = CognitoSyncSettings.GetPlugin<ICognitoSyncSettingsPlugin>();
-            cognitoSyncPlugin.SynchronizeDataset();
-
-            var firebasePlugin = Settings.GetPlugin<IFirebaseRemoteConfigPlugin>();  
-            plugin.FetchCompletionHandler = (status) =>
+    
+            var firebaseRemoteConfigPlugin = Settings.GetPlugin<IFirebaseRemoteConfigPlugin>();  
+            firebaseRemoteConfigPlugin.FetchCompletionHandler = (status) =>
             {
                 switch (status)
                 {
                     case Advexp.FetchStatus.Success:
                         Settings.LoadSettings();
                         // This value will be loaded from Google Firebase Remote Config service
-                        var  stringConfiguration = Settings.StringConfiguration;
-                        break;
-                    case Advexp.FetchStatus.Throttled:
-                        break;
-                    case Advexp.FetchStatus.NoFetchYet:
-                        break;
-                    case Advexp.FetchStatus.Failure:
+                        var  configuration = Settings.FirebaseRemoteConfig;
                         break;
                 }
             };
-
-            firebasePlugin.Fetch(); 
-
+    
+            firebaseRemoteConfigPlugin.Fetch(); 
+    
             // Dynamic settings
-        
+            
             var lds = Settings.
               GetPlugin<Advexp.LocalDynamicSettings.Plugin.ILocalDynamicSettingsPlugin>();
-        
-            lds.SetSetting("dynamic_setting_name1", "value1");
-            lds.SetSetting("dynamic_setting_name2", false);
-            lds.SetSetting("dynamic_setting_name3", DateTime.Now);
-
+            
+            lds.SetSetting("dynamic_setting1", "value1");
+            lds.SetSetting("dynamic_setting2", false);
+            lds.SetSetting("dynamic_setting3", DateTime.Now);
+    
             lds.SaveSettings();
-
-            var dt = lds.GetSetting<DateTime>("dynamic_setting_name3");
+    
+            var dt = lds.GetSetting<DateTime>("dynamic_setting3");
         }
     }
 
+
 The evaluation version of the Amazon Cognito Sync plugin does not allow specifying the name of the Cognito Sync dataset and uses the name "Advexp.Settings.Evaluation"
 
-In evaluation version of the Google Firebase Remote Config plugin "v2\_AdvexpSettingsEvaluation\_" prefix will be added to setting names. Functions, to specify default values using xml resource (Android) or plist file (iOS) does not implemented. Also *FirebaseRemoteConfigConfiguration.ExpirationDuration* value cannot be changed and function *IFirebaseRemoteConfigPlugin.Fetch(long expirationDuration)* is not implemented. By default, value of expiration duration is 43200 seconds (12 hours).
+In evaluation version of the Google Firebase Remote Config plugin “v2\_AdvexpSettingsEvaluation\_” prefix will be added to setting names. Functions, to specify default values using xml resource (Android) or plist file (iOS) does not implemented. Also *FirebaseRemoteConfigConfiguration.ExpirationDuration* value cannot be changed and function *IFirebaseRemoteConfigPlugin.Fetch(long expirationDuration)* is not implemented. By default, value of expiration duration is 43200 seconds (12 hours).
 
 ####Getting Started
 #####Create settings
@@ -431,7 +391,7 @@ All Cognito Sync Settings plugin parameters can be set through the *CognitoSyncS
 Xamarin.iOS (Unified)
 Xamarin.Android
 
-PCL projects
+NetStandard/PCL projects
 
 NuGet package “Advexp.Settings Local” you can download from the site:
 <https://www.nuget.org/packages/Advexp.Settings.Local>

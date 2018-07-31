@@ -238,11 +238,12 @@ An example of use can be found in the TDD project (UnitTests/DynamicSettings/Dyn
 
 
 Get the dynamic setting value for a specific name and bring it to the T type.
-For example, if the text "10" was saved as the dynamic setting, then an attempt to get a value of int type returns a number 10 of int type. *defaultValue* will be returned if dynamic setting is not contained in the collection:
+For example, if the text "10" was saved as the dynamic setting, then an attempt to get a value of int type returns a number 10 of int type. Default value will be returned if the setting is not in the collection:
 
     :::csharp
     T GetSetting<T>(string settingName);
     T GetSetting<T>(string settingName, T defaultValue);
+
 
 Set or add (if the setting is not in the collection) a dynamic setting:
 
@@ -276,8 +277,9 @@ Get the count of dynamic settings in the collection:
     :::csharp
     int Count { get; }
 
-The name format of the dynamic setting is following:
-D_v2_{namespace name}_{class name}_{setting name}
+
+The name format of the dynamic setting is following:   
+D\_v2\_{namespace name}\_{class name}\_{setting name}
 
 To see the names of the settings and their values during the process of loading or saving, the option SettingsBaseConfiguration.LogLevel needs to be set to value LogLevel.Info. To avoid various problems and operate settings locally, the *SettingAttribute* attribute needs to be temporarily applied to the configuration (if you want to monitor non dynamic settings). After this operations, Advexp.Settings will wrote the setting names and values into the application log in the form in which they will be stored in the storage.
 
@@ -293,7 +295,7 @@ Examples of using dynamic settings can be seen in the corresponding example (Sam
 
 #####Cloud: Syncing settings by using Amazon Cognito Sync
 
-To add this ability, you need to install the [AWSSDK.CognitoSync](https://www.nuget.org/packages/AWSSDK.CognitoSync/) NuGet package in your project, add the Advexp.CognitoSyncSettings.Plugin.PCL assembly to the references, and register the plugin:
+To add this ability, you need to install the [AWSSDK.CognitoSync](https://www.nuget.org/packages/AWSSDK.CognitoSync/) NuGet package in your project, add the **Advexp.CognitoSyncSettings.Plugin.PCL** assembly to the references, and register the plugin:
 
     :::csharp
     SettingsBaseConfiguration.
@@ -332,9 +334,28 @@ The following operations for this dynamic settings are available: Load, Save and
 A way of using this plugin may be seen in the component examples: 
 Sample.CognitoSyncSettings.Android and Sample.CognitoSyncSettings.iOS as well as TODOList.iOS and TODOList.Android, reflecting the interaction between Amazon Cognito Sync and Advexp.Settings dynamic settings (this example is an adaptation of the example from Amazon)
 
+#####Cloud: Configure app remotely by using Google Firebase Remote Config
+
+To add this ability, you need to install the Google Firebase Remote Config NuGet package for [iOS](https://www.nuget.org/packages/Xamarin.Firebase.iOS.RemoteConfig/) or [Android](https://www.nuget.org/packages/Xamarin.Firebase.Config/), add the **Advexp.FirebaseRemoteConfig.Plugin.iOS/Android** and **Advexp.FirebaseRemoteConfig.Plugin.Standard** assemblies to the references, and register the plugin:
+
+    SettingsBaseConfiguration.
+        RegisterSettingsPlugin<IFirebaseRemoteConfigPlugin, FirebaseRemoteConfigPlugin>();
+
+Next, follow instructions in the Google [Firebase console](https://console.firebase.google.com/u/0/) section Grow -> Remote Config
+
+#####Cloud: Dynamic settings and Google Firebase Remote Config
+
+Dynamic settings added to the Google Firebase console can be obtained via *IDynamicSettingsPlugin* interface. This interface can be obtained by casting *IFirebaseRemoteConfigPlugin* to type *IDynamicSettingsPlugin*. For these dynamic settings, only the Load operation is available.
+
+In evaluation version of the Google Firebase Remote Config plugin “v2\_AdvexpSettingsEvaluation\_” prefix will be added to setting names. Functions, to specify default values using xml resource (Android) or plist file (iOS) does not implemented. Also *FirebaseRemoteConfigConfiguration.ExpirationDuration* value cannot be changed and function *IFirebaseRemoteConfigPlugin.Fetch(long expirationDuration)* is not implemented. By default, value of expiration duration is 43200 seconds (12 hours).
+
+
+A way of using this plugin may be seen in the component examples: 
+Sample.FirebaseRemoteConfig.Android, Sample.FirebaseRemoteConfig.iOS and Sample.FirebaseRemoteConfig.PCL-iOS
+
 #####Saving and loading settings by using JSON
 
-To add this capability, you need to install the [Json.NET](https://components.xamarin.com/view/json.net) component in your project, add the **Advexp.JSONSettings.Plugin.PCL** assembly to the dependencies, and register the plugin:
+To add this capability, you need to install the [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json) NuGet package in your project, add the **Advexp.JSONSettings.Plugin.Standard** assembly to the references, and register the plugin:
 
     :::csharp
 	SettingsBaseConfiguration.

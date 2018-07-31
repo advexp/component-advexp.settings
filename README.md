@@ -129,19 +129,21 @@ Create a new class with the name "Settings" (for example) and inherit it as foll
 Specify those settings in the definition of this class that are required by your application. They should be accompanied by required attributes:
 
     :::csharp
-    [CognitoSyncSetting(Name = "CognitoSyncSettings.Boolean", Default = false)]
-    public static Boolean CognitoSyncBoolean {get; set;}
-
-    [Setting(Name = "IntSetting", Default = 3)]
-    public static Int32 IntSetting {get; set;}
-
-    [Setting(Name = "StringSetting")]
-    public static String StringSetting {get; set;}
+    [CognitoSyncSetting(Name = "CognitoSync.Boolean", Default = false)]
+    public static Boolean CognitoSync {get; set;}
     
-    [Setting(Name = "SecureDateTimeSetting", 
+    [FirebaseRemoteConfig(Name = “FirebaseRemoteConfig.String”, 
+                     Default = “default string configuration”)]
+    public static String FirebaseRemoteConfig {get; set;}
+    
+    [Setting(Name = "Local.Setting", Default = 3)]
+    public static Int32 LocalSetting {get; set;}
+        
+    [Setting(Name = "Local. SecureSetting", 
                  Secure = true, 
                  Default = "2009-06-15T13:45:30.0000000Z")]
-    public static DateTime SecureDateTimeSetting {get; set;}
+    public static DateTime LocalSecureSetting {get; set;}
+
 
 
 You can use the class fields instead of properties. For example:
@@ -152,24 +154,22 @@ You can use the class fields instead of properties. For example:
 
 The settings do not have to be static. In that case, they can be accessed through the *Instance* static property or through the class object which you manage independently.
 
-Call the appropriate method in order to perform the desired actions.
+Call the appropriate method in order to perform the desired action.
 
 
 #####Using user-defined types as settings
 
-The library allows the use of any user-defined types which can be saved as settings. User-defined types do not require modification and addition of special attributes. Usage case - CustomObjectTest in TDD projects on the site 
-<https://bitbucket.org/advexp/component-advexp.settings>. 
+The library allows the use of any user-defined types which can be saved as settings. User-defined types do not require modification and addition of special attributes. Usage case - CustomObjectTest in TDD projects: <https://bitbucket.org/advexp/component-advexp.settings>. 
+
 Serializing settings is done via the [SharpSerializer](http://sharpserializer.com/en/index.html) library.
-The serializer settings can be modified by using the following parameter:
-*SettingsBaseConfiguration.AdvancedConfiguration.SharpSerializerSettings*
+The serializer parameters can be modified by using the following property: *SettingsBaseConfiguration.AdvancedConfiguration.SharpSerializerSettings*
 
 
-#####Settings serialization
+#####Save, load and delete settings
 
-Library users can specify their own method for storing/loading/deleting settings by using the *ISettingsSerializer* interface and the *SerializerAttribute* attribute or the *MethodSerializerAttribute* attribute.
+Library users can specify their own method for storing, loading or deleting settings by using the *ISettingsSerializer* interface and the *SerializerAttribute* attribute or the *MethodSerializerAttribute* attribute.
 
-#####Priorities for using serializers
-
+#####Priorities for saving, loading, or deleting settings
 The following serializers are available:
 
 - Library level
@@ -190,17 +190,110 @@ In short, the priority for settings serialization is assigned in a cascading fas
 You can use proprietary attributes to specify settings. To do this, you need to register your attribute type and the corresponding serializer type:
 
     :::csharp
-	SettingsBaseConfiguration.
-	    RegisterSettingsAttribute<MyAttributeType, MySerializerType>();
+    SettingsBaseConfiguration.
+        RegisterSettingsAttribute<MyAttributeType, MySerializerType>();
 
 #####Specifying the default settings values
 
 You can assign a default settings value which will be used for various exceptional cases, inability to load or when deleting. This is done with the help of the *SettingBaseAttribute.Default* property. This property can be assigned any type of value allowed in C# during attribute initialization or the *DefaulValueMode.TypeDefaultValue* value. In this case, the default value will be the value used by default for this type in C#. Many parameters can also be assigned by using a string value. For example, the default value for the DateTime setting type can be assigned as a string “2009-06-15T13:45:30.0000000Z”. In case the *Default* property has not been set up, then to delete the settings or in various exceptional cases (for example, inability to convert the loaded value into a setting type), the default value utilized for this type in C# will be used; in the case of inability to load, the setting value will remains unchanged.
 
+#####Dynamic settings
 
-#####Syncing settings by using Amazon Cognito Sync
+Dynamic settings are parameters of the name - value pairs.  Where "name" is the text name of the setting, and "value" is the value of any system or user-defined type. Local dynamic settings can be accessed via the *ILocalDynamicSettingsPlugin* interface of the corresponding plugin:
 
-To add this ability, you need to install the [AWSSDK - Amazon Cognito Sync](https://components.xamarin.com/view/aws-cognitosync-sdk) component in your project, add the Advexp.CognitoSyncSettings.Plugin.PCL assembly to the dependencies, and register the plugin:
+    :::csharp
+    var lds = MySettingsClass.GetPlugin<ILocalDynamicSettingsPlugin>();
+
+This plugin is built into the library and does not require registration.
+
+To manipulate dynamic settings, the following methods are available.
+
+Load, save or delete all dynamic settings:
+
+    :::csharp
+    void LoadSettings();
+    void SaveSettings();
+    void DeleteSettings();
+        
+
+Load, save, or delete a dynamic setting with a specific name:
+
+    :::csharp
+    void LoadSetting(string settingName);
+    void SaveSetting(string settingName);
+    void DeleteSetting(string settingName);
+
+
+Determine whether a dynamic setting with a specific name is contained in the collection:
+
+    :::csharp
+    bool Contains(string settingName);
+
+
+Set the order of the dynamic settings. By default, the order of the settings corresponds to the order at which they have been added to the collection. But you can change it to any other. If you input *null* into this function, the order will be reset to the original one. If a setting name from the collection isn't present in the installed sequence order, then this setting will not be listed. The custom and default orders of the dynamic settings are saved and will be restored the next time the dynamic parameters are loaded.
+An example of use can be found in the TDD project (UnitTests/DynamicSettings/DynamicSettingsTest.TestDynamicSettingsCustomOrder):
+
+    :::csharp
+    void SetSettingsOrder(IEnumerable<string> settingsOrder);
+
+
+Get the dynamic setting value for a specific name and bring it to the T type.
+For example, if the text "10" was saved as the dynamic setting, then an attempt to get a value of int type returns a number 10 of int type. *defaultValue* will be returned if dynamic setting is not contained in the collection:
+
+    :::csharp
+    T GetSetting<T>(string settingName);
+    T GetSetting<T>(string settingName, T defaultValue);
+
+Set or add (if the setting is not in the collection) a dynamic setting:
+
+    :::csharp
+    void SetSetting<T>(string settingName, T settingValue);
+
+
+Set the default values. This value will be returned if there is no dynamic setting in the collection. Reset all default values by inputting *null* into the function.
+An example of use can be found in the TDD project (UnitTests/DynamicSettings/DynamicSettingsTest.TestDefaultValues):
+
+    :::csharp
+    void SetDefaultSettings(IDictionary<string, object> defaultSettings);
+
+
+Listing of all settings in the collection:
+
+    :::csharp
+    IEnumerator<string> GetEnumerator();
+
+The following action is valid:
+
+    :::csharp
+    var lds = MySettingsClass.GetPlugin<ILocalDynamicSettingsPlugin>();
+    foreach(var dynamicSettingName in lds)
+    {
+    }
+
+
+Get the count of dynamic settings in the collection:
+
+    :::csharp
+    int Count { get; }
+
+The name format of the dynamic setting is following:
+D_v2_{namespace name}_{class name}_{setting name}
+
+To see the names of the settings and their values during the process of loading or saving, the option SettingsBaseConfiguration.LogLevel needs to be set to value LogLevel.Info. To avoid various problems and operate settings locally, the *SettingAttribute* attribute needs to be temporarily applied to the configuration (if you want to monitor non dynamic settings). After this operations, Advexp.Settings will wrote the setting names and values into the application log in the form in which they will be stored in the storage.
+
+The default order of dynamic settings is determined by the following setting:   
+*S\_v2\_{namespace name}\_{class name}\_DynamicSettingsDefaultOrder*
+
+The user-defined order of dynamic settings is determined by the following setting:   
+S\_v2\_{namespace name}\_{class name}\_DynamicSettingsCustomOrder
+
+These settings are created automatically and cannot be obtained using the API. They contain the names of user-defined dynamic settings separated by a comma. The order can be changed using the *IDynamicSettingsPlugin.SetSettingsOrder* method. 
+
+Examples of using dynamic settings can be seen in the corresponding example (Samples/DynamicSettings) or in the TDD project (TDD/UnitTests/DynamicSettings)
+
+#####Cloud: Syncing settings by using Amazon Cognito Sync
+
+To add this ability, you need to install the [AWSSDK.CognitoSync](https://www.nuget.org/packages/AWSSDK.CognitoSync/) NuGet package in your project, add the Advexp.CognitoSyncSettings.Plugin.PCL assembly to the references, and register the plugin:
 
     :::csharp
     SettingsBaseConfiguration.
@@ -230,6 +323,14 @@ Also, you need to assign an authorization token to the relevant plugin parameter
 As an authorization server you can use Amazon, Facebook, Twitter, Digits, Google or any other identity provider compatible with OpenID Connect. For more detailed information, see [Amazon Cognito’s documentation](http://docs.aws.amazon.com/cognito/latest/developerguide/getting-started.html)
 
 The evaluation version of the component does not allow specifying the name of the Cognito Sync dataset and uses the name "Advexp.Settings.Evaluation"
+
+#####Cloud: Dynamic settings and Amazon Cognito Sync
+
+Added to the Amazon Cognito Sync console, dynamic settings can be obtained via *IDynamicSettingsPlugin* interface. This interface can be obtained by casting *ICognitoSyncSettingsPlugin* to type *IDynamicSettingsPlugin*.
+The following operations for this dynamic settings are available: Load, Save and Delete.
+
+A way of using this plugin may be seen in the component examples: 
+Sample.CognitoSyncSettings.Android and Sample.CognitoSyncSettings.iOS as well as TODOList.iOS and TODOList.Android, reflecting the interaction between Amazon Cognito Sync and Advexp.Settings dynamic settings (this example is an adaptation of the example from Amazon)
 
 #####Saving and loading settings by using JSON
 

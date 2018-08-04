@@ -377,31 +377,32 @@ You can load or save settings in JSON format by using the plugin object.
 Save settings in JSON format:
 
     :::csharp
-	var jsonSettings = jsonPlugin.Settings;
+    var jsonSettings = jsonPlugin.SaveSettingsToJSON();
 
 Load settings from JSON:
 
     :::csharp
-	jsonPlugin.Settings = jsonSettings;
+    jsonPlugin.LoadSettingsFromJSON(jsonSettings);
 
-The JSON parser parameters may be modified by using the parameter:  
+The JSON parser parameters may be modified by using the parameter:
 *JSONSettingsConfiguration.JsonSerializerSettings*
 
 The JSON Settings plugin parameters may be modified by using the parameter:  
 *JSONSettingsConfiguration.PluginSettings*
 
-A way of using this plugin may be seen in the component examples:  
-Sample.JSONSettings.iOS and Sample.JSONSettings.Android
+A way of using this plugin may be seen in the component examples: 
+Sample.JSONSettings.Android and Sample.JSONSettings.iOS
+
 
 #####Previous version support and settings naming
 
-During the development process, you need to keep in mind that Advexp.Settings version 2.0 and higher, records settings in a different format. Reading the parameters formed by the library's previous version is done by utilizing the migration mechanism. Also, in the new version, a "v2" prefix is automatically added to the setting's name. Encrypted parameters (Secure) in the library's Android version are not subject to migration. Consequently, the library does not have the capability to read the confidential settings and perform migration from the old version (encrypted SharedPreferences) to the new one (KeyStore). You can do that yourself for the simple settings type by reading them from *SharedPreferences* and decrypting them with the help of the *Cryptography* class located in the TDD library project ([here](https://bitbucket.org/advexp/component-advexp.settings/src/833b7ffdcd37244a9082d692117324c32f3b0793/TDD.Android/Cryptography.cs?at=default&fileviewer=file-view-default)). For the iOS version, all settings are readable without additional manipulations by the user. Also, for the iOS library version, the *SettingsConfiguration.KeyChainPrefixName* configuration parameter is no longer used. Previous version support can be turned on by using *SettingsBaseConfiguration.EnableFormatMigration* property.
+During the development process, you need to keep in mind that Advexp.Settings version 2.0 and higher records settings in a different format. Also, in the new version, a "v2" prefix is automatically added to the setting's name.
 
 #####iOS: The relationship between the settings from Settings App and the settings from Advexp.Settings and using the InAppSettingsKit component
 
-In order to link the settings from the Settings app with settings from Advexp.Settings, you must ensure that the parameter *Name* in the *SettingAttribute* attribute matches the corresponding identifier in Settings.bundle. In this case, it is not possible to set the parameter *Secure = true*, since the setting must be stored in *NSUserDefaults*. When using along with [InAppSettingsKit](https://components.xamarin.com/view/InAppSettingsKit) component, it is enough to maintain identificator compliance.  
-This function is available only for local settings (settings marked by the *SettingAttribute*).  
-For a more detailed usage option for this scenario, see the component example.
+In order to link the settings from the Settings App with settings from Advexp.Settings, you need to ensure that the parameter name in the *SettingAttribute* attribute matches the corresponding identifier in Settings.bundle. In this case, it is not possible to set the parameter *Secure = true*, since the setting must be stored in *NSUserDefaults*. When using along with [InAppSettingsKit](https://www.nuget.org/packages/Xamarin.InAppSettingsKit/) component, it is enough to maintain identificator compliance.
+This function is available only for local settings (settings marked by the *SettingAttribute*). 
+Examples: Sample.LocalSettings.iOS and Sample.InAppSettingsKit.iOS.
 
 #####Description of library classes
 

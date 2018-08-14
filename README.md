@@ -1,18 +1,18 @@
 ###Advexp.Settings
 
-Cross-platform app settings for Xamarin
+Cross-platform .NET settings for Xamarin mobile apps
 
 ####Details
 
-Create cross-platform app settings and make them accessible in your iOS or Android applications natively. Ability to save settings locally or to the cloud and sync them across different devices by using the [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service. Ability to remotely configure your app by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).
+Create cross-platform settings and make them accessible in your iOS or Android applications natively. Ability to save settings locally or to the cloud and sync them across different devices by using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service. Ability to remotely configure your app by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).
 
 - **iOS**: Storing settings in a normal form using *NSUserDefaults*
 - **iOS**: Storing settings in an encrypted form using Keychain
 - **Android**: Using *SharedPreferences* to store settings in a normal form
 - **Android**: Using KeyStore to save confidential settings in an encrypted form
 - Saving settings as dynamic parameters (name - value pairs)
-- Using the [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service to save settings to the cloud and sync them across different devices
-- **iOS**, **Android**: Using the [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/) service to remotely configure your mobile app
+- Using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service to save settings to the cloud and sync them across different devices
+- **iOS**, **Android**: Using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/) service to remotely configure your mobile app
 - Using user storage for settings
 - Using any build-in or user-defined types which can be saved as a setting
 - **iOS**: Ability to link settings from Advexp.Settings with settings from the Settings App
@@ -26,9 +26,10 @@ NuGet package “Advexp.Settings Local” you can download from the site:
 NuGet package “Advexp.Settings Cloud”, evaluation version, you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Cloud.Evaluation>
 
-Samples, Unit Tests and additional information you can find here: <https://bitbucket.org/advexp/component-advexp.settings>
+Samples, Unit Tests and additional information you can find here:  
+<https://bitbucket.org/advexp/component-advexp.settings>
 
-To purchase "Advexp.Settings Cloud", send a request to <components@advexp.net>
+Purchase "Advexp.Settings Cloud", full version, you can [here](avangate).
 
 #####Example of settings declaration
 
@@ -511,7 +512,7 @@ All Cognito Sync Settings plugin parameters can be set through the *CognitoSyncS
 
 ####Supported platforms
 
-Xamarin.iOS (Unified)
+Xamarin.iOS (Unified)  
 Xamarin.Android
 
 NetStandard/PCL projects
@@ -522,8 +523,9 @@ NuGet package “Advexp.Settings Local” you can download from the site:
 NuGet package “Advexp.Settings Cloud”, evaluation version, you can download from the site:
 <https://www.nuget.org/packages/Advexp.Settings.Cloud.Evaluation>
 
-Samples, Unit Tests and additional information you can find here:  <https://bitbucket.org/advexp/component-advexp.settings>
+Samples, Unit Tests and additional information you can find here:  
+<https://bitbucket.org/advexp/component-advexp.settings>
 
-To purchase "Advexp.Settings Cloud", send a request to <components@advexp.net>
+Purchase "Advexp.Settings Cloud", full version, you can [here](avangate).
 
-Please send your questions, suggestions and impressions to components@advexp.net with the subject "Advexp.Settings"
+Please send your questions, suggestions and impressions to <components@advexp.net> with the subject "Advexp.Settings"

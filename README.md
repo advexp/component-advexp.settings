@@ -29,7 +29,7 @@ NuGet package “Advexp.Settings Cloud”, evaluation version, you can download 
 Samples, Unit Tests and additional information you can find here:  
 <https://bitbucket.org/advexp/component-advexp.settings>
 
-Purchase "Advexp.Settings Cloud", full version, you can [here](avangate).
+Purchase "Advexp.Settings Cloud", full version, you can [here](avangate)
 
 #####Example of settings declaration
 
@@ -140,12 +140,10 @@ Specify those settings in the definition of this class that are required by your
     [Setting(Name = "Local.Setting", Default = 3)]
     public static Int32 LocalSetting {get; set;}
         
-    [Setting(Name = "Local. SecureSetting", 
+    [Setting(Name = "Local.SecureSetting", 
                  Secure = true, 
                  Default = "2009-06-15T13:45:30.0000000Z")]
     public static DateTime LocalSecureSetting {get; set;}
-
-
 
 You can use the class fields instead of properties. For example:
 
@@ -155,6 +153,8 @@ You can use the class fields instead of properties. For example:
 
 The settings do not have to be static. In that case, they can be accessed through the *Instance* static property or through the class object which you manage independently.
 
+Also, you can use dynamic parameters as saved settings. Their use is described below.
+
 Call the appropriate method in order to perform the desired action.
 
 
@@ -163,7 +163,8 @@ Call the appropriate method in order to perform the desired action.
 The library allows the use of any user-defined types which can be saved as settings. User-defined types do not require modification and addition of special attributes. Usage case - CustomObjectTest in TDD projects: <https://bitbucket.org/advexp/component-advexp.settings>. 
 
 Serializing settings is done via the [SharpSerializer](http://sharpserializer.com/en/index.html) library.
-The serializer parameters can be modified by using the following property: *SettingsBaseConfiguration.AdvancedConfiguration.SharpSerializerSettings*
+The serializer parameters can be modified by using the following property:  
+*SettingsBaseConfiguration.AdvancedConfiguration.SharpSerializerSettings*
 
 
 #####Save, load and delete settings
@@ -171,6 +172,7 @@ The serializer parameters can be modified by using the following property: *Sett
 Library users can specify their own method for storing, loading or deleting settings by using the *ISettingsSerializer* interface and the *SerializerAttribute* attribute or the *MethodSerializerAttribute* attribute.
 
 #####Priorities for saving, loading, or deleting settings
+
 The following serializers are available:
 
 - Library level
@@ -325,12 +327,12 @@ Also, you need to assign an authorization token to the relevant plugin parameter
 
 As an authorization server you can use Amazon, Facebook, Twitter, Digits, Google or any other identity provider compatible with OpenID Connect. For more detailed information, see [Amazon Cognito’s documentation](http://docs.aws.amazon.com/cognito/latest/developerguide/getting-started.html)
 
-The evaluation version of the component does not allow specifying the name of the Cognito Sync dataset and uses the name "Advexp.Settings.Evaluation"
+The evaluation version of the plugin does not allow specifying the name of the Cognito Sync dataset and uses the name "Advexp.Settings.Evaluation"
 
 #####Cloud: Dynamic settings and Amazon Cognito Sync
 
-Added to the Amazon Cognito Sync console, dynamic settings can be obtained via *IDynamicSettingsPlugin* interface. This interface can be obtained by casting *ICognitoSyncSettingsPlugin* to type *IDynamicSettingsPlugin*.
-The following operations for this dynamic settings are available: Load, Save and Delete.
+Added to the Amazon Cognito Sync console, dynamic settings can be obtained via *IDynamicSettingsPlugin* interface. This interface can be obtained by casting *ICognitoSyncSettingsPlugin* to *IDynamicSettingsPlugin* interface.
+The following operations for this dynamic settings are available: *Load*, *Save* and *Delete*.
 
 A way of using this plugin may be seen in the component examples: 
 Sample.CognitoSyncSettings.Android and Sample.CognitoSyncSettings.iOS as well as TODOList.iOS and TODOList.Android, reflecting the interaction between Amazon Cognito Sync and Advexp.Settings dynamic settings (this example is an adaptation of the example from Amazon)
@@ -346,13 +348,13 @@ Next, follow instructions in the Google [Firebase console](https://console.fireb
 
 #####Cloud: Dynamic settings and Google Firebase Remote Config
 
-Dynamic settings added to the Google Firebase console can be obtained via *IDynamicSettingsPlugin* interface. This interface can be obtained by casting *IFirebaseRemoteConfigPlugin* to type *IDynamicSettingsPlugin*. For these dynamic settings, only the Load operation is available.
+Dynamic settings added to the Google Firebase console can be obtained via *IDynamicSettingsPlugin* interface. This interface can be obtained by casting *IFirebaseRemoteConfigPlugin* to *IDynamicSettingsPlugin* interface. For these dynamic settings, only the *Load* operation is available.
 
 In evaluation version of the Google Firebase Remote Config plugin “v2\_AdvexpSettingsEvaluation\_” prefix will be added to setting names. Functions, to specify default values using xml resource (Android) or plist file (iOS) does not implemented. Also *FirebaseRemoteConfigConfiguration.ExpirationDuration* value cannot be changed and function *IFirebaseRemoteConfigPlugin.Fetch(long expirationDuration)* is not implemented. By default, value of expiration duration is 43200 seconds (12 hours).
 
 
 A way of using this plugin may be seen in the component examples: 
-Sample.FirebaseRemoteConfig.Android, Sample.FirebaseRemoteConfig.iOS and Sample.FirebaseRemoteConfig.PCL-iOS
+Sample.FirebaseRemoteConfig.Android, Sample.FirebaseRemoteConfig.iOS and Sample.FirebaseRemoteConfig.Standard-iOS
 
 #####Saving and loading settings by using JSON
 
@@ -397,7 +399,7 @@ Sample.JSONSettings.Android and Sample.JSONSettings.iOS
 
 #####Previous version support and settings naming
 
-During the development process, you need to keep in mind that Advexp.Settings version 2.0 and higher records settings in a different format. Also, in the new version, a "v2" prefix is automatically added to the setting's name.
+During the development process, you need to keep in mind that Advexp.Settings version 2.0 and higher save settings in a different format. Also, in the new version, a "v2" prefix is automatically added to the setting's name.
 
 #####iOS: The relationship between the settings from Settings App and the settings from Advexp.Settings and using the InAppSettingsKit component
 
@@ -409,10 +411,10 @@ Examples: Sample.LocalSettings.iOS and Sample.InAppSettingsKit.iOS.
 
 ######Advexp.Settings library
 
-***interface ISettingsSerializer*** (Advexp.Settings.Utils.PCL.dll)  
+***interface ISettingsSerializer*** (Advexp.Settings.Utils.Standard.dll)  
 It describes the serializer interface.
 
-***class MethodSerializerAttribute*** (Advexp.Settings.Utils.PCL.dll)  
+***class MethodSerializerAttribute*** (Advexp.Settings.Utils.Standard.dll)  
 Arbitrary class methods can be used as a serializer.
 
 Method prototypes are:  
@@ -420,17 +422,18 @@ Method prototypes are:
 Returns true if downloaded successfully, otherwise false  
 *void Save(string settingName, bool secure, object value);*  
 *void Delete(string settingName, bool secure);*  
+*void Contains(string settingName, bool secure);*  
 *void Synchronize();*  
 This attribute can be applied to a class or to a member of a class.
 
-***class SerializerAttribute*** (Advexp.Settings.Utils.PCL.dll)  
+***class SerializerAttribute*** (Advexp.Settings.Utils.Standard.dll)  
 The attribute specifies the serializer type that must be applied to a setting or to a class with settings.
 
-***class SettingAttribute*** (Advexp.Settings.Utils.PCL.dll)  
+***class SettingAttribute*** (Advexp.Settings.Utils.Standard.dll)  
 This attribute indicates that the current class element is a setting and can be loaded/saved/deleted.  
 It is applied to a class member.
 
-***class Settings<T\>*** (Advexp.Settings.dll for iOS, Android and PCL)  
+***class Settings\<T\>*** (Advexp.Settings.dll for iOS, Android and NetStandard)  
 The class specifies that its inheritor is a settings class and adds the appropriate functionality to the methods set.
 
 ***class SettingsConfiguration*** (Advexp.Settings.dll for iOS and Android)  
@@ -444,21 +447,26 @@ Example - ExternalUserDefaultsTest in the iOS TDD project, which can be accessed
 The class that implements the serializer for *SharedPreferences*. It can be applied when it is necessary to access parameters that are not stored in SharedPreferences of the application context.
 Example - ExternalSaredPreferencesTest in the Android TDD project, which can be accessed at <https://bitbucket.org/advexp/component-advexp.settings> 
 
-***class AdvancedConfiguration*** (Advexp.Settings.Utils.PCL.dll)  
+***class AdvancedConfiguration*** (Advexp.Settings.Utils.Standard.dll)  
 Extended library configuration parameters. Objects of this type belong to the *SettingsBaseConfiguration* class.
+
+######Dynamic Settings plugin
+
+***interface ILocalDynamicSettingsPlugin*** (Advexp.Settings.Utils.Standard.dll)  
+Interface definition of the Local Dynamic Settings Plugin
 
 ######JSON Settings plugin
 
-***interface IJSONSettingsPlugin*** (Advexp.JSONSettings.Plugin.PCL)  
+***interface IJSONSettingsPlugin*** (Advexp.JSONSettings.Plugin.Standard)  
 Interface definition of the JSON Settings plugin
 
-***class JSONSettingsPlugin*** (Advexp.JSONSettings.Plugin.PCL)  
+***class JSONSettingsPlugin*** (Advexp.JSONSettings.Plugin.Standard)  
 Implementation of the JSON Settings plugin
 
-***class JSONSettingsConfiguration*** (Advexp.JSONSettings.Plugin.PCL)  
+***class JSONSettingsConfiguration*** (Advexp.JSONSettings.Plugin.Standard)  
 Static class. It contains parameters that define the JSON Settings plugin configuration
 
-***class PluginSettings*** (Advexp.JSONSettings.Plugin.PCL)  
+***class PluginSettings*** (Advexp.JSONSettings.Plugin.Standard)  
 Class which contains the JSON Settings plugin parameters. Objects of this type belong to the JSONSettingsConfiguration class.
 
 ######Cognito Sync Settings plugin
@@ -517,15 +525,15 @@ Xamarin.Android
 
 NetStandard/PCL projects
 
-NuGet package “Advexp.Settings Local” you can download from the site:
+NuGet package “Advexp.Settings Local” you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Local>
-
-NuGet package “Advexp.Settings Cloud”, evaluation version, you can download from the site:
+ 
+NuGet package “Advexp.Settings Cloud”, evaluation version, you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Cloud.Evaluation>
 
 Samples, Unit Tests and additional information you can find here:  
 <https://bitbucket.org/advexp/component-advexp.settings>
 
-Purchase "Advexp.Settings Cloud", full version, you can [here](avangate).
+Purchase "Advexp.Settings Cloud", full version, you can [here](avangate)
 
 Please send your questions, suggestions and impressions to <components@advexp.net> with the subject "Advexp.Settings"

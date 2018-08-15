@@ -162,7 +162,7 @@ Call the appropriate method in order to perform the desired action.
 
 The library allows the use of any user-defined types which can be saved as settings. User-defined types do not require modification and addition of special attributes. Usage case - CustomObjectTest in TDD projects: <https://bitbucket.org/advexp/component-advexp.settings>. 
 
-Serializing settings is done via the [SharpSerializer](http://sharpserializer.com/en/index.html) library.
+Settings serialization is done via the [SharpSerializer](http://sharpserializer.com/en/index.html) library.   
 The serializer parameters can be modified by using the following property:  
 *SettingsBaseConfiguration.AdvancedConfiguration.SharpSerializerSettings*
 

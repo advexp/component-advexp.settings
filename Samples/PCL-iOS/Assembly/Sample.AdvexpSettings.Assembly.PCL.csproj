@@ -44,13 +44,13 @@
       <HintPath>..\..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.1\lib\portable-net45+wp80+win8+wpa81\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.2\lib\portable-net45+wp80+win8+wpa81\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.1\lib\portable-net45+wp80+win8+wpa81\Advexp.Settings.Utils.PCL.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.2\lib\portable-net45+wp80+win8+wpa81\Advexp.Settings.Utils.PCL.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.JSONSettings.Plugin.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.1\lib\portable-net45+wp80+win8+wpa81\Plugins\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.2\lib\portable-net45+wp80+win8+wpa81\Plugins\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

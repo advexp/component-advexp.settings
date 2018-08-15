@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_id">972960006158564</string>
+    <string name="app_name">Advexp.Settings</string>
+
+    <string name="title_checkbox_preference">Checkbox preference</string>
+    <string name="summary_checkbox_preference">This is a checkbox</string>
+
+    <string name="title_switch_preference">Switch preference</string>
+    <string name="summary_switch_preference">This is a switch</string>
+
+    <string name="title_edittext_preference">Edit text preference</string>
+    <string name="summary_edittext_preference">An example that uses an edit text dialog</string>
+    <string name="dialog_title_edittext_preference">Enter your text</string>
+
+    <string name="title_enum_preference">Enum preference</string>
+    <string name="summary_enum_preference">An example that uses an enum dialog</string>
+    <string name="dialog_title_enum_preference">Choose one</string>
+
+    <string name="app_name">Advexp.Settings CognitoSync Sample</string>
+    <string name="btn_text">Change preferences</string>
+
+    <string name="edittext_default_value">Default text</string>
+    <string name="enum_preference_entry_default_value">Zero</string>
+
+</resources>

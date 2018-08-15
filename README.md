@@ -477,8 +477,11 @@ Static class. It contains parameters that define the Cognito Sync Settings plugi
 ***class CognitoSyncSettingAttribute*** (Advexp.CognitoSyncSettings.Plugin.PCL)  
 This attribute indicates that the current class element is a setting and can be loaded/saved/deleted using Amazon Cognito Sync service. It is applied to a class member
 
-***interface ICognitoSyncSettingsPlugin*** (Advexp.CognitoSyncSettings.Plugin.PCL)
+***interface ICognitoSyncSettingsPlugin*** (Advexp.CognitoSyncSettings.Plugin.PCL)  
 Interface definition of the Cognito Sync Settings plugin
+
+***interface IDynamicSettingsPlugin*** (Advexp.Settings.Utils.Standard.dll)  
+Interface definition of dynamic settings for the Cognito Sync Settings plugin
 
 ***class CognitoSyncSettingsPlugin*** (Advexp.CognitoSyncSettings.Plugin.PCL)
 Implementation of the Cognito Sync Settings plugin
@@ -489,13 +492,36 @@ Attribute which defines to which dataset the settings class belongs. It is appli
 ***class CognitoSyncSerializer*** (Advexp.CognitoSyncSettings.Plugin.PCL)
 Settings serializer for the Amazon Cognito Sync service
 
+######Firebase Remote Config plugin
+
+***class FirebaseRemoteConfigConfiguration*** (Advexp.FirebaseRemoteConfig.Plugin.*)   
+Static class. It contains parameters that define the Firebase Remote Config plugin configuration
+
+***class FirebaseRemoteConfigAttribute*** (Advexp.FirebaseRemoteConfig.Plugin.Standard)   
+This attribute indicates that the current class element is a setting and can be loaded from Google Firebase Remote Config service
+It is applied to a class member
+
+***interface IFirebaseRemoteConfigPlugin*** (Advexp.FirebaseRemoteConfig.Plugin.Standard)   
+Interface definition of the Firebase Remote Config plugin
+
+***interface IDynamicSettingsPlugin*** (Advexp.Settings.Utils.Standard.dll)   
+Interface definition of dynamic settings for the Firebase Remote Config plugin
+
+***class FirebaseRemoteConfigPluginStandard*** (Advexp.FirebaseRemoteConfig.Plugin.Standard)   
+Implementation of the Firebase Remote Config plugin for NetStandard
+
+***class FirebaseRemoteConfigPlugin*** (Advexp.FirebaseRemoteConfig.Plugin.(iOS | Android))   
+Implementation of the Firebase Remote Config plugin for iOS and Android
+
+***class FirebaseRemoteConfigSerializer*** (Advexp.FirebaseRemoteConfig.Plugin.(iOS | Android))   
+Settings serializer for the  Firebase Remote Config service 
+
 #####Library configuration
 
 ######Advexp.Settings library
 
 All library parameters can be set through the *SettingsConfiguration* static class. These manipulations should be produced before the other library functions are first used.
 
-- ***SettingsNamePattern***  - specifies the name pattern under which the settings are saved to the storage. The default value is "{NamespaceName}.{ClassName}.{FieldName}". It supports only those substitution parameters that are used by default
 - ***EncryptionServiceID*** - for settings that will be stored in the Keychain or KeyStore. It defines the Service Name. The default value is "Advexp.Settings"
 - **iOS:** ***KeyChainSecAccessible*** - for settings that will be stored in the Keychain. It determines at what time the parameter can be read from the Keychain. The default value is *SecAccessible.Always*
 - **Android:** ***KeyStoreFileProtectionPassword*** - the password used to protect KeyStore file. The default value is *null*
@@ -504,7 +530,7 @@ All library parameters can be set through the *SettingsConfiguration* static cla
 - ***AdvancedConfiguration.SharpSerializerSettings*** - parameters of the *SharpSerializer* serializer which are used for saving settings
 - ***RegisterSettingsAttribute*** - a method designed for registering the settings indicator attribute
 - ***RegisterSettingsPlugin*** - a method designed for the registration of plugins, for example, *CognitoSyncSettingsPlugin*
-- **EnableFormatMigration** - enable or disable previous version support. The default value is *false*
+- ***LogLevel*** - set log level
 
 ######JSON Settings plugin
 
@@ -517,6 +543,13 @@ All JSON Settings plugin parameters can be set through the JSONSettingsConfigura
 All Cognito Sync Settings plugin parameters can be set through the *CognitoSyncSettingsConfiguration* static class. These manipulations should be produced before the other library functions are first used.  
 ***Config*** - Configuration for accessing Amazon Cognito Sync service  
 ***Credentials*** - Temporary, short-lived session credentials. Depending on configured Logins, credentials may be authenticated or unauthenticated.
+
+######Firebase Remote Config plugin
+
+All Firebase Remote Config plugin parameters can be set through the *FirebaseRemoteConfigConfiguration* static class. These manipulations should be produced before the other library functions are first used.   
+***ExpirationDuration*** - Duration that defines how long fetched config data is available, in seconds   
+**iOS**: ***RemoteConfigDefaultsPlistFileName*** - Sets default settings from plist file.   
+**Android**: ***RemoteConfigDefaultsId*** - Sets default settings from xml resources.
 
 ####Supported platforms
 

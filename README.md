@@ -450,7 +450,7 @@ Example - ExternalSaredPreferencesTest in the Android TDD project, which can be 
 ***class AdvancedConfiguration*** (Advexp.Settings.Utils.Standard.dll)  
 Extended library configuration parameters. Objects of this type belong to the *SettingsBaseConfiguration* class.
 
-######Dynamic Settings plugin
+######Local Dynamic Settings plugin
 
 ***interface ILocalDynamicSettingsPlugin*** (Advexp.Settings.Utils.Standard.dll)  
 Interface definition of the Local Dynamic Settings plugin
@@ -534,7 +534,7 @@ All library parameters can be set through the *SettingsConfiguration* static cla
 
 ######JSON Settings plugin
 
-All JSON Settings plugin parameters can be set through the JSONSettingsConfiguration static class. These manipulations should be produced before the other library functions are first used.  
+All JSON Settings plugin parameters can be set through the *JSONSettingsConfiguration* static class. These manipulations should be produced before the other library functions are first used.  
 ***JsonSerializerSettings*** - The JSON parser parameters  
 ***PluginSettings*** - The JSON Settings plugin parameters
 
@@ -556,7 +556,7 @@ All Firebase Remote Config plugin parameters can be set through the *FirebaseRem
 Xamarin.iOS (Unified)  
 Xamarin.Android
 
-NetStandard/PCL projects
+NetStandard / PCL projects
 
 NuGet package “Advexp.Settings Local” you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Local>

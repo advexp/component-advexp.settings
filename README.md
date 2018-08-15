@@ -453,7 +453,7 @@ Extended library configuration parameters. Objects of this type belong to the *S
 ######Dynamic Settings plugin
 
 ***interface ILocalDynamicSettingsPlugin*** (Advexp.Settings.Utils.Standard.dll)  
-Interface definition of the Local Dynamic Settings Plugin
+Interface definition of the Local Dynamic Settings plugin
 
 ######JSON Settings plugin
 

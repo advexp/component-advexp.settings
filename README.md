@@ -433,7 +433,7 @@ The attribute specifies the serializer type that must be applied to a setting or
 This attribute indicates that the current class element is a setting and can be loaded/saved/deleted.  
 It is applied to a class member.
 
-***class Settings\<T\>*** (Advexp.Settings.dll for iOS, Android and NetStandard)  
+***class Settings\<T>*** (Advexp.Settings.dll for iOS, Android and NetStandard)  
 The class specifies that its inheritor is a settings class and adds the appropriate functionality to the methods set.
 
 ***class SettingsConfiguration*** (Advexp.Settings.dll for iOS and Android)  

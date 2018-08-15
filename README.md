@@ -339,7 +339,7 @@ Sample.CognitoSyncSettings.Android and Sample.CognitoSyncSettings.iOS as well as
 
 #####Cloud: Configure app remotely by using Google Firebase Remote Config
 
-To add this ability, you need to install the Google Firebase Remote Config NuGet package for [iOS](https://www.nuget.org/packages/Xamarin.Firebase.iOS.RemoteConfig/) or [Android](https://www.nuget.org/packages/Xamarin.Firebase.Config/), add the **Advexp.FirebaseRemoteConfig.Plugin.iOS/Android** and **Advexp.FirebaseRemoteConfig.Plugin.Standard** assemblies to the references, and register the plugin:
+To add this ability, you need to install the Google Firebase Remote Config NuGet package for [iOS](https://www.nuget.org/packages/Xamarin.Firebase.iOS.RemoteConfig/) or [Android](https://www.nuget.org/packages/Xamarin.Firebase.Config/), add the *Advexp.FirebaseRemoteConfig.Plugin.iOS/Android* and **Advexp.FirebaseRemoteConfig.Plugin.Standard** assemblies to the references, and register the plugin:
 
     SettingsBaseConfiguration.
         RegisterSettingsPlugin<IFirebaseRemoteConfigPlugin, FirebaseRemoteConfigPlugin>();

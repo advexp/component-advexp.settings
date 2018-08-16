@@ -29,7 +29,7 @@ NuGet package “Advexp.Settings Cloud”, evaluation version, you can download 
 Samples, Unit Tests and additional information you can find here:  
 <https://bitbucket.org/advexp/component-advexp.settings>
 
-Purchase "Advexp.Settings Cloud", full version, you can [here](avangate)
+To purchase "Advexp.Settings Cloud", full version, send a request to <components@advexp.net>
 
 #####Example of settings declaration
 
@@ -567,6 +567,6 @@ NuGet package “Advexp.Settings Cloud”, evaluation version, you can download 
 Samples, Unit Tests and additional information you can find here:  
 <https://bitbucket.org/advexp/component-advexp.settings>
 
-Purchase "Advexp.Settings Cloud", full version, you can [here](avangate)
+To purchase "Advexp.Settings Cloud", send a request to <components@advexp.net>
 
 Please send your questions, suggestions and impressions to <components@advexp.net> with the subject "Advexp.Settings"

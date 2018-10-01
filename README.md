@@ -1,20 +1,20 @@
 ###Advexp.Settings
 
-Cross-platform .NET settings for Xamarin mobile apps
+Cross-platform .NET app settings for Windows and Xamarin mobile applications
 
 ####Details
 
-Create cross-platform C# settings and make them accessible in your Windows, Xamarin.iOS or Xamarin.Android applications natively. Ability to save settings locally or to the cloud and sync them across different devices by using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service. Ability to remotely configure your app by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).
+Create cross-platform .NET app settings and make them accessible in your Windows, Xamarin.iOS or Xamarin.Android applications natively. Ability to save settings locally or to the cloud and sync them across different devices by using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service. Ability to remotely configure your mobile application by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).
 
 - **Windows**: Storing settings in a normal form using Isolated Storage
-- **Windows**: Storing settings in an encrypted form using Data Protection API
+- **Windows**: Storing settings in an encrypted form using Data Protection API and Isolated Storage
 - **iOS**: Storing settings in a normal form using *NSUserDefaults*
 - **iOS**: Storing settings in an encrypted form using Keychain
 - **Android**: Using *SharedPreferences* to store settings in a normal form
 - **Android**: Using KeyStore to save confidential settings in an encrypted form
 - Saving settings as dynamic parameters (name - value pairs)
 - Using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service to save settings to the cloud and sync them across different devices
-- **iOS**, **Android**: Using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/) service to remotely configure your mobile app
+- **iOS**, **Android**: Using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/) service to remotely configure your mobile application
 - Using user storage for settings
 - Using any build-in or user-defined types which can be saved as a setting
 - **iOS**: Ability to link settings from Advexp.Settings with settings from the Settings App

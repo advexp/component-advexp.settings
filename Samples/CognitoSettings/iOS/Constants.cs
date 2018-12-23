@@ -1,4 +1,5 @@
-﻿using Amazon;
+﻿using System;
+using Amazon;
 
 namespace Sample.CognitoSyncSettings.iOS
 {
@@ -13,3 +14,4 @@ namespace Sample.CognitoSyncSettings.iOS
         public static readonly RegionEndpoint CognitoSyncRegion = RegionEndpoint.USEast1;
     }
 }
+

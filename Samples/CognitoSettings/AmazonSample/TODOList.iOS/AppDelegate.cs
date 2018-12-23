@@ -31,7 +31,7 @@ namespace TODOList.iOS
         {
             // create a new window instance based on the screen size
             Profile.EnableUpdatesOnAccessTokenChange(true);
-            Settings.AppID = TODOListPortableLibrary.Constants.FacebookAppId;
+            Settings.AppId = TODOListPortableLibrary.Constants.FacebookAppId;
             Settings.DisplayName = TODOListPortableLibrary.Constants.FacebookAppName;
 
             Window = new UIWindow(UIScreen.MainScreen.Bounds);

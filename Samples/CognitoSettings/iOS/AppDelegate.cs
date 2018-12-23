@@ -27,7 +27,7 @@ namespace Sample.CognitoSyncSettings.iOS
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             Profile.EnableUpdatesOnAccessTokenChange (true);
-            Settings.AppID = Constants.FacebookAppId;
+            Settings.AppId = Constants.FacebookAppId;
             Settings.DisplayName = Constants.FacebookAppName;
 
             CognitoSyncSettings.LoadSettings();

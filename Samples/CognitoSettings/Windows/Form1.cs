@@ -19,6 +19,7 @@ namespace Sample.CognitoSyncSettings.Windows
         };
 
         bool m_enableEnumComboBoxEvent = false;
+        int m_textCounter = -1;
 
         string m_AccessToken = null;
 
@@ -56,7 +57,16 @@ namespace Sample.CognitoSyncSettings.Windows
 
                 // set static settings
                 this.boolValue.Checked = CognitoSyncSettings.Boolean;
-                this.textValue.Text = CognitoSyncSettings.Text;
+
+                if (m_textCounter <= 0)
+                {
+                    this.textValue.Text = CognitoSyncSettings.Text;
+                }
+                else
+                {
+                    m_textCounter--;
+                }
+                
                 this.enumValue.SelectedIndex = (int)CognitoSyncSettings.Enum;
 
                 // set dynamic settings
@@ -76,6 +86,8 @@ namespace Sample.CognitoSyncSettings.Windows
 
         private void textValue_TextChanged(object sender, EventArgs e)
         {
+            m_textCounter++;
+
             CognitoSyncSettings.Text = this.textValue.Text;
             CognitoSyncSettings.SaveSetting(s => CognitoSyncSettings.Text);
         }
@@ -163,6 +175,8 @@ namespace Sample.CognitoSyncSettings.Windows
                     }
             }
 
+            CognitoSyncSettingsConfiguration.Credentials.Clear();
+
             m_AccessToken = null;
             m_ProviderName = LoginProvider.Unknown;
 
@@ -197,8 +211,6 @@ namespace Sample.CognitoSyncSettings.Windows
                 var plugin = CognitoSyncSettings.GetPlugin<ICognitoSyncSettingsPlugin>();
                 plugin.SynchronizeDataset();
 
-                var settings = CognitoSyncSettings.Instance;
-
                 return true;
             }
             else
@@ -222,8 +234,6 @@ namespace Sample.CognitoSyncSettings.Windows
                 // plugins are persistant and next call return the same object
                 var plugin = CognitoSyncSettings.GetPlugin<ICognitoSyncSettingsPlugin>();
                 plugin.SynchronizeDataset();
-
-                var settings = CognitoSyncSettings.Instance;
 
                 return true;
             }

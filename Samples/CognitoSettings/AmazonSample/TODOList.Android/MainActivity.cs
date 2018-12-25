@@ -34,9 +34,6 @@ namespace TODOList.Android
         {
             base.OnCreate(bundle);
 
-
-            FacebookSdk.SdkInitialize(this.ApplicationContext);
-
             callbackManager = CallbackManagerFactory.Create();
 
             LoginManager.Instance.RegisterCallback(callbackManager, new FacebookCallback<LoginResult>()
@@ -58,8 +55,6 @@ namespace TODOList.Android
                 }
             });
             LoginManager.Instance.LogInWithReadPermissions(this, new List<string> { "public_profile" });
-
-            //initialize the logs
 
             CognitoSyncUtils.Initialize();
         }
@@ -84,8 +79,6 @@ namespace TODOList.Android
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            //if (tracker != null)
-                //tracker.StopTracking();
         }
 
         void ShowAlert(string title, string msg, string buttonText = null)
@@ -136,12 +129,10 @@ namespace TODOList.Android
             this.OldAccessToken = oldAccessToken;
             this.NewAccessToken = newAccessToken;
         }
-
     }
 
     internal class CognitoAccessTokenTracker : AccessTokenTracker
     {
-
         internal event EventHandler<AccessTokenChangedArgs> AccessTokenChangedEvent;
 
         protected override void OnCurrentAccessTokenChanged(AccessToken p0, AccessToken p1)
@@ -153,6 +144,4 @@ namespace TODOList.Android
             }
         }
     }
-
 }
-

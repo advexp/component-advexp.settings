@@ -33,8 +33,6 @@ namespace Sample.CognitoSyncSettings.Android
         {
             base.OnCreate(savedInstanceState);
 
-            FacebookSdk.SdkInitialize(this.ApplicationContext);
-
             Context context = global::Android.App.Application.Context;
             PreferenceManager.SetDefaultValues(context, Resource.Xml.preferences, false);
 
@@ -47,6 +45,7 @@ namespace Sample.CognitoSyncSettings.Android
             ((MainApplication)Application).SetCognitoSyncListerner(this);
 
             m_CallbackManager = CallbackManagerFactory.Create();
+
 
             LoginManager.Instance.RegisterCallback(m_CallbackManager, new FacebookCallback<LoginResult>()
             {

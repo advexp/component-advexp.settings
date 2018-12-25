@@ -49,6 +49,8 @@ namespace Sample.CognitoSyncSettings.iOS
                         LoginManager login = new LoginManager();
                         login.LogOut();
 
+                        CognitoSyncSettingsConfiguration.Credentials.Clear();
+
                         ((AppDelegate)UIApplication.SharedApplication.Delegate).Continue(new SettingsViewController
                         { 
                             AddLoginButton = true,

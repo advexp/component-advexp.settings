@@ -1,0 +1,82 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+    <ReleaseVersion></ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Common\ListExtention.cs" Link="ListExtention.cs" />
+    <Compile Include="..\Common\RandomExtention.cs" Link="RandomExtention.cs" />
+    <Compile Include="..\Common\UnitTestHandler.cs" Link="UnitTestHandler.cs" />
+    <Compile Include="..\Common\UnitTests\CollectionsTest\CollectionsSettings.cs" Link="UnitTests\CollectionsTest\CollectionsSettings.cs" />
+    <Compile Include="..\Common\UnitTests\CollectionsTest\CollectionsTest.cs" Link="UnitTests\CollectionsTest\CollectionsTest.cs" />
+    <Compile Include="..\Common\UnitTests\ContainsTest\ContainsTest.cs" Link="UnitTests\ContainsTest\ContainsTest.cs" />
+    <Compile Include="..\Common\UnitTests\CustomObjectTest\CustomObjectSettings.cs" Link="UnitTests\CustomObjectTest\CustomObjectSettings.cs" />
+    <Compile Include="..\Common\UnitTests\CustomObjectTest\CustomObjectTest.cs" Link="UnitTests\CustomObjectTest\CustomObjectTest.cs" />
+    <Compile Include="..\Common\UnitTests\DateTimeTest\DateTimeSettings.cs" Link="UnitTests\DateTimeTest\DateTimeSettings.cs" />
+    <Compile Include="..\Common\UnitTests\DateTimeTest\DateTimeTest.cs" Link="UnitTests\DateTimeTest\DateTimeTest.cs" />
+    <Compile Include="..\Common\UnitTests\DefaultValueTest\DefaultValueSettings.cs" Link="UnitTests\DefaultValueTest\DefaultValueSettings.cs" />
+    <Compile Include="..\Common\UnitTests\DefaultValueTest\DefaulValueTest.cs" Link="UnitTests\DefaultValueTest\DefaulValueTest.cs" />
+    <Compile Include="..\Common\UnitTests\DifferentMemberTypesTest\DifferentMemberTypesSettings.cs" Link="UnitTests\DifferentMemberTypesTest\DifferentMemberTypesSettings.cs" />
+    <Compile Include="..\Common\UnitTests\DifferentMemberTypesTest\DifferentMemberTypesTest.cs" Link="UnitTests\DifferentMemberTypesTest\DifferentMemberTypesTest.cs" />
+    <Compile Include="..\Common\UnitTests\DifferentTypesTest\DifferentTypesSettings.cs" Link="UnitTests\DifferentTypesTest\DifferentTypesSettings.cs" />
+    <Compile Include="..\Common\UnitTests\DifferentTypesTest\DifferentTypesTest.cs" Link="UnitTests\DifferentTypesTest\DifferentTypesTest.cs" />
+    <Compile Include="..\Common\UnitTests\DynamicSettings\DynamicSettings.cs" Link="UnitTests\DynamicSettings\DynamicSettings.cs" />
+    <Compile Include="..\Common\UnitTests\DynamicSettings\DynamicSettingsTest.cs" Link="UnitTests\DynamicSettings\DynamicSettingsTest.cs" />
+    <Compile Include="..\Common\UnitTests\Issues\2\Issue2Settings.cs" Link="UnitTests\Issues\2\Issue2Settings.cs" />
+    <Compile Include="..\Common\UnitTests\Issues\2\Issue2Test.cs" Link="UnitTests\Issues\2\Issue2Test.cs" />
+    <Compile Include="..\Common\UnitTests\JSONTest\JSONTest.cs" Link="UnitTests\JSONTest\JSONTest.cs" />
+    <Compile Include="..\Common\UnitTests\MethodSerializerTest\MethodSerializerSettings.cs" Link="UnitTests\MethodSerializerTest\MethodSerializerSettings.cs" />
+    <Compile Include="..\Common\UnitTests\MethodSerializerTest\MethodSerializerTest.cs" Link="UnitTests\MethodSerializerTest\MethodSerializerTest.cs" />
+    <Compile Include="..\Common\UnitTests\NotLoadedValuesTest\NotLoadedValuesSettings.cs" Link="UnitTests\NotLoadedValuesTest\NotLoadedValuesSettings.cs" />
+    <Compile Include="..\Common\UnitTests\NotLoadedValuesTest\NotLoadedValuesTest.cs" Link="UnitTests\NotLoadedValuesTest\NotLoadedValuesTest.cs" />
+    <Compile Include="..\Common\UnitTests\NullValueTest\NullValueSettings.cs" Link="UnitTests\NullValueTest\NullValueSettings.cs" />
+    <Compile Include="..\Common\UnitTests\NullValueTest\NullValueTest.cs" Link="UnitTests\NullValueTest\NullValueTest.cs" />
+    <Compile Include="..\Common\UnitTests\SerializerCreationTest\SerializerCreationTest.cs" Link="UnitTests\SerializerCreationTest\SerializerCreationTest.cs" />
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\BaseSerializer.cs" Link="UnitTests\SerializerPriorityTest\BaseSerializer.cs" />
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\ClassSerializer.cs" Link="UnitTests\SerializerPriorityTest\ClassSerializer.cs" />
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\ClassSerializerSettings.cs" Link="UnitTests\SerializerPriorityTest\ClassSerializerSettings.cs" />
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\CompoundSerializerSettings.cs" Link="UnitTests\SerializerPriorityTest\CompoundSerializerSettings.cs" />
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\FieldAndLibrarySerializerSettings.cs" Link="UnitTests\SerializerPriorityTest\FieldAndLibrarySerializerSettings.cs" />
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\FieldSerializer.cs" Link="UnitTests\SerializerPriorityTest\FieldSerializer.cs" />
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\FieldSerializerSettings.cs" Link="UnitTests\SerializerPriorityTest\FieldSerializerSettings.cs" />
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\LibrarySerializer.cs" Link="UnitTests\SerializerPriorityTest\LibrarySerializer.cs" />
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\SerializerPriorityTest.cs" Link="UnitTests\SerializerPriorityTest\SerializerPriorityTest.cs" />
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\SimpleSettings.cs" Link="UnitTests\SerializerPriorityTest\SimpleSettings.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nunit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Advexp.Settings\Windows\Core\Advexp.Settings.Windows.Core.csproj" />
+    <ProjectReference Include="..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj" />
+    <ProjectReference Include="..\..\Advexp.Settings\Plugins\JSONSettings\Plugin.JSONSettings.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UnitTests\CollectionsTest\" />
+    <Folder Include="UnitTests\ContainsTest\" />
+    <Folder Include="UnitTests\CustomObjectTest\" />
+    <Folder Include="UnitTests\DateTimeTest\" />
+    <Folder Include="UnitTests\DefaultValueTest\" />
+    <Folder Include="UnitTests\DifferentMemberTypesTest\" />
+    <Folder Include="UnitTests\DifferentTypesTest\" />
+    <Folder Include="UnitTests\DynamicSettings\" />
+    <Folder Include="UnitTests\Issues\2\" />
+    <Folder Include="UnitTests\JSONTest\" />
+    <Folder Include="UnitTests\MethodSerializerTest\" />
+    <Folder Include="UnitTests\NotLoadedValuesTest\" />
+    <Folder Include="UnitTests\NullValueTest\" />
+    <Folder Include="UnitTests\SerializerCreationTest\" />
+    <Folder Include="UnitTests\SerializerPriorityTest\" />
+  </ItemGroup>
+
+</Project>

@@ -1,84 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\..\packages\NUnit.3.11.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{E745B033-4422-4C8C-B34D-2401A00382A1}</ProjectGuid>
+    <ProjectGuid>{4AF12AA0-126F-4BEE-A436-108FC401C33E}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>TDD</RootNamespace>
-    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
-    <AndroidResgenClass>Resource</AndroidResgenClass>
-    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
-    <AndroidApplication>True</AndroidApplication>
-    <AssemblyName>TDD.Android</AssemblyName>
-    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TDD.Windows.NET45</RootNamespace>
+    <AssemblyName>TDD.Windows.ClassicDesktop</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <ReleaseVersion>
     </ReleaseVersion>
-    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
-    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-    <AndroidTlsProvider>
-    </AndroidTlsProvider>
-    <JavaMaximumHeapSize>
-    </JavaMaximumHeapSize>
     <SynchReleaseVersion>false</SynchReleaseVersion>
-    <AndroidStoreUncompressedFileExtensions>
-    </AndroidStoreUncompressedFileExtensions>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\Bin\Android\Debug\TDD</OutputPath>
-    <DefineConstants>DEBUG;__MOBILE__;__ANDROID__;</DefineConstants>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;__DESKTOP__;__WINDOWS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>None</AndroidLinkMode>
-    <ConsolePause>false</ConsolePause>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
-    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-    <AndroidSupportedAbis>armeabi-v7a</AndroidSupportedAbis>
-    <MandroidI18n>
-    </MandroidI18n>
-    <JavaMaximumHeapSize>
-    </JavaMaximumHeapSize>
-    <AndroidFastDeploymentType>
-    </AndroidFastDeploymentType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Bin\Android\Release\TDD</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;__DESKTOP__;__WINDOWS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
-    <DefineConstants>__MOBILE__;__ANDROID__;</DefineConstants>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <AndroidSupportedAbis>armeabi;armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
-    <DebugType>full</DebugType>
-    <AndroidKeyStore>
-    </AndroidKeyStore>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="Mono.Android" />
-    <Reference Include="Xamarin.Android.NUnitLite" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
-    <Compile Include="Resources\Resource.designer.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Common\ListExtention.cs">
+      <Link>ListExtention.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\RandomExtention.cs">
+      <Link>RandomExtention.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTestHandler.cs">
+      <Link>UnitTestHandler.cs</Link>
+    </Compile>
     <Compile Include="..\Common\UnitTests\CollectionsTest\CollectionsSettings.cs">
       <Link>UnitTests\CollectionsTest\CollectionsSettings.cs</Link>
     </Compile>
     <Compile Include="..\Common\UnitTests\CollectionsTest\CollectionsTest.cs">
       <Link>UnitTests\CollectionsTest\CollectionsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\ContainsTest\ContainsTest.cs">
+      <Link>UnitTests\ContainsTest\ContainsTest.cs</Link>
     </Compile>
     <Compile Include="..\Common\UnitTests\CustomObjectTest\CustomObjectSettings.cs">
       <Link>UnitTests\CustomObjectTest\CustomObjectSettings.cs</Link>
@@ -86,11 +75,44 @@
     <Compile Include="..\Common\UnitTests\CustomObjectTest\CustomObjectTest.cs">
       <Link>UnitTests\CustomObjectTest\CustomObjectTest.cs</Link>
     </Compile>
+    <Compile Include="..\Common\UnitTests\DateTimeTest\DateTimeSettings.cs">
+      <Link>UnitTests\DateTimeTest\DateTimeSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DateTimeTest\DateTimeTest.cs">
+      <Link>UnitTests\DateTimeTest\DateTimeTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DefaultValueTest\DefaultValueSettings.cs">
+      <Link>UnitTests\DefaultValueTest\DefaultValueSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DefaultValueTest\DefaulValueTest.cs">
+      <Link>UnitTests\DefaultValueTest\DefaulValueTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DifferentMemberTypesTest\DifferentMemberTypesSettings.cs">
+      <Link>UnitTests\DifferentMemberTypesTest\DifferentMemberTypesSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DifferentMemberTypesTest\DifferentMemberTypesTest.cs">
+      <Link>UnitTests\DifferentMemberTypesTest\DifferentMemberTypesTest.cs</Link>
+    </Compile>
     <Compile Include="..\Common\UnitTests\DifferentTypesTest\DifferentTypesSettings.cs">
       <Link>UnitTests\DifferentTypesTest\DifferentTypesSettings.cs</Link>
     </Compile>
     <Compile Include="..\Common\UnitTests\DifferentTypesTest\DifferentTypesTest.cs">
       <Link>UnitTests\DifferentTypesTest\DifferentTypesTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DynamicSettings\DynamicSettings.cs">
+      <Link>UnitTests\DynamicSettings\DynamicSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DynamicSettings\DynamicSettingsTest.cs">
+      <Link>UnitTests\DynamicSettings\DynamicSettingsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\Issues\2\Issue2Settings.cs">
+      <Link>UnitTests\Issues\2\Issue2Settings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\Issues\2\Issue2Test.cs">
+      <Link>UnitTests\Issues\2\Issue2Test.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\JSONTest\JSONTest.cs">
+      <Link>UnitTests\JSONTest\JSONTest.cs</Link>
     </Compile>
     <Compile Include="..\Common\UnitTests\MethodSerializerTest\MethodSerializerSettings.cs">
       <Link>UnitTests\MethodSerializerTest\MethodSerializerSettings.cs</Link>
@@ -143,64 +165,29 @@
     <Compile Include="..\Common\UnitTests\SerializerPriorityTest\SimpleSettings.cs">
       <Link>UnitTests\SerializerPriorityTest\SimpleSettings.cs</Link>
     </Compile>
-    <Compile Include="..\Common\RandomExtention.cs">
-      <Link>RandomExtention.cs</Link>
-    </Compile>
-    <Compile Include="UnitTests\ExternalSharedPreferencesTest\ExternalSharedPreferencesClassSerializer.cs" />
-    <Compile Include="UnitTests\ExternalSharedPreferencesTest\ExternalSharedPreferencesFieldSerializer.cs" />
-    <Compile Include="UnitTests\ExternalSharedPreferencesTest\ExternalSharedPreferencesSettings.cs" />
-    <Compile Include="UnitTests\ExternalSharedPreferencesTest\ExternalSharedPreferencesTest.cs" />
-    <Compile Include="..\Common\UnitTests\ActionsTest\ActionsTest.cs">
-      <Link>UnitTests\ActionsTest\ActionsTest.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\UnitTests\ActionsTest\ActionsTestSettings.cs">
-      <Link>UnitTests\ActionsTest\ActionsTestSettings.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\UnitTests\JSONTest\JSONTest.cs">
-      <Link>UnitTests\JSONTest\JSONTest.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\UnitTests\DifferentMemberTypesTest\DifferentMemberTypesSettings.cs">
-      <Link>UnitTests\DifferentMemberTypesTest\DifferentMemberTypesSettings.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\UnitTests\DifferentMemberTypesTest\DifferentMemberTypesTest.cs">
-      <Link>UnitTests\DifferentMemberTypesTest\DifferentMemberTypesTest.cs</Link>
-    </Compile>
-    <Compile Include="Application.cs" />
-    <Compile Include="..\Common\UnitTests\DefaultValueTest\DefaulValueTest.cs">
-      <Link>UnitTests\DefaultValueTest\DefaulValueTest.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\UnitTests\DefaultValueTest\DefaultValueSettings.cs">
-      <Link>UnitTests\DefaultValueTest\DefaultValueSettings.cs</Link>
-    </Compile>
-    <Compile Include="KeyChainUtils.cs" />
-    <Compile Include="..\Common\UnitTestHandler.cs">
-      <Link>UnitTestHandler.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\UnitTests\DynamicSettings\DynamicSettings.cs">
-      <Link>UnitTests\DynamicSettings\DynamicSettings.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\UnitTests\DynamicSettings\DynamicSettingsTest.cs">
-      <Link>UnitTests\DynamicSettings\DynamicSettingsTest.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\ListExtention.cs">
-      <Link>ListExtention.cs</Link>
-    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\AboutAssets.txt" />
-    <None Include="packages.config" />
-    <None Include="Properties\AndroidManifest.xml" />
+    <ProjectReference Include="..\..\Advexp.Settings\Windows\ClassicDesktop\Advexp.Settings.Windows.ClassicDesktop.csproj">
+      <Project>{506a28b8-fdcc-4fc4-9eeb-600b544d1067}</Project>
+      <Name>Advexp.Settings.Windows.ClassicDesktop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
+      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
+      <Name>Advexp.Settings.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Advexp.Settings\Plugins\JSONSettings\Plugin.JSONSettings.csproj">
+      <Project>{6C86CC15-4D6F-40D1-AAF2-5168712F6EAC}</Project>
+      <Name>Plugin.JSONSettings</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\values\Strings.xml" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="UnitTests\MultithreadingTest\" />
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -39,15 +39,14 @@ namespace TDD
         }
 
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
+        [SetUp]
         public void Setup()
         {
-            SettingsConfiguration.EnableFormatMigration = false;
             SettingsConfiguration.TDDData.SerializerAction += SerializerAction;
         }
 
         //------------------------------------------------------------------------------
-        [TestFixtureTearDown]
+        [TearDown]
         public void Cleanup()
         {
             SettingsConfiguration.TDDData.SerializerAction -= SerializerAction;

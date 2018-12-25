@@ -26,7 +26,6 @@ namespace TODOList.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::Advexp.Resource.String.library_name = global::TODOList.Android.Resource.String.library_name;
 			global::AndroidHUD.Resource.Attribute.ahBarColor = global::TODOList.Android.Resource.Attribute.ahBarColor;
 			global::AndroidHUD.Resource.Attribute.ahBarLength = global::TODOList.Android.Resource.Attribute.ahBarLength;
 			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::TODOList.Android.Resource.Attribute.ahBarWidth;

@@ -9,13 +9,6 @@ namespace TDD
     public class DateTimeTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
-        public void Setup()
-        {
-            SettingsConfiguration.EnableFormatMigration = false;
-        }
-
-        //------------------------------------------------------------------------------
         void Test(ref DateTime value, DateTime refValue)
         {
             value = refValue;

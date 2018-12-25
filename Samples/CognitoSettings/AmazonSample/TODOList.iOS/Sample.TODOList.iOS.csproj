@@ -152,18 +152,6 @@
       <Project>{71ff347c-68e8-4469-a644-bbc20a19dd6b}</Project>
       <Name>Sample.TODOList.PCL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\Apple\iOS\Advexp.Settings.iOS.csproj">
-      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
-      <Name>Advexp.Settings.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
-      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
-      <Name>Advexp.Settings.Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\Plugins\CognitoSyncSettings\Plugin.CognitoSyncSettings.csproj">
-      <Project>{517d1b56-97a1-4255-8e7e-a243e160182a}</Project>
-      <Name>Plugin.CognitoSyncSettings</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">

@@ -10,10 +10,9 @@ namespace TDD
     public class DynamicSettingsTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
+        [SetUp]
         public void Setup()
         {
-            SettingsBaseConfiguration.EnableFormatMigration = false;
         }
 
         //------------------------------------------------------------------------------

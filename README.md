@@ -564,6 +564,9 @@ Xamarin.Android
 
 NetStandard / PCL projects
 
+Project home page:
+https://advexp.bitbucket.io
+
 NuGet package “Advexp.Settings Local” you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Local>
  
@@ -573,7 +576,7 @@ NuGet package “Advexp.Settings Cloud”, evaluation version, you can download 
 Samples, Unit Tests and additional information you can find here:  
 <https://bitbucket.org/advexp/component-advexp.settings>
 
-Purchase "Advexp.Settings Cloud", full version, you can here:  
+Purchase "Advexp.Settings Cloud", full version, you can buy here:  
 <https://store.payproglobal.com/checkout?products[1][id]=48612>
 
 

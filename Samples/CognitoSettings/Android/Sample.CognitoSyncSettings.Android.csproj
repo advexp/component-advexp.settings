@@ -168,6 +168,18 @@
     <Reference Include="Xamarin.Facebook.Android">
       <HintPath>..\..\..\packages\Xamarin.Facebook.Android.4.38.0\lib\monoandroid81\Xamarin.Facebook.Android.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\MonoAndroid10\Advexp.Settings.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSerializer">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\MonoAndroid10\SharpSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.CognitoSyncSettings.Plugin">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\MonoAndroid10\Plugins\Advexp.CognitoSyncSettings.Plugin.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -199,20 +211,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Android\Advexp.Settings.Android.csproj">
-      <Project>{29EB96CB-9287-4740-AEE3-859265DD32BC}</Project>
-      <Name>Advexp.Settings.Android</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
-      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
-      <Name>Advexp.Settings.Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\CognitoSyncSettings\Plugin.CognitoSyncSettings.csproj">
-      <Project>{517d1b56-97a1-4255-8e7e-a243e160182a}</Project>
-      <Name>Plugin.CognitoSyncSettings</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Android.Support.Annotations.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\..\..\packages\Xamarin.Android.Support.Annotations.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets')" />

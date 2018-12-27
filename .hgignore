@@ -35,3 +35,8 @@ Samples/FirebaseRemoteConfig/iOS/bin
 Samples/FirebaseRemoteConfig/PCL-iOS/Assembly/bin
 UserPrefs.xml
 .vs
+Samples/CognitoSettings/Windows/bin
+Samples/FirebaseRemoteConfig/Standard-iOS/App/bin
+Samples/FirebaseRemoteConfig/Standard-iOS/Assembly/bin
+TDDs/TDD.Windows.ClassicDesktop/bin
+TDDs/TDD.Windows.Core/bin

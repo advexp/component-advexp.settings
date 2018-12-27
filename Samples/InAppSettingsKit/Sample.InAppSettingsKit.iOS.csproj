@@ -85,10 +85,20 @@
     <Reference Include="InAppSettingsKit">
       <HintPath>References\InAppSettingsKit.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.3.0.5\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils">
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.3.0.5\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSerializer">
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.3.0.5\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -176,15 +186,5 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.1024.png">
       <Visible>false</Visible>
     </ImageAsset>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
-      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
-      <Name>Advexp.Settings.Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Advexp.Settings\Apple\iOS\Advexp.Settings.iOS.csproj">
-      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
-      <Name>Advexp.Settings.iOS</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

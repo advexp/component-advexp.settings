@@ -69,6 +69,15 @@
     <Reference Include="Mono.Android" />
     <Reference Include="Xamarin.Android.NUnitLite" />
     <Reference Include="System.Core" />
+    <Reference Include="Advexp.JSONSettings.Plugin">
+      <HintPath>..\References\Android\Advexp.JSONSettings.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\References\Android\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils">
+      <HintPath>..\References\Android\Advexp.Settings.Utils.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -200,20 +209,6 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\..\Advexp.Settings\Android\Advexp.Settings.Android.csproj">
-      <Project>{29EB96CB-9287-4740-AEE3-859265DD32BC}</Project>
-      <Name>Advexp.Settings.Android</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Advexp.Settings\Plugins\JSONSettings\Plugin.JSONSettings.csproj">
-      <Project>{6C86CC15-4D6F-40D1-AAF2-5168712F6EAC}</Project>
-      <Name>Plugin.JSONSettings</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
-      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
-      <Name>Advexp.Settings.Utils</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <Folder Include="UnitTests\MultithreadingTest\" />
   </ItemGroup>

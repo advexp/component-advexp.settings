@@ -110,6 +110,21 @@
     <Reference Include="Firebase.RemoteConfig">
       <HintPath>..\..\..\..\packages\Xamarin.Firebase.iOS.RemoteConfig.3.0.1\lib\Xamarin.iOS10\Firebase.RemoteConfig.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSerializer">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.iOS">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -131,24 +146,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\Plugins\FirebaseRemoteConfig\iOS\Plugin.FirebaseRemoteConfig.iOS.csproj">
-      <Project>{688D74C5-628F-4912-B109-1E400DC3A208}</Project>
-      <Name>Plugin.FirebaseRemoteConfig.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\Apple\iOS\Advexp.Settings.iOS.csproj">
-      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
-      <Name>Advexp.Settings.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
-      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
-      <Name>Advexp.Settings.Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Advexp.Settings\Plugins\FirebaseRemoteConfig\Standard\Plugin.FirebaseRemoteConfig.csproj">
-      <Project>{75F5BF5A-9FFA-4327-84BD-A51D3FC9ADC1}</Project>
-      <Name>Plugin.FirebaseRemoteConfig</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Assembly\Sample.FirebaseRemoteConfig.Assembly.Standard.csproj">
-      <Project>{48887482-BF47-4B71-A4CD-A99D6E991897}</Project>
+      <Project>{95664E56-EA3E-4A87-A257-4DCB51147162}</Project>
       <Name>Sample.FirebaseRemoteConfig.Assembly.Standard</Name>
     </ProjectReference>
   </ItemGroup>

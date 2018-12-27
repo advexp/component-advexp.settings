@@ -49,6 +49,15 @@
     <Reference Include="nunit.framework">
       <HintPath>..\..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.JSONSettings.Plugin">
+      <HintPath>..\References\Windows\ClassicDesktop\Advexp.JSONSettings.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\References\Windows\ClassicDesktop\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils">
+      <HintPath>..\References\Windows\ClassicDesktop\Advexp.Settings.Utils.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Common\ListExtention.cs">
@@ -166,20 +175,6 @@
       <Link>UnitTests\SerializerPriorityTest\SimpleSettings.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Advexp.Settings\Windows\ClassicDesktop\Advexp.Settings.Windows.ClassicDesktop.csproj">
-      <Project>{506a28b8-fdcc-4fc4-9eeb-600b544d1067}</Project>
-      <Name>Advexp.Settings.Windows.ClassicDesktop</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
-      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
-      <Name>Advexp.Settings.Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Advexp.Settings\Plugins\JSONSettings\Plugin.JSONSettings.csproj">
-      <Project>{6C86CC15-4D6F-40D1-AAF2-5168712F6EAC}</Project>
-      <Name>Plugin.JSONSettings</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

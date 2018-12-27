@@ -44,6 +44,20 @@
     <Compile Include="AdvexpTasks.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Advexp.Settings\Standard\Advexp.Settings.csproj">
+      <Project>{8875cf44-c5c6-44e7-be5f-8ee57d49c6f0}</Project>
+      <Name>Advexp.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
+      <Project>{97ec8088-8ed4-4294-b3c3-3a06c6f31c68}</Project>
+      <Name>Advexp.Settings.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Advexp.Settings\Plugins\CognitoSyncSettings\Plugin.CognitoSyncSettings.csproj">
+      <Project>{517D1B56-97A1-4255-8E7E-A243E160182A}</Project>
+      <Name>Plugin.CognitoSyncSettings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

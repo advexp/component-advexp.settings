@@ -244,6 +244,20 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\..\Advexp.Settings\Apple\iOS\Advexp.Settings.iOS.csproj">
+      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
+      <Name>Advexp.Settings.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
+      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
+      <Name>Advexp.Settings.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Advexp.Settings\Plugins\JSONSettings\Plugin.JSONSettings.csproj">
+      <Project>{6C86CC15-4D6F-40D1-AAF2-5168712F6EAC}</Project>
+      <Name>Plugin.JSONSettings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>

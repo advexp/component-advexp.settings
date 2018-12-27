@@ -115,6 +115,24 @@
   <ItemGroup>
     <GoogleServicesJson Include="google-services.json" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Advexp.Settings\Android\Advexp.Settings.Android.csproj">
+      <Project>{29EB96CB-9287-4740-AEE3-859265DD32BC}</Project>
+      <Name>Advexp.Settings.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\FirebaseRemoteConfig\Android\Plugin.FirebaseRemoteConfig.Android.csproj">
+      <Project>{DE58DA42-D567-4BCD-A5D5-0057A278B3D4}</Project>
+      <Name>Plugin.FirebaseRemoteConfig.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
+      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
+      <Name>Advexp.Settings.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\FirebaseRemoteConfig\Standard\Plugin.FirebaseRemoteConfig.csproj">
+      <Project>{75F5BF5A-9FFA-4327-84BD-A51D3FC9ADC1}</Project>
+      <Name>Plugin.FirebaseRemoteConfig</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

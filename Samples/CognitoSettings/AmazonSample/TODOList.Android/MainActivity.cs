@@ -2,15 +2,8 @@
 using Android.App;
 using Android.Content;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Xamarin.Facebook;
-using Xamarin.Facebook.Share.Widget;
-using Xamarin.Facebook.Login.Widget;
-using Xamarin.Facebook.AppEvents;
-using Xamarin.Facebook.Share.Model;
-using Xamarin.Facebook.Share;
 using Xamarin.Facebook.Login;
 using Android.Support.V4.App;
 using TODOListPortableLibrary;
@@ -22,7 +15,7 @@ using System.Collections.Generic;
 [assembly: MetaData("com.facebook.sdk.ApplicationName", Value = "@string/app_name")]
 namespace TODOList.Android
 {
-    [Activity(Label = "TODOList.Android", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "TODOList.Android", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : FragmentActivity
     {
         //LoginButton loginButton;

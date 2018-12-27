@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -199,5 +200,19 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.1024.png">
       <Visible>false</Visible>
     </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Advexp.Settings\Apple\iOS\Advexp.Settings.iOS.csproj">
+      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
+      <Name>Advexp.Settings.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
+      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
+      <Name>Advexp.Settings.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\CognitoSyncSettings\Plugin.CognitoSyncSettings.csproj">
+      <Project>{517d1b56-97a1-4255-8e7e-a243e160182a}</Project>
+      <Name>Plugin.CognitoSyncSettings</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

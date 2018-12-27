@@ -182,6 +182,24 @@
     <BundleResource Include="GoogleService-Info.plist" />
     <BundleResource Include="RemoteConfigDefaults.plist" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Advexp.Settings\Apple\iOS\Advexp.Settings.iOS.csproj">
+      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
+      <Name>Advexp.Settings.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
+      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
+      <Name>Advexp.Settings.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\FirebaseRemoteConfig\Standard\Plugin.FirebaseRemoteConfig.csproj">
+      <Project>{75F5BF5A-9FFA-4327-84BD-A51D3FC9ADC1}</Project>
+      <Name>Plugin.FirebaseRemoteConfig</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\FirebaseRemoteConfig\iOS\Plugin.FirebaseRemoteConfig.iOS.csproj">
+      <Project>{688D74C5-628F-4912-B109-1E400DC3A208}</Project>
+      <Name>Plugin.FirebaseRemoteConfig.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

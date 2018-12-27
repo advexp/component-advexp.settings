@@ -6,9 +6,4 @@
     <ReleaseVersion>2.1</ReleaseVersion>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj" />
-    <ProjectReference Include="..\..\..\Advexp.Settings\Standard\Advexp.Settings.csproj" />
-    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\JSONSettings\Plugin.JSONSettings.csproj" />
-  </ItemGroup>
 </Project>

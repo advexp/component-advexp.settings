@@ -9,4 +9,9 @@
   <ItemGroup>
     <Compile Remove="Class1.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Advexp.Settings\Plugins\FirebaseRemoteConfig\Standard\Plugin.FirebaseRemoteConfig.csproj" />
+    <ProjectReference Include="..\..\..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj" />
+    <ProjectReference Include="..\..\..\..\Advexp.Settings\Standard\Advexp.Settings.csproj" />
+  </ItemGroup>
 </Project>

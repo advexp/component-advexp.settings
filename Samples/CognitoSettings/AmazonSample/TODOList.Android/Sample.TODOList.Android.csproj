@@ -198,6 +198,11 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <None Include="packages.config" />
+    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -209,9 +214,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </None>
@@ -220,6 +222,18 @@
     <ProjectReference Include="..\TODOListPortableLibrary\Sample.TODOList.PCL.csproj">
       <Project>{71ff347c-68e8-4469-a644-bbc20a19dd6b}</Project>
       <Name>Sample.TODOList.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Advexp.Settings\Android\Advexp.Settings.Android.csproj">
+      <Project>{29EB96CB-9287-4740-AEE3-859265DD32BC}</Project>
+      <Name>Advexp.Settings.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj">
+      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
+      <Name>Advexp.Settings.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Advexp.Settings\Plugins\CognitoSyncSettings\Plugin.CognitoSyncSettings.csproj">
+      <Project>{517d1b56-97a1-4255-8e7e-a243e160182a}</Project>
+      <Name>Plugin.CognitoSyncSettings</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

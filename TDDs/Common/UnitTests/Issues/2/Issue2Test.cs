@@ -9,10 +9,9 @@ namespace TDD
     public class Issue2Test
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
+        [SetUp]
         public void Setup()
         {
-            SettingsBaseConfiguration.EnableFormatMigration = false;
         }
 
         //------------------------------------------------------------------------------

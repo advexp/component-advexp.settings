@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +9,8 @@
     <RootNamespace>TDD</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>TDD.iOS</AssemblyName>
-    <ReleaseVersion></ReleaseVersion>
+    <ReleaseVersion>
+    </ReleaseVersion>
     <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
@@ -30,8 +31,8 @@
     <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
     <MtouchFloat32>false</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-<DeviceSpecificBuild>false</DeviceSpecificBuild>
-<MtouchFastDev>true</MtouchFastDev>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <MtouchFastDev>true</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <Optimize>true</Optimize>
@@ -82,31 +83,32 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchFloat32>true</MtouchFloat32>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="MonoTouch.NUnitLite" />
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.Core" />
-    <Reference Include="Advexp.Settings_V1">
-      <HintPath>..\References\iOS\Advexp.Settings_V1.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
-      <HintPath>..\References\iOS\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
+    <Reference Include="Advexp.JSONSettings.Plugin">
+      <HintPath>..\References\iOS\Advexp.JSONSettings.Plugin.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings">
       <HintPath>..\References\iOS\Advexp.Settings.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\References\iOS\Advexp.Settings.Utils.PCL.dll</HintPath>
+    <Reference Include="Advexp.Settings.Utils">
+      <HintPath>..\References\iOS\Advexp.Settings.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.CognitoSyncSettings.Plugin">
+      <HintPath>..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\Xamarin.iOS10\Plugins\Advexp.CognitoSyncSettings.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\" />
-    <Folder Include="UnitTests\JSONTest\" />
     <Folder Include="UnitTests\MultithreadingTest\" />
     <Folder Include="UnitTests\SettingsNamePatternTest\" />
   </ItemGroup>
@@ -230,12 +232,6 @@
     <Compile Include="..\Common\UnitTests\DateTimeTest\DateTimeTest.cs">
       <Link>UnitTests\DateTimeTest\DateTimeTest.cs</Link>
     </Compile>
-    <Compile Include="..\Common\UnitTests\FormatMigration\DifferentTypesSettings_V1.cs">
-      <Link>UnitTests\FormatMigration\DifferentTypesSettings_V1.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\UnitTests\FormatMigration\FormatMigrationTest.cs">
-      <Link>UnitTests\FormatMigration\FormatMigrationTest.cs</Link>
-    </Compile>
     <Compile Include="..\Common\UnitTests\Issues\2\Issue2Settings.cs">
       <Link>UnitTests\Issues\2\Issue2Settings.cs</Link>
     </Compile>
@@ -260,19 +256,47 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.60.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.58.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.87.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.80.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.120.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.180.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.20.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.29.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.76.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.152.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.167.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
 </Project>

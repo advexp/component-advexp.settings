@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\..\packages\NUnit.3.11.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AF12AA0-126F-4BEE-A436-108FC401C33E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TDD.Windows.NET45</RootNamespace>
+    <AssemblyName>TDD.Windows.ClassicDesktop</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ReleaseVersion>
+    </ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;__DESKTOP__;__WINDOWS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;__DESKTOP__;__WINDOWS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.JSONSettings.Plugin">
+      <HintPath>..\References\Windows\ClassicDesktop\Advexp.JSONSettings.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\References\Windows\ClassicDesktop\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils">
+      <HintPath>..\References\Windows\ClassicDesktop\Advexp.Settings.Utils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Common\ListExtention.cs">
+      <Link>ListExtention.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\RandomExtention.cs">
+      <Link>RandomExtention.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTestHandler.cs">
+      <Link>UnitTestHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\CollectionsTest\CollectionsSettings.cs">
+      <Link>UnitTests\CollectionsTest\CollectionsSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\CollectionsTest\CollectionsTest.cs">
+      <Link>UnitTests\CollectionsTest\CollectionsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\ContainsTest\ContainsTest.cs">
+      <Link>UnitTests\ContainsTest\ContainsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\CustomObjectTest\CustomObjectSettings.cs">
+      <Link>UnitTests\CustomObjectTest\CustomObjectSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\CustomObjectTest\CustomObjectTest.cs">
+      <Link>UnitTests\CustomObjectTest\CustomObjectTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DateTimeTest\DateTimeSettings.cs">
+      <Link>UnitTests\DateTimeTest\DateTimeSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DateTimeTest\DateTimeTest.cs">
+      <Link>UnitTests\DateTimeTest\DateTimeTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DefaultValueTest\DefaultValueSettings.cs">
+      <Link>UnitTests\DefaultValueTest\DefaultValueSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DefaultValueTest\DefaulValueTest.cs">
+      <Link>UnitTests\DefaultValueTest\DefaulValueTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DifferentMemberTypesTest\DifferentMemberTypesSettings.cs">
+      <Link>UnitTests\DifferentMemberTypesTest\DifferentMemberTypesSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DifferentMemberTypesTest\DifferentMemberTypesTest.cs">
+      <Link>UnitTests\DifferentMemberTypesTest\DifferentMemberTypesTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DifferentTypesTest\DifferentTypesSettings.cs">
+      <Link>UnitTests\DifferentTypesTest\DifferentTypesSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DifferentTypesTest\DifferentTypesTest.cs">
+      <Link>UnitTests\DifferentTypesTest\DifferentTypesTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DynamicSettings\DynamicSettings.cs">
+      <Link>UnitTests\DynamicSettings\DynamicSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\DynamicSettings\DynamicSettingsTest.cs">
+      <Link>UnitTests\DynamicSettings\DynamicSettingsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\Issues\2\Issue2Settings.cs">
+      <Link>UnitTests\Issues\2\Issue2Settings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\Issues\2\Issue2Test.cs">
+      <Link>UnitTests\Issues\2\Issue2Test.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\JSONTest\JSONTest.cs">
+      <Link>UnitTests\JSONTest\JSONTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\MethodSerializerTest\MethodSerializerSettings.cs">
+      <Link>UnitTests\MethodSerializerTest\MethodSerializerSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\MethodSerializerTest\MethodSerializerTest.cs">
+      <Link>UnitTests\MethodSerializerTest\MethodSerializerTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\NotLoadedValuesTest\NotLoadedValuesSettings.cs">
+      <Link>UnitTests\NotLoadedValuesTest\NotLoadedValuesSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\NotLoadedValuesTest\NotLoadedValuesTest.cs">
+      <Link>UnitTests\NotLoadedValuesTest\NotLoadedValuesTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\NullValueTest\NullValueSettings.cs">
+      <Link>UnitTests\NullValueTest\NullValueSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\NullValueTest\NullValueTest.cs">
+      <Link>UnitTests\NullValueTest\NullValueTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\SerializerCreationTest\SerializerCreationTest.cs">
+      <Link>UnitTests\SerializerCreationTest\SerializerCreationTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\BaseSerializer.cs">
+      <Link>UnitTests\SerializerPriorityTest\BaseSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\ClassSerializer.cs">
+      <Link>UnitTests\SerializerPriorityTest\ClassSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\ClassSerializerSettings.cs">
+      <Link>UnitTests\SerializerPriorityTest\ClassSerializerSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\CompoundSerializerSettings.cs">
+      <Link>UnitTests\SerializerPriorityTest\CompoundSerializerSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\FieldAndLibrarySerializerSettings.cs">
+      <Link>UnitTests\SerializerPriorityTest\FieldAndLibrarySerializerSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\FieldSerializer.cs">
+      <Link>UnitTests\SerializerPriorityTest\FieldSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\FieldSerializerSettings.cs">
+      <Link>UnitTests\SerializerPriorityTest\FieldSerializerSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\LibrarySerializer.cs">
+      <Link>UnitTests\SerializerPriorityTest\LibrarySerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\SerializerPriorityTest.cs">
+      <Link>UnitTests\SerializerPriorityTest\SerializerPriorityTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UnitTests\SerializerPriorityTest\SimpleSettings.cs">
+      <Link>UnitTests\SerializerPriorityTest\SimpleSettings.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

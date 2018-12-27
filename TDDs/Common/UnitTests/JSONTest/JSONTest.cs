@@ -10,10 +10,9 @@ namespace TDD
     public class JSONTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
-        public void Setup()
+        static JSONTest()
         {
-            SettingsConfiguration.EnableFormatMigration = false;
+            //SettingsBaseConfiguration.RegisterSettingsPlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
         }
 
         //------------------------------------------------------------------------------

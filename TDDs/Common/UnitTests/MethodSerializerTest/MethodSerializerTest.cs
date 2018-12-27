@@ -8,10 +8,9 @@ namespace TDD
     public class MethodSerializerTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
+        [SetUp]
         public void Setup()
         {
-            SettingsConfiguration.EnableFormatMigration = false;
         }
 
         //------------------------------------------------------------------------------

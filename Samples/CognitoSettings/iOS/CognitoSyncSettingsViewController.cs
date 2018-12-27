@@ -49,6 +49,8 @@ namespace Sample.CognitoSyncSettings.iOS
                         LoginManager login = new LoginManager();
                         login.LogOut();
 
+                        CognitoSyncSettingsConfiguration.Credentials.Clear();
+
                         ((AppDelegate)UIApplication.SharedApplication.Delegate).Continue(new SettingsViewController
                         { 
                             AddLoginButton = true,
@@ -123,7 +125,7 @@ namespace Sample.CognitoSyncSettings.iOS
             // You can use CognitoSync dynamic settings
             // Just cast plugin interface to IDynamicSettingsPlugin
 
-            var info = new MultilineElement("See Sample.CognitoSyncSettings.Android for more details");
+            var info = new MultilineElement("See Sample.CognitoSyncSettings.Android and Sample.CognitoSyncSettings.Windows projects for more details");
 
             m_boolElement = new BooleanElement("Bool value", CognitoSyncSettings.Boolean);
             m_boolElement.ValueChanged += (object sender, EventArgs e) => 

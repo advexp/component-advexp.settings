@@ -1,18 +1,20 @@
 ###Advexp.Settings
 
-Cross-platform .NET settings for Xamarin mobile apps
+Cross-platform .NET app settings for Windows and Xamarin mobile applications
 
 ####Details
 
-Create cross-platform settings and make them accessible in your iOS or Android applications natively. Ability to save settings locally or to the cloud and sync them across different devices by using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service. Ability to remotely configure your app by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).
+Create cross-platform .NET app settings and make them accessible in your Windows, Xamarin.iOS or Xamarin.Android applications natively. Ability to save settings locally or to the cloud and sync them across different devices by using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service. Ability to remotely configure your mobile application by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).
 
+- **Windows**: Storing settings in a normal form using Isolated Storage
+- **Windows**: Storing settings in an encrypted form using Data Protection API and Isolated Storage
 - **iOS**: Storing settings in a normal form using *NSUserDefaults*
 - **iOS**: Storing settings in an encrypted form using Keychain
 - **Android**: Using *SharedPreferences* to store settings in a normal form
 - **Android**: Using KeyStore to save confidential settings in an encrypted form
 - Saving settings as dynamic parameters (name - value pairs)
 - Using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service to save settings to the cloud and sync them across different devices
-- **iOS**, **Android**: Using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/) service to remotely configure your mobile app
+- **iOS**, **Android**: Using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/) service to remotely configure your mobile application
 - Using user storage for settings
 - Using any build-in or user-defined types which can be saved as a setting
 - **iOS**: Ability to link settings from Advexp.Settings with settings from the Settings App
@@ -29,7 +31,8 @@ NuGet package “Advexp.Settings Cloud”, evaluation version, you can download 
 Samples, Unit Tests and additional information you can find here:  
 <https://bitbucket.org/advexp/component-advexp.settings>
 
-To purchase "Advexp.Settings Cloud", full version, send a request to <components@advexp.net>
+Purchase "Advexp.Settings Cloud", full version, you can here:  
+<https://store.payproglobal.com/checkout?products[1][id]=48612>
 
 #####Example of settings declaration
 
@@ -202,7 +205,7 @@ You can assign a default settings value which will be used for various exception
 
 #####Dynamic settings
 
-Dynamic settings are parameters of the name - value pairs.  Where "name" is the text name of the setting, and "value" is the value of any system or user-defined type. Local dynamic settings can be accessed via the *ILocalDynamicSettingsPlugin* interface of the corresponding plugin:
+Dynamic settings are parameters of the name - value pairs.  Where "name" is the text name of the setting and "value" is the value of any system or user-defined type which can be saved as a setting. Local dynamic settings can be accessed via the *ILocalDynamicSettingsPlugin* interface of the corresponding plugin:
 
     :::csharp
     var lds = MySettingsClass.GetPlugin<ILocalDynamicSettingsPlugin>();
@@ -337,7 +340,7 @@ The following operations for this dynamic settings are available: *Load*, *Save*
 A way of using this plugin may be seen in the component examples: 
 Sample.CognitoSyncSettings.Android and Sample.CognitoSyncSettings.iOS as well as TODOList.iOS and TODOList.Android, reflecting the interaction between Amazon Cognito Sync and Advexp.Settings dynamic settings (this example is an adaptation of the example from Amazon)
 
-#####Cloud: Configure app remotely by using Google Firebase Remote Config
+#####Cloud: Configure mobile app remotely by using Google Firebase Remote Config
 
 To add this ability, you need to install the Google Firebase Remote Config NuGet package for [iOS](https://www.nuget.org/packages/Xamarin.Firebase.iOS.RemoteConfig/) or [Android](https://www.nuget.org/packages/Xamarin.Firebase.Config/), add the **Advexp.FirebaseRemoteConfig.Plugin.(iOS|Android)** and **Advexp.FirebaseRemoteConfig.Plugin.Standard** assemblies to the references, and register the plugin:
 
@@ -522,7 +525,9 @@ Settings serializer for the  Firebase Remote Config service
 
 All library parameters can be set through the *SettingsConfiguration* static class. These manipulations should be produced before the other library functions are first used.
 
-- ***EncryptionServiceID*** - for settings that will be stored in the Keychain or KeyStore. It defines the Service Name. The default value is "Advexp.Settings"
+- **Windows:** ***SecureSettingsAdditionalEntropy*** - an optional additional byte array used to increase the complexity of the encryption, or null for no additional complexity  
+- **Windows:** ***SecureSettingsScope*** - one of the enumeration values that specifies the scope of encryption  
+- **iOS, Android:** ***EncryptionServiceID*** - for settings that will be stored in the Keychain or KeyStore. It defines the Service Name. The default value is "Advexp.Settings"
 - **iOS:** ***KeyChainSecAccessible*** - for settings that will be stored in the Keychain. It determines at what time the parameter can be read from the Keychain. The default value is *SecAccessible.Always*
 - **Android:** ***KeyStoreFileProtectionPassword*** - the password used to protect KeyStore file. The default value is *null*
 - **Android:** ***KeyStoreFileName*** - KeyStore file name. The default value is *null*. In this case file name is “.keystore”
@@ -553,10 +558,14 @@ All Firebase Remote Config plugin parameters can be set through the *FirebaseRem
 
 ####Supported platforms
 
+Windows (.NET Framework, .NET Core, UWP)  
 Xamarin.iOS (Unified)  
 Xamarin.Android
 
 NetStandard / PCL projects
+
+Project home page:
+https://advexp.bitbucket.io
 
 NuGet package “Advexp.Settings Local” you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Local>
@@ -567,6 +576,8 @@ NuGet package “Advexp.Settings Cloud”, evaluation version, you can download 
 Samples, Unit Tests and additional information you can find here:  
 <https://bitbucket.org/advexp/component-advexp.settings>
 
-To purchase "Advexp.Settings Cloud", send a request to <components@advexp.net>
+Purchase "Advexp.Settings Cloud", full version, you can buy here:  
+<https://store.payproglobal.com/checkout?products[1][id]=48612>
+
 
 Please send your questions, suggestions and impressions to <components@advexp.net> with the subject "Advexp.Settings"

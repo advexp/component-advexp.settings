@@ -2,15 +2,8 @@
 using Android.App;
 using Android.Content;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Xamarin.Facebook;
-using Xamarin.Facebook.Share.Widget;
-using Xamarin.Facebook.Login.Widget;
-using Xamarin.Facebook.AppEvents;
-using Xamarin.Facebook.Share.Model;
-using Xamarin.Facebook.Share;
 using Xamarin.Facebook.Login;
 using Android.Support.V4.App;
 using TODOListPortableLibrary;
@@ -22,7 +15,7 @@ using System.Collections.Generic;
 [assembly: MetaData("com.facebook.sdk.ApplicationName", Value = "@string/app_name")]
 namespace TODOList.Android
 {
-    [Activity(Label = "TODOList.Android", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "TODOList.Android", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : FragmentActivity
     {
         //LoginButton loginButton;
@@ -33,9 +26,6 @@ namespace TODOList.Android
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
-
-            FacebookSdk.SdkInitialize(this.ApplicationContext);
 
             callbackManager = CallbackManagerFactory.Create();
 
@@ -58,8 +48,6 @@ namespace TODOList.Android
                 }
             });
             LoginManager.Instance.LogInWithReadPermissions(this, new List<string> { "public_profile" });
-
-            //initialize the logs
 
             CognitoSyncUtils.Initialize();
         }
@@ -84,8 +72,6 @@ namespace TODOList.Android
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            //if (tracker != null)
-                //tracker.StopTracking();
         }
 
         void ShowAlert(string title, string msg, string buttonText = null)
@@ -136,12 +122,10 @@ namespace TODOList.Android
             this.OldAccessToken = oldAccessToken;
             this.NewAccessToken = newAccessToken;
         }
-
     }
 
     internal class CognitoAccessTokenTracker : AccessTokenTracker
     {
-
         internal event EventHandler<AccessTokenChangedArgs> AccessTokenChangedEvent;
 
         protected override void OnCurrentAccessTokenChanged(AccessToken p0, AccessToken p1)
@@ -153,6 +137,4 @@ namespace TODOList.Android
             }
         }
     }
-
 }
-

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ReleaseVersion>2.1</ReleaseVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Advexp.Settings.Cloud.Evaluation" Version="2.3.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\netstandard1.0\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

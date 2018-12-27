@@ -9,10 +9,9 @@ namespace TDD
     public class DifferentTypesTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
+        [SetUp]
         public void Setup()
         {
-            SettingsConfiguration.EnableFormatMigration = false;
         }
 
         //------------------------------------------------------------------------------

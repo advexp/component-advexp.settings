@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,16 +12,19 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidApplication>True</AndroidApplication>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AssemblyName>TDD.Android</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <ReleaseVersion></ReleaseVersion>
+    <ReleaseVersion>
+    </ReleaseVersion>
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-    <AndroidTlsProvider></AndroidTlsProvider>
-    <JavaMaximumHeapSize></JavaMaximumHeapSize>
+    <AndroidTlsProvider>
+    </AndroidTlsProvider>
+    <JavaMaximumHeapSize>
+    </JavaMaximumHeapSize>
     <SynchReleaseVersion>false</SynchReleaseVersion>
-    <AndroidStoreUncompressedFileExtensions></AndroidStoreUncompressedFileExtensions>
+    <AndroidStoreUncompressedFileExtensions>
+    </AndroidStoreUncompressedFileExtensions>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,9 +40,12 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <AndroidSupportedAbis>armeabi-v7a</AndroidSupportedAbis>
-    <MandroidI18n></MandroidI18n>
-    <JavaMaximumHeapSize></JavaMaximumHeapSize>
-    <AndroidFastDeploymentType></AndroidFastDeploymentType>
+    <MandroidI18n>
+    </MandroidI18n>
+    <JavaMaximumHeapSize>
+    </JavaMaximumHeapSize>
+    <AndroidFastDeploymentType>
+    </AndroidFastDeploymentType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -52,27 +58,25 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <AndroidSupportedAbis>armeabi;armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
     <DebugType>full</DebugType>
-    <AndroidKeyStore></AndroidKeyStore>
+    <AndroidKeyStore>
+    </AndroidKeyStore>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="Mono.Android" />
     <Reference Include="Xamarin.Android.NUnitLite" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="Advexp.Settings_V1">
-      <HintPath>..\References\Android\Advexp.Settings_V1.dll</HintPath>
+    <Reference Include="Advexp.JSONSettings.Plugin">
+      <HintPath>..\References\Android\Advexp.JSONSettings.Plugin.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings">
       <HintPath>..\References\Android\Advexp.Settings.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
-      <HintPath>..\References\Android\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\References\Android\Advexp.Settings.Utils.PCL.dll</HintPath>
+    <Reference Include="Advexp.Settings.Utils">
+      <HintPath>..\References\Android\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -177,12 +181,6 @@
     <Compile Include="..\Common\UnitTests\DefaultValueTest\DefaultValueSettings.cs">
       <Link>UnitTests\DefaultValueTest\DefaultValueSettings.cs</Link>
     </Compile>
-    <Compile Include="..\Common\UnitTests\FormatMigration\FormatMigrationTest.cs">
-      <Link>UnitTests\FormatMigration\FormatMigrationTest.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\UnitTests\FormatMigration\DifferentTypesSettings_V1.cs">
-      <Link>UnitTests\FormatMigration\DifferentTypesSettings_V1.cs</Link>
-    </Compile>
     <Compile Include="KeyChainUtils.cs" />
     <Compile Include="..\Common\UnitTestHandler.cs">
       <Link>UnitTestHandler.cs</Link>
@@ -199,8 +197,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />
-    <None Include="Properties\AndroidManifest.xml" />
     <None Include="packages.config" />
+    <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
@@ -212,7 +210,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="UnitTests\JSONTest\" />
     <Folder Include="UnitTests\MultithreadingTest\" />
   </ItemGroup>
 </Project>

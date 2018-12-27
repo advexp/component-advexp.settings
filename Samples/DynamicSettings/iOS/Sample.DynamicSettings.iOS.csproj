@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,7 +13,8 @@
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ReleaseVersion></ReleaseVersion>
+    <ReleaseVersion>
+    </ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
@@ -84,10 +85,13 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.Core" />
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.0.5\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
+    <Reference Include="Advexp.Settings.Utils">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.0.5\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSerializer">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.0.5\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -104,10 +108,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DialogElementsEx.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-    <Folder Include="Resources\Settings.bundle\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <BundleResource Include="Resources\Settings.bundle\Bluetooth.plist">
@@ -127,19 +128,50 @@
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.60.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.58.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.87.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.80.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.120.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.180.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.20.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.29.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.76.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.152.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.167.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.1024.png" />    
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
   </ItemGroup>
 </Project>

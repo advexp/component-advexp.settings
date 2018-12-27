@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Android.App;
 using Android.Content;
 using NUnit.Framework;
@@ -10,10 +10,9 @@ namespace TDD
     public class ExternalSharedPreferencesTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
+        [SetUp]
         public void Setup()
         {
-            SettingsConfiguration.EnableFormatMigration = false;
         }
 
         //------------------------------------------------------------------------------

@@ -19,10 +19,9 @@ namespace TDD
     public class ActionsTest
     {
         //------------------------------------------------------------------------------
-        [TestFixtureSetUp]
+        [SetUp]
         public void Setup()
         {
-            SettingsConfiguration.EnableFormatMigration = false;
         }
 
 #if __ANDROID__
@@ -40,13 +39,21 @@ namespace TDD
             if (!status || stringValue == null)
             {
                 return null;
-                //throw new Exception(String.Format("Can`t get secure setting {0}", sKey));
             }
 
             return stringValue;
         }
 
 #endif // __ANDROID__
+
+#if __WINDOWS__
+
+        //------------------------------------------------------------------------------
+        static string Windows_GetValueFromDPAPIIsolatedStorage(string sKey)
+        {
+        }
+
+#endif // __WINDOWS__
 
         //------------------------------------------------------------------------------
         static public string GetSecureStringValue(string sKey)
@@ -74,12 +81,14 @@ namespace TDD
 
 #if __ANDROID__
 
-
             var value = Android_GetValueFromKeyChain(sKey);
 
             return value;
 
 #endif // __ANDROID__
+
+#if __WINDOWS__
+#endif // __WINDOWS__
         }
 
         //------------------------------------------------------------------------------

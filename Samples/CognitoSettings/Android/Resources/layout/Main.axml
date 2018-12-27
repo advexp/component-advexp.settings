@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="See Sample.CognitoSyncSettings.iOS for synchronization details"
+        android:text="See Sample.CognitoSyncSettings.iOS and Sample.CognitoSyncSettings.Windows projects for more details"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

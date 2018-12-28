@@ -89,6 +89,15 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="MonoTouch.Dialog-1" />
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.0.5\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.0.5\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSerializer">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.0.5\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -150,7 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Assembly\Sample.AdvexpSettings.Assembly.Standard.csproj">
-      <Project>{5CD13DCA-010F-41A5-94BB-A36FCBD173F8}</Project>
+      <Project>{2E16C88B-662D-4E38-A134-48A4C5F53E9A}</Project>
       <Name>Sample.AdvexpSettings.Assembly.Standard</Name>
     </ProjectReference>
   </ItemGroup>

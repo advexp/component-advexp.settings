@@ -1,3 +1,6 @@
+**2.3.1**  
+Bugfixing.  
+
 **2.3**  
 Add Windows support: .NET Framework, .NET Core and UWP platforms.  
 Add .NETStandard support.  

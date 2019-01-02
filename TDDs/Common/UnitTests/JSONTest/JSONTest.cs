@@ -10,12 +10,6 @@ namespace TDD
     public class JSONTest
     {
         //------------------------------------------------------------------------------
-        static JSONTest()
-        {
-            //SettingsBaseConfiguration.RegisterSettingsPlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
-        }
-
-        //------------------------------------------------------------------------------
         [Test]
         public void Test()
         {

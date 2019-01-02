@@ -459,7 +459,7 @@ namespace TDD
 
             // try to get setting with no default value
             const string settingName = "setting"; 
-            Assert.Throws<System.Collections.Generic.KeyNotFoundException>(() => 
+            Assert.Throws<KeyNotFoundException>(() => 
             {
                 plugin1_1.GetSetting<string>(settingName);
             });
@@ -484,7 +484,7 @@ namespace TDD
 
             // reset defaults
             plugin1_1.SetDefaultSettings(null);
-            Assert.Throws<System.Collections.Generic.KeyNotFoundException>(() =>
+            Assert.Throws<KeyNotFoundException>(() =>
             {
                 plugin1_1.GetSetting<string>(settingName);
             });

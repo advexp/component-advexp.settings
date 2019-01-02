@@ -91,10 +91,10 @@
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="MonoTouch.NUnitLite" />
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.Core" />
+    <Reference Include="MonoTouch.NUnitLite" />
     <Reference Include="Advexp.JSONSettings.Plugin">
       <HintPath>..\References\iOS\Advexp.JSONSettings.Plugin.dll</HintPath>
     </Reference>
@@ -103,9 +103,6 @@
     </Reference>
     <Reference Include="Advexp.Settings.Utils">
       <HintPath>..\References\iOS\Advexp.Settings.Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.CognitoSyncSettings.Plugin">
-      <HintPath>..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\Xamarin.iOS10\Plugins\Advexp.CognitoSyncSettings.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +249,9 @@
     </Compile>
     <Compile Include="..\Common\UnitTestHandler.cs">
       <Link>UnitTestHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\OneTimeSetUpImpl.cs">
+      <Link>OneTimeSetUpImpl.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

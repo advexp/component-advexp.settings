@@ -175,6 +175,12 @@
       <Link>UnitTests\SerializerPriorityTest\SimpleSettings.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Common\OneTimeSetUp.cs">
+      <Link>OneTimeSetUp.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\OneTimeSetUpImpl.cs">
+      <Link>OneTimeSetUpImpl.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

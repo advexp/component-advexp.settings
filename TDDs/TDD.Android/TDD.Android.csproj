@@ -56,7 +56,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <DefineConstants>__MOBILE__;__ANDROID__;</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <AndroidSupportedAbis>x86;arm64-v8a;x86_64;armeabi-v7a</AndroidSupportedAbis>
+    <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
     <DebugType>full</DebugType>
     <AndroidKeyStore>
     </AndroidKeyStore>
@@ -193,6 +193,9 @@
     </Compile>
     <Compile Include="..\Common\ListExtention.cs">
       <Link>ListExtention.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\OneTimeSetUpImpl.cs">
+      <Link>OneTimeSetUpImpl.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -86,19 +86,19 @@
       <HintPath>..\..\..\packages\Xamarin.Firebase.Config.60.1142.1\lib\MonoAndroid80\Xamarin.Firebase.Config.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.1\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\MonoAndroid10\Advexp.Settings.Utils.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.1\lib\MonoAndroid10\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
     <Reference Include="SharpSerializer">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\MonoAndroid10\SharpSerializer.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.1\lib\MonoAndroid10\SharpSerializer.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.Android">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\MonoAndroid10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.Android.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.1\lib\MonoAndroid10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.Android.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.0.5\lib\MonoAndroid10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.1\lib\MonoAndroid10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

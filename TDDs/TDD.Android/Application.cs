@@ -2,7 +2,6 @@
 using Android.App;
 using Android.Runtime;
 using Advexp;
-using Advexp.JSONSettings.Plugin;
 
 namespace TDD.Android
 {
@@ -23,9 +22,7 @@ namespace TDD.Android
             SettingsConfiguration.KeyStoreFileName = "keystore";
             SettingsBaseConfiguration.EncryptionServiceID = "Advexp.Settings.TDD";
 
-            SettingsBaseConfiguration.LogLevel = LogLevel.Error;
-
-            SettingsBaseConfiguration.RegisterSettingsPlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
+            OneTimeSetUpImpl.SetUp();
         }
     }
 }

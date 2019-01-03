@@ -22,6 +22,9 @@ Create cross-platform .NET app settings and make them accessible in your Windows
 - Using library in NetStandard/PCL projects
 - Saving or loading settings by using JSON. In this case, the additional NuGet package [Json.NET](https://www.nuget.org/packages/newtonsoft.json) is used
 
+Project home page:
+<https://advexp.bitbucket.io>
+
 NuGet package “Advexp.Settings Local” you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Local>
  
@@ -31,8 +34,8 @@ NuGet package “Advexp.Settings Cloud”, evaluation version, you can download 
 Samples, Unit Tests and additional information you can find here:  
 <https://bitbucket.org/advexp/component-advexp.settings>
 
-Purchase "Advexp.Settings Cloud", full version, you can here:  
-<https://store.payproglobal.com/checkout?products[1][id]=48612>
+NuGet package "Advexp.Settings Cloud", full version, you can buy here:
+<https://advexp.bitbucket.io>
 
 #####Example of settings declaration
 
@@ -565,7 +568,7 @@ Xamarin.Android
 NetStandard / PCL projects
 
 Project home page:
-https://advexp.bitbucket.io
+<https://advexp.bitbucket.io>
 
 NuGet package “Advexp.Settings Local” you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Local>
@@ -576,8 +579,8 @@ NuGet package “Advexp.Settings Cloud”, evaluation version, you can download 
 Samples, Unit Tests and additional information you can find here:  
 <https://bitbucket.org/advexp/component-advexp.settings>
 
-Purchase "Advexp.Settings Cloud", full version, you can buy here:  
-<https://store.payproglobal.com/checkout?products[1][id]=48612>
+NuGet package "Advexp.Settings Cloud", full version, you can buy here:
+<https://advexp.bitbucket.io>
 
 
 Please send your questions, suggestions and impressions to <components@advexp.net> with the subject "Advexp.Settings"

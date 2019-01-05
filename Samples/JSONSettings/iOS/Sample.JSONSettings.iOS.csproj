@@ -89,7 +89,7 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="Advexp.JSONSettings.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.1\lib\Xamarin.iOS10\Plugins\Advexp.JSONSettings.Plugin.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\Xamarin.iOS10\Plugins\Advexp.JSONSettings.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

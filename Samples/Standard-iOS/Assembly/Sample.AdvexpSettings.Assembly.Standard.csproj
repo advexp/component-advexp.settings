@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <Reference Include="Advexp.JSONSettings.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.1\lib\netstandard1.0\Plugins\Advexp.JSONSettings.Plugin.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\netstandard1.0\Plugins\Advexp.JSONSettings.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@
     <Compile Remove="Class1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Advexp.Settings.Cloud.Evaluation" Version="2.3.2" />
+    <PackageReference Include="Advexp.Settings.Cloud.Evaluation" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">

@@ -34,13 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Advexp.Settings, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Advexp.Settings">
       <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\net45\Advexp.Settings.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.Settings.Utils, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Advexp.Settings.Utils">
       <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\net45\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
-    <Reference Include="SharpSerializer, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="SharpSerializer">
       <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\net45\SharpSerializer.dll</HintPath>
     </Reference>
     <Reference Include="System" />

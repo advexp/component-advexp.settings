@@ -95,28 +95,28 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Advexp.Settings, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Advexp.Settings">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.Settings.Utils, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Advexp.Settings.Utils">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
-    <Reference Include="Firebase.ABTesting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Firebase.ABTesting">
       <HintPath>..\..\..\packages\Xamarin.Firebase.iOS.ABTesting.2.0.0.1\lib\Xamarin.iOS10\Firebase.ABTesting.dll</HintPath>
     </Reference>
-    <Reference Include="Firebase.Analytics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Firebase.Analytics">
       <HintPath>..\..\..\packages\Xamarin.Firebase.iOS.Analytics.5.1.4\lib\Xamarin.iOS10\Firebase.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="Firebase.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Firebase.Core">
       <HintPath>..\..\..\packages\Xamarin.Firebase.iOS.Core.5.1.3\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Firebase.InstanceID, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Firebase.InstanceID">
       <HintPath>..\..\..\packages\Xamarin.Firebase.iOS.InstanceID.3.2.1\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
     </Reference>
-    <Reference Include="Firebase.RemoteConfig, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Firebase.RemoteConfig">
       <HintPath>..\..\..\packages\Xamarin.Firebase.iOS.RemoteConfig.3.0.1\lib\Xamarin.iOS10\Firebase.RemoteConfig.dll</HintPath>
     </Reference>
-    <Reference Include="SharpSerializer, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="SharpSerializer">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
     </Reference>
     <Reference Include="System" />

@@ -46,6 +46,7 @@
     </JavaMaximumHeapSize>
     <AndroidFastDeploymentType>
     </AndroidFastDeploymentType>
+    <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -57,7 +58,6 @@
     <DefineConstants>__MOBILE__;__ANDROID__;</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
-    <DebugType>full</DebugType>
     <AndroidKeyStore>
     </AndroidKeyStore>
   </PropertyGroup>

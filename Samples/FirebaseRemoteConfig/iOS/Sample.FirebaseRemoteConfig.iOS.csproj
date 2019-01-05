@@ -95,6 +95,12 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Advexp.Settings, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
+    </Reference>
     <Reference Include="Firebase.ABTesting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Xamarin.Firebase.iOS.ABTesting.2.0.0.1\lib\Xamarin.iOS10\Firebase.ABTesting.dll</HintPath>
     </Reference>
@@ -110,24 +116,18 @@
     <Reference Include="Firebase.RemoteConfig, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Xamarin.Firebase.iOS.RemoteConfig.3.0.1\lib\Xamarin.iOS10\Firebase.RemoteConfig.dll</HintPath>
     </Reference>
+    <Reference Include="SharpSerializer, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.1\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings.Utils">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.1\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpSerializer">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.1\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
-    </Reference>
     <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.1\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.iOS">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.1\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.iOS.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

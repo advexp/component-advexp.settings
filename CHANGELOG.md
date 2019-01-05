@@ -1,5 +1,6 @@
 **2.3.2**  
-Bugfixing.  
+Bugfixing:  
+- Linker error issue.  
 
 **2.3.1**  
 Bugfixing.  

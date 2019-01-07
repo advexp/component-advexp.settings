@@ -77,13 +77,16 @@
     <SkipValidatePackageReferences>true</SkipValidatePackageReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Advexp.Settings">
+    <Reference Include="Advexp.CognitoSyncSettings.Plugin">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Plugins\Advexp.CognitoSyncSettings.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.Settings.Utils">
+    <Reference Include="Advexp.Settings.Utils, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
-    <Reference Include="SharpSerializer">
+    <Reference Include="SharpSerializer, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -141,9 +144,6 @@
     </Reference>
     <Reference Include="Facebook.ShareKit">
       <HintPath>..\..\..\packages\Xamarin.Facebook.ShareKit.iOS.4.35.0\lib\Xamarin.iOS10\Facebook.ShareKit.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.CognitoSyncSettings.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Plugins\Advexp.CognitoSyncSettings.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

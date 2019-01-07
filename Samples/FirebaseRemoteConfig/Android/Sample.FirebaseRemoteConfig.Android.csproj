@@ -45,13 +45,19 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Advexp.Settings">
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\MonoAndroid10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.Android">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\MonoAndroid10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.Settings.Utils">
+    <Reference Include="Advexp.Settings.Utils, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\MonoAndroid10\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
-    <Reference Include="SharpSerializer">
+    <Reference Include="SharpSerializer, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\MonoAndroid10\SharpSerializer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -93,12 +99,6 @@
     </Reference>
     <Reference Include="Xamarin.Firebase.Config">
       <HintPath>..\..\..\packages\Xamarin.Firebase.Config.60.1142.1\lib\MonoAndroid80\Xamarin.Firebase.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.Android">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\MonoAndroid10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\MonoAndroid10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -4,6 +4,7 @@ using NUnit.Framework;
 
 namespace TDD
 {
+    [Advexp.Preserve(AllMembers = true)]
     [TestFixture]
     public class NotLoadedValueTest
     {

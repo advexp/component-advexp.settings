@@ -3,6 +3,7 @@ using Advexp;
 
 namespace TDD
 {
+    [Advexp.Preserve(AllMembers = true)]
     public class FieldAndLibrarySerializerSettings : Advexp.Settings<TDD.FieldAndLibrarySerializerSettings>
     {
         [Setting]

@@ -5,6 +5,7 @@ using System.Globalization;
 
 namespace TDD
 {
+    [Advexp.Preserve(AllMembers = true)]
     [TestFixture]
     public class DateTimeTest
     {

@@ -6,6 +6,7 @@ using Advexp.LocalDynamicSettings.Plugin;
 
 namespace TDD
 {
+    [Advexp.Preserve(AllMembers = true)]
     [TestFixture]
     public class DynamicSettingsTest
     {

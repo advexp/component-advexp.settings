@@ -6,6 +6,7 @@ using System;
 
 namespace TDD
 {
+    [Advexp.Preserve(AllMembers = true)]
     [TestFixture]
     public class JSONTest
     {

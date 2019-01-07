@@ -19,6 +19,7 @@ namespace TDD
         Ten,
     }
 
+    [Advexp.Preserve(AllMembers = true)]
     // if the Foo is a reference type, the Equals(Object) method tests for reference equality
     // this inapplicable for m_FooList
     // therefore Foo is struct

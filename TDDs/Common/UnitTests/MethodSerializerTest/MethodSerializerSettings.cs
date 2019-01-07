@@ -5,6 +5,7 @@ using NUnit.Framework;
 
 namespace TDD
 {
+    [Advexp.Preserve(AllMembers = true)]
     [MethodSerializer("ClassSerializerLoad", "ClassSerializerSave", "ClassSerializerDelete", "ClassSerializerSynchronize", "ClassSerializerContains")]
     public class MethodSerializerSettings : Advexp.Settings<TDD.MethodSerializerSettings>
     {

@@ -15,6 +15,7 @@ using TDD.Android;
 
 namespace TDD
 {
+    [Advexp.Preserve(AllMembers = true)]
     [TestFixture]
     public class ActionsTest
     {

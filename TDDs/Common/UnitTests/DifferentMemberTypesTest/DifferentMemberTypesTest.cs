@@ -4,6 +4,7 @@ using Advexp;
 
 namespace TDD
 {
+    [Advexp.Preserve(AllMembers = true)]
     [TestFixture]
     public class DifferentMemberTypesTest
     {

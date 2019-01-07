@@ -3,6 +3,7 @@ using Advexp;
 
 namespace TDD
 {
+    [Advexp.Preserve(AllMembers = true)]
     public class DefaultValueSettings : Advexp.Settings<TDD.DefaultValueSettings>
     {
         public const Int32 DefailtIntValue = 10;

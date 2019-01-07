@@ -7,6 +7,7 @@ using System.Linq.Expressions;
 
 namespace TDD
 {
+    [Advexp.Preserve(AllMembers = true)]
     [TestFixture]
     public class ContainsTest
     {

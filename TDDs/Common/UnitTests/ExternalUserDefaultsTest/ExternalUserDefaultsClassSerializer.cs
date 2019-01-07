@@ -8,6 +8,7 @@ namespace TDD
         static NSUserDefaults s_userDefaults;
 
         //------------------------------------------------------------------------------
+        [Advexp.Preserve]
         public ExternalUserDefaultsClassSerializer()
         {
             SetUserDefaults(s_userDefaults);

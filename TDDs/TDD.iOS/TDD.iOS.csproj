@@ -44,7 +44,7 @@
     <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchArch>x86_64</MtouchArch>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>Full</MtouchLink>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
@@ -82,19 +82,12 @@
     </IpaPackageName>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchFloat32>true</MtouchFloat32>
+    <MtouchLink>Full</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="MonoTouch.Dialog-1" />
-    <Reference Include="Xamarin.iOS" />
-    <Reference Include="System.Core" />
-    <Reference Include="MonoTouch.NUnitLite" />
     <Reference Include="Advexp.JSONSettings.Plugin">
       <HintPath>..\References\iOS\Advexp.JSONSettings.Plugin.dll</HintPath>
     </Reference>
@@ -104,10 +97,14 @@
     <Reference Include="Advexp.Settings.Utils">
       <HintPath>..\References\iOS\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UnitTests\MultithreadingTest\" />
-    <Folder Include="UnitTests\SettingsNamePatternTest\" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="MonoTouch.Dialog-1" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Core" />
+    <Reference Include="MonoTouch.NUnitLite" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

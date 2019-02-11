@@ -530,8 +530,8 @@ All library parameters can be set through the *SettingsConfiguration* static cla
 
 - **Windows:** ***SecureSettingsAdditionalEntropy*** - an optional additional byte array used to increase the complexity of the encryption, or null for no additional complexity  
 - **Windows:** ***SecureSettingsScope*** - one of the enumeration values that specifies the scope of encryption  
-- **iOS, MacOS, Android:** ***EncryptionServiceID*** - for settings that will be stored in the Keychain or KeyStore. It defines the Service Name. The default value is "Advexp.Settings"
-- **iOS, MacOS:** ***KeyChainSecAccessible*** - for settings that will be stored in the Keychain. It determines at what time the parameter can be read from the Keychain. The default value is *SecAccessible.Always*
+- **MacOS, iOS, Android:** ***EncryptionServiceID*** - for settings that will be stored in the Keychain or KeyStore. It defines the Service Name. The default value is "Advexp.Settings"
+- **MacOS, iOS:** ***KeyChainSecAccessible*** - for settings that will be stored in the Keychain. It determines at what time the parameter can be read from the Keychain. The default value is *SecAccessible.Always*
 - **Android:** ***KeyStoreFileProtectionPassword*** - the password used to protect KeyStore file. The default value is *null*
 - **Android:** ***KeyStoreFileName*** - KeyStore file name. The default value is *null*. In this case file name is “.keystore”
 - ***Serializer*** - determines the library level serializer. The default value is *null*  

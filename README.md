@@ -8,8 +8,8 @@ Create cross-platform .NET app settings and make them accessible in your Windows
 
 - **Windows**: Storing settings in a normal form using Isolated Storage
 - **Windows**: Storing settings in an encrypted form using Data Protection API and Isolated Storage
-- **iOS, MacOS**: Storing settings in a normal form using *NSUserDefaults*
-- **iOS, MacOS**: Storing settings in an encrypted form using Keychain
+- **MacOS, iOS**: Storing settings in a normal form using *NSUserDefaults*
+- **MacOS, iOS**: Storing settings in an encrypted form using Keychain
 - **Android**: Using *SharedPreferences* to store settings in a normal form
 - **Android**: Using KeyStore to save confidential settings in an encrypted form
 - Saving settings as dynamic parameters (name - value pairs)

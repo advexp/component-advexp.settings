@@ -147,7 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Assembly\Sample.FirebaseRemoteConfig.Assembly.Standard.csproj">
-      <Project>{48887482-BF47-4B71-A4CD-A99D6E991897}</Project>
+      <Project>{95664E56-EA3E-4A87-A257-4DCB51147162}</Project>
       <Name>Sample.FirebaseRemoteConfig.Assembly.Standard</Name>
     </ProjectReference>
   </ItemGroup>

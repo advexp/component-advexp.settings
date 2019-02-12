@@ -1,3 +1,7 @@
+**2.4**  
+Add Xamarin.Mac support.  
+Bugfixing.  
+
 **2.3.2**  
 Bugfixing:  
 - Linker error issue.  

@@ -43,3 +43,4 @@ TDDs/TDD.Windows.Core/bin
 Samples/LocalSettings/Windows/bin
 Samples/Standard-iOS/App/bin
 Samples/Standard-iOS/Assembly/bin
+Samples/LocalSettings/Mac/bin

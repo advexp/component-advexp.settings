@@ -12,12 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Advexp.Settings.Cloud.Evaluation" Version="2.3.2" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">
-      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\netstandard1.0\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.4.0\lib\netstandard1.0\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Advexp.Settings.Cloud.Evaluation" Version="2.4.0" />
   </ItemGroup>
 </Project>

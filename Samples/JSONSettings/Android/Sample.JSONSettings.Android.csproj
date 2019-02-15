@@ -48,26 +48,25 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Advexp.JSONSettings.Plugin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\MonoAndroid10\Plugins\Advexp.JSONSettings.Plugin.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings.Utils, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\MonoAndroid10\Advexp.Settings.Utils.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpSerializer, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\MonoAndroid10\SharpSerializer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.4.0\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.4.0\lib\MonoAndroid10\Advexp.Settings.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSerializer">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.4.0\lib\MonoAndroid10\SharpSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.JSONSettings.Plugin">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.4.0\lib\MonoAndroid10\Plugins\Advexp.JSONSettings.Plugin.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />

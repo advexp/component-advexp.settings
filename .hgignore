@@ -41,3 +41,6 @@ Samples/FirebaseRemoteConfig/Standard-iOS/Assembly/bin
 TDDs/TDD.Windows.ClassicDesktop/bin
 TDDs/TDD.Windows.Core/bin
 Samples/Standard-iOS/Assembly/bin
+Samples/LocalSettings/Mac/bin
+Samples/Standard-iOS/App/bin
+Samples/LocalSettings/Windows/bin

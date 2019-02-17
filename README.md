@@ -1,15 +1,15 @@
 ###Advexp.Settings
 
-Cross-platform .NET app settings for Windows and Xamarin mobile applications
+Cross-platform .NET app settings for Windows, Xamarin.Mac, Xamarin.iOS and Xamarin.Android applications
 
 ####Details
 
-Create cross-platform .NET app settings and make them accessible in your Windows, Xamarin.iOS or Xamarin.Android applications natively. Ability to save settings locally or to the cloud and sync them across different devices by using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service. Ability to remotely configure your mobile application by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).
+Create cross-platform .NET app settings and make them accessible in your Windows, Xamarin.Mac, Xamarin.iOS or Xamarin.Android applications natively. Ability to save settings locally or to the cloud and sync them across different devices by using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service. Ability to remotely configure your mobile application by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).
 
 - **Windows**: Storing settings in a normal form using Isolated Storage
 - **Windows**: Storing settings in an encrypted form using Data Protection API and Isolated Storage
-- **iOS**: Storing settings in a normal form using *NSUserDefaults*
-- **iOS**: Storing settings in an encrypted form using Keychain
+- **MacOS, iOS**: Storing settings in a normal form using *NSUserDefaults*
+- **MacOS, iOS**: Storing settings in an encrypted form using Keychain
 - **Android**: Using *SharedPreferences* to store settings in a normal form
 - **Android**: Using KeyStore to save confidential settings in an encrypted form
 - Saving settings as dynamic parameters (name - value pairs)
@@ -530,8 +530,8 @@ All library parameters can be set through the *SettingsConfiguration* static cla
 
 - **Windows:** ***SecureSettingsAdditionalEntropy*** - an optional additional byte array used to increase the complexity of the encryption, or null for no additional complexity  
 - **Windows:** ***SecureSettingsScope*** - one of the enumeration values that specifies the scope of encryption  
-- **iOS, Android:** ***EncryptionServiceID*** - for settings that will be stored in the Keychain or KeyStore. It defines the Service Name. The default value is "Advexp.Settings"
-- **iOS:** ***KeyChainSecAccessible*** - for settings that will be stored in the Keychain. It determines at what time the parameter can be read from the Keychain. The default value is *SecAccessible.Always*
+- **MacOS, iOS, Android:** ***EncryptionServiceID*** - for settings that will be stored in the Keychain or KeyStore. It defines the Service Name. The default value is "Advexp.Settings"
+- **MacOS, iOS:** ***KeyChainSecAccessible*** - for settings that will be stored in the Keychain. It determines at what time the parameter can be read from the Keychain. The default value is *SecAccessible.Always*
 - **Android:** ***KeyStoreFileProtectionPassword*** - the password used to protect KeyStore file. The default value is *null*
 - **Android:** ***KeyStoreFileName*** - KeyStore file name. The default value is *null*. In this case file name is “.keystore”
 - ***Serializer*** - determines the library level serializer. The default value is *null*  
@@ -562,6 +562,7 @@ All Firebase Remote Config plugin parameters can be set through the *FirebaseRem
 ####Supported platforms
 
 Windows (.NET Framework, .NET Core, UWP)  
+Xamarin.Mac  
 Xamarin.iOS (Unified)  
 Xamarin.Android
 

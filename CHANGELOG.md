@@ -1,3 +1,8 @@
+**2.5**  
+Add plugin for environment variables.  
+Cloud version: Add KeyVault support for Microsoft Azure environment.  
+Bugfixing.  
+
 **2.4**  
 Add Xamarin.Mac support.  
 Bugfixing.  

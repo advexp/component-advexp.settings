@@ -1,3 +1,6 @@
+**2.5.1**  
+Maintenance release
+
 **2.5**  
 Add plugin for environment variables.  
 Cloud version: Add KeyVault support for Microsoft Azure environment.  

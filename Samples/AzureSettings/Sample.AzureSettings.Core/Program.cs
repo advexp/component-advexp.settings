@@ -14,9 +14,9 @@ namespace Sample.AzureSettings.Core
             KeyVaultClient.AuthenticationCallback authCallback = async (authority_, resource_, scope_) =>
             {
                 // access credentials
-                string tenantId = "15397875-9c8e-47e4-9eb1-9db1d6d8d12a";
-                string applicationId = "e6a628a6-dd05-442e-a5eb-eed811e1fb3b";
-                string applicationSecret = "N=+.U=.;#(|N}.5&;%pj=(/#{#;}__$%V>[^*)$}";
+                string tenantId = "{my-tenant-id}";
+                string applicationId = "{my-application-id}";
+                string applicationSecret = "{my-application-secret}";
 
                 string resource = "https://vault.azure.net";
                 string authority = "https://login.windows.net/" + tenantId;

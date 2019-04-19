@@ -10,14 +10,15 @@
     <DebugType>full</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj" />
-    <ProjectReference Include="..\..\..\Advexp.Settings\Plugins\AzureKeyVaultSettings\Plugin.AzureKeyVaultSettings.csproj" />
-    <ProjectReference Include="..\..\..\Advexp.Settings\Core\Advexp.Settings.Core.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.Azure.KeyVault" Version="3.0.3" />
     <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="4.5.1" />
     <PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.0.3" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.4.0" />
+    <PackageReference Include="Advexp.Settings.Cloud.Evaluation" Version="2.5.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Advexp.AzureKeyVaultSettings.Plugin">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.5.1\lib\Plugins\netstandard1.4\Advexp.AzureKeyVaultSettings.Plugin.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

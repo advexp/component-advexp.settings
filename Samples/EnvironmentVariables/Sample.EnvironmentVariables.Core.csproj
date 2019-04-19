@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Advexp.Settings\Core\Advexp.Settings.Core.csproj" />
-    <ProjectReference Include="..\..\Advexp.Settings\Utils\Advexp.Settings.Utils.csproj" />
-    <ProjectReference Include="..\..\Advexp.Settings\Plugins\EnvironmentVariables\Plugin.EnvironmentVariables.csproj" />
+    <PackageReference Include="Advexp.Settings.Local" Version="2.5.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Advexp.EnvironmentVariables.Plugin">
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.5.1\lib\Plugins\netstandard2.0\Advexp.EnvironmentVariables.Plugin.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

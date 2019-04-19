@@ -5,27 +5,27 @@ namespace Sample.AzureSettings.Core
 {
     /*
     Evaluation version of Advexp.Settings for MS Azure allow load no more then one value per time.
-    To load more use full version https://advexp.bitbucket.io/
+    Use full version instead https://advexp.bitbucket.io/
     */
 
-    [AzureKeyVaultInfo(DNSName = "https://advexpkeyvault.vault.azure.net/")]
+    [AzureKeyVaultInfo(DNSName = "{my-keyvault-dns-name}")]
     class Settings1 : Advexp.Settings<Settings1>
     {
-        [AzureKeyVaultSecret(Name = "secret")]
+        [AzureKeyVaultSecret(Name = "{my-secret-name}")]
         public static SecretBundle Secret { get; set; }
     }
 
-    [AzureKeyVaultInfo(DNSName = "https://advexpkeyvault.vault.azure.net/")]
+    [AzureKeyVaultInfo(DNSName = "{my-keyvault-dns-name}")]
     class Settings2 : Advexp.Settings<Settings2>
     {
-        [AzureKeyVaultKey(Name = "key")]
+        [AzureKeyVaultKey(Name = "{my-key-name}")]
         public static KeyBundle Key { get; set; }
     }
 
-    [AzureKeyVaultInfo(DNSName = "https://advexpkeyvault.vault.azure.net/")]
+    [AzureKeyVaultInfo(DNSName = "{my-keyvault-dns-name}")]
     class Settings3 : Advexp.Settings<Settings3>
     {
-        [AzureKeyVaultCertificate(Name = "certificate")]
+        [AzureKeyVaultCertificate(Name = "{my-certificate-name}")]
         public static CertificateBundle Certificate { get; set; }
     }
 }

@@ -44,6 +44,8 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <IOSDebugOverWiFi></IOSDebugOverWiFi>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,8 +55,6 @@
     <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DocumentationFile></DocumentationFile>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -64,12 +64,6 @@
     </IpaPackageName>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
-    <MtouchEnableBitcode></MtouchEnableBitcode>
-    <NoWarn></NoWarn>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <LangVersion>Default</LangVersion>
-    <NoStdLib>false</NoStdLib>
-    <PlatformTarget>anycpu</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <Optimize>true</Optimize>
@@ -84,25 +78,23 @@
     <IpaPackageName>
     </IpaPackageName>
     <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
-    <MtouchDebug></MtouchDebug>
-    <MtouchI18n></MtouchI18n>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InAppSettingsKit, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.InAppSettingsKit.2.6.0.1\lib\Xamarin.iOS\InAppSettingsKit.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="System.Core" />
+    <Reference Include="InAppSettingsKit">
+      <HintPath>..\..\packages\Xamarin.InAppSettingsKit.2.6.0.1\lib\Xamarin.iOS\InAppSettingsKit.dll</HintPath>
+    </Reference>
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\packages\Advexp.Settings.Local.2.4.0\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.5.1\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils">
-      <HintPath>..\..\packages\Advexp.Settings.Local.2.4.0\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.5.1\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
     <Reference Include="SharpSerializer">
-      <HintPath>..\..\packages\Advexp.Settings.Local.2.4.0\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.5.1\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -31,7 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
@@ -85,17 +84,17 @@
     <Reference Include="Xamarin.Firebase.Config">
       <HintPath>..\..\..\packages\Xamarin.Firebase.Config.60.1142.1\lib\MonoAndroid80\Xamarin.Firebase.Config.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.5.1\lib\Plugins\MonoAndroid10\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
+    </Reference>
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.4.0\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.5.1\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.4.0\lib\MonoAndroid10\Advexp.Settings.Utils.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.5.1\lib\MonoAndroid10\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
     <Reference Include="SharpSerializer">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.4.0\lib\MonoAndroid10\SharpSerializer.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.4.0\lib\MonoAndroid10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.5.1\lib\MonoAndroid10\SharpSerializer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

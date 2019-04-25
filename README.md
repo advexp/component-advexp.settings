@@ -1,26 +1,31 @@
 ###Advexp.Settings
 
-Cross-platform .NET app settings for Windows, Xamarin.Mac, Xamarin.iOS and Xamarin.Android applications
+Cross-platform .NET app settings for .NET Framework, .NET Core, Xamarin.Mac, Xamarin.iOS or Xamarin.Android application
 
 ####Details
 
-Create cross-platform .NET app settings and make them accessible in your Windows, Xamarin.Mac, Xamarin.iOS or Xamarin.Android applications natively. Ability to save settings locally or to the cloud and sync them across different devices by using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service. Ability to remotely configure your mobile application by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).
+Create cross-platform .NET app settings and make them accessible in your .NET Framework, .NET Core, Xamarin.Mac, Xamarin.iOS or Xamarin.Android application natively.  
+Ability to save settings locally or to the cloud and sync them across different devices by using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service.  
+Ability to remotely configure your mobile application by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).  
+Ability to load cryptographic keys and secrets by using [Microsoft Azure](https://azure.microsoft.com) service.
 
-- **Windows**: Storing settings in a normal form using Isolated Storage
-- **Windows**: Storing settings in an encrypted form using Data Protection API and Isolated Storage
-- **MacOS, iOS**: Storing settings in a normal form using *NSUserDefaults*
-- **MacOS, iOS**: Storing settings in an encrypted form using Keychain
-- **Android**: Using *SharedPreferences* to store settings in a normal form
-- **Android**: Using KeyStore to save confidential settings in an encrypted form
-- Saving settings as dynamic parameters (name - value pairs)
-- Using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service to save settings to the cloud and sync them across different devices
-- **iOS**, **Android**: Using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/) service to remotely configure your mobile application
-- Using user storage for settings
-- Using any build-in or user-defined types which can be saved as a setting
-- **iOS**: Ability to link settings from Advexp.Settings with settings from the Settings App
-- **iOS**: The possibility of using [InAppSettingsKit](https://www.nuget.org/packages/Xamarin.InAppSettingsKit/) along with Advexp.Settings. Both for creating fully functional GUI of the app settings and for locating them in the Settings App and accessing them from C# code.
-- Using library in NetStandard/PCL projects
-- Saving or loading settings by using JSON. In this case, the additional NuGet package [Json.NET](https://www.nuget.org/packages/newtonsoft.json) is used
+- **.NET Framework**, **.NET Core**: Save settings in a normal form using Isolated Storage
+- **.NET Framework**: Save settings in an encrypted form using Data Protection API and Isolated Storage
+- **Xamarin.Mac**, **Xamarin.iOS**: Save settings in a normal form using *NSUserDefaults*
+- **Xamarin.Mac**, **Xamarin.iOS**: Save settings in an encrypted form using Keychain
+- **Xamarin.Android**: Use *SharedPreferences* to save settings in a normal form
+- **Xamarin.Android**: Use KeyStore to save confidential settings in an encrypted form
+- Save settings as dynamic parameters (name - value pairs)
+- Use [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service to save settings to the cloud and sync them across different devices
+- **Xamarin.iOS**, **Xamarin.Android**: Use [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/) service to remotely configure your mobile application
+- **.NET Framework**, **.NET Core**: Load cryptographic keys and secrets by using [Microsoft Azure Key Vault](https://azure.microsoft.com/en-us/services/key-vault/) service
+- Use user storage for settings
+- Use any build-in or user-defined types which can be saved as a setting
+- **Xamarin.iOS**: Ability to link settings from Advexp.Settings with settings from the Settings App
+- **Xamarin.iOS**: The possibility of use [InAppSettingsKit](https://www.nuget.org/packages/Xamarin.InAppSettingsKit/) along with Advexp.Settings. Both for creating fully functional GUI of the app settings and for locating them in the Settings App and accessing them from C# code.
+- Use environment variables as settings
+- Use library in NetStandard/PCL projects
+- Save or load settings by using JSON. In this case, the additional NuGet package [Json.NET](https://www.nuget.org/packages/newtonsoft.json) is used
 
 Project home page:
 <https://advexp.bitbucket.io>
@@ -171,7 +176,6 @@ The library allows the use of any user-defined types which can be saved as setti
 Settings serialization is done via the [SharpSerializer](http://sharpserializer.com/en/index.html) library.   
 The serializer parameters can be modified by using the following property:  
 *SettingsBaseConfiguration.AdvancedConfiguration.SharpSerializerSettings*
-
 
 #####Save, load and delete settings
 
@@ -358,9 +362,37 @@ Dynamic settings added to the Google Firebase console can be obtained via *IDyna
 
 In evaluation version of the Google Firebase Remote Config plugin “v2\_AdvexpSettingsEvaluation\_” prefix will be added to setting names. Functions, to specify default values using xml resource (Android) or plist file (iOS) does not implemented. Also *FirebaseRemoteConfigConfiguration.ExpirationDuration* value cannot be changed and function *IFirebaseRemoteConfigPlugin.Fetch(long expirationDuration)* is not implemented. By default, value of expiration duration is 43200 seconds (12 hours).
 
-
 A way of using this plugin may be seen in the component examples: 
 Sample.FirebaseRemoteConfig.Android, Sample.FirebaseRemoteConfig.iOS and Sample.FirebaseRemoteConfig.Standard-iOS
+
+#####Cloud: Load cryptographic keys and secrets by using Microsoft Azure service
+
+To add this ability, you need to install the [Microsoft.Azure.KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault/) NuGet package in your project, add the **Advexp.AzureKeyVaultSettings.Plugin** assembly to the references, and register the plugin:
+
+    :::csharp
+    SettingsBaseConfiguration.
+        RegisterSettingsPlugin<IAzureKeyVaultSettingsPlugin, AzureKeyVaultSettingsPlugin>();
+
+Set authentication callback:
+
+    :::csharp
+    AzureKeyVaultConfiguration.AuthenticationCallback = authCallback;
+    
+You can use *AzureKeyVaultSecretAttribute*, *AzureKeyVaultKeyAttribute* and *AzureKeyVaultCertificateAttribute* as settings attributes to load secrets, keys and certificates respectively.
+
+For more details, see examples in AzureKeyVaultSettings folder.
+
+#####Use environment variables as settings
+
+To add this ability, you need to add the **Advexp.EnvironmentVariables.Plugin** assembly to the references, and register the plugin:
+
+    :::csharp
+    SettingsBaseConfiguration.
+        RegisterSettingsPlugin<IEnvironmentVariables, EnvironmentVariablesPlugin>();
+
+Mark setting by *EnvironmentVariableAttribute* attribute.
+
+For more details, see example in EnvironmentVariables folder.
 
 #####Saving and loading settings by using JSON
 
@@ -561,7 +593,9 @@ All Firebase Remote Config plugin parameters can be set through the *FirebaseRem
 
 ####Supported platforms
 
-Windows (.NET Framework, .NET Core, UWP)  
+.NET Framework  
+.NET Core  
+UWP  
 Xamarin.Mac  
 Xamarin.iOS (Unified)  
 Xamarin.Android

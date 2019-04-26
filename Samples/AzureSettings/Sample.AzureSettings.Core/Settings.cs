@@ -5,8 +5,11 @@ namespace Sample.AzureSettings.Core
 {
     /*
     Evaluation version of Advexp.Settings for MS Azure allow load no more then one value per time.
-    Use full version instead https://advexp.bitbucket.io/
+    Instead use full version
+    https://advexp.bitbucket.io/
     */
+
+#error Set correct values
 
     [AzureKeyVaultInfo(DNSName = "{my-keyvault-dns-name}")]
     class Settings1 : Advexp.Settings<Settings1>

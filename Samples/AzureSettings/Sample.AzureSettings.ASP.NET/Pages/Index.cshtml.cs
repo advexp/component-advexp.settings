@@ -14,7 +14,6 @@ namespace Sample.AzureSettings.ASP.NET.Pages
         public void OnGetAsync()
         {
             Settings.LoadSettings();
-            Settings.LoadSettings();
 
             if (Settings.Secret == null)
             {

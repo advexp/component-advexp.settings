@@ -13,6 +13,9 @@ namespace Sample.AzureSettings.Core
             Advexp.SettingsBaseConfiguration.RegisterSettingsPlugin<IAzureKeyVaultSettingsPlugin, AzureKeyVaultSettingsPlugin>();
             KeyVaultClient.AuthenticationCallback authCallback = async (authority_, resource_, scope_) =>
             {
+
+#error Set access credentials
+
                 // access credentials
                 string tenantId = "{my-tenant-id}";
                 string applicationId = "{my-application-id}";

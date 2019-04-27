@@ -1,3 +1,6 @@
+**2.5.2**  
+Maintenance release
+
 **2.5.1**  
 Maintenance release
 

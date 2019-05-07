@@ -7,7 +7,7 @@ Cross-platform .NET app settings for .NET Framework, .NET Core, Xamarin.Mac, Xam
 Create cross-platform .NET app settings and make them accessible in your .NET Framework, .NET Core, Xamarin.Mac, Xamarin.iOS or Xamarin.Android application natively.  
 Ability to save settings locally or to the cloud and sync them across different devices by using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service.  
 Ability to remotely configure your mobile application by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).  
-Ability to load cryptographic keys and secrets by using [Microsoft Azure](https://azure.microsoft.com) service.
+Ability to load cryptographic keys and secrets by using [Microsoft Azure Key Vault](https://azure.microsoft.com/en-us/services/key-vault/) service.
 
 - **.NET Framework**, **.NET Core**: Save settings in a normal form using Isolated Storage
 - **.NET Framework**: Save settings in an encrypted form using Data Protection API and Isolated Storage
@@ -365,7 +365,7 @@ In evaluation version of the Google Firebase Remote Config plugin “v2\_AdvexpS
 A way of using this plugin may be seen in the component examples: 
 Sample.FirebaseRemoteConfig.Android, Sample.FirebaseRemoteConfig.iOS and Sample.FirebaseRemoteConfig.Standard-iOS
 
-#####Cloud: Load cryptographic keys and secrets by using Microsoft Azure service
+#####Cloud: Load cryptographic keys and secrets by using Microsoft Azure Key Vault service
 
 To add this ability, you need to install the [Microsoft.Azure.KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault/) NuGet package in your project, add the **Advexp.AzureKeyVaultSettings.Plugin** assembly to the references, and register the plugin:
 

@@ -1,20 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <ReleaseVersion></ReleaseVersion>
-    <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-    <PackageReference Include="Advexp.Settings.Local" Version="2.4.0" />
+    <PackageReference Include="Advexp.Settings.Local" Version="2.5.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Advexp.JSONSettings.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.4.0\lib\netstandard1.0\Plugins\Advexp.JSONSettings.Plugin.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.5.2\lib\Plugins\netstandard1.0\Advexp.JSONSettings.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

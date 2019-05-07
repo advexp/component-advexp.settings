@@ -44,7 +44,6 @@
     <Compile Include="AdvexpTasks.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -85,16 +84,16 @@
       <HintPath>..\..\..\..\packages\AWSSDK.CognitoSync.3.3.1.68\lib\portable-net45+win8+wpa81+wp8\AWSSDK.CognitoSync.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.4.0\lib\netstandard1.0\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.5.2\lib\netstandard1.0\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils">
-      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.4.0\lib\netstandard1.0\Advexp.Settings.Utils.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.5.2\lib\netstandard1.0\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
     <Reference Include="SharpSerializer">
-      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.4.0\lib\netstandard1.0\SharpSerializer.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.5.2\lib\netstandard1.0\SharpSerializer.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.CognitoSyncSettings.Plugin">
-      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.4.0\lib\netstandard1.0\Plugins\Advexp.CognitoSyncSettings.Plugin.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.5.2\lib\Plugins\netstandard1.1\Advexp.CognitoSyncSettings.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

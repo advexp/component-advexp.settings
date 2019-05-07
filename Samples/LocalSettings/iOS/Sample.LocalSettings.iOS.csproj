@@ -33,6 +33,7 @@
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchLink>None</MtouchLink>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <Optimize>true</Optimize>
@@ -64,6 +65,10 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CrashReportingEnabled>false</CrashReportingEnabled>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
+    <CrashReportingDelay>-1</CrashReportingDelay>
+    <MtouchI18n></MtouchI18n>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <Optimize>true</Optimize>
@@ -78,8 +83,7 @@
     </IpaPackageName>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <DeviceSpecificBuild>
-    </DeviceSpecificBuild>
+    <DeviceSpecificBuild></DeviceSpecificBuild>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -87,13 +91,13 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.Core" />
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.4.0\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.5.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.4.0\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.5.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
     <Reference Include="SharpSerializer">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.4.0\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.5.2\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

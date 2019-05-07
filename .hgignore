@@ -44,3 +44,7 @@ Samples/Standard-iOS/Assembly/bin
 Samples/LocalSettings/Mac/bin
 Samples/Standard-iOS/App/bin
 Samples/LocalSettings/Windows/bin
+Samples/AzureSettings/Sample.AzureSettings.ASP.NET/bin
+Samples/AzureSettings/Sample.AzureSettings.Core/bin
+Samples/EnvironmentVariables/bin
+Samples/AzureSettings/Sample.AzureSettings.ASP.NET/Properties

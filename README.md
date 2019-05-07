@@ -1,4 +1,4 @@
-###Advexp.Settings v.2.5.2
+###Advexp.Settings 2.5.2
 
 Cross-platform .NET app settings for .NET Framework, .NET Core, Xamarin.Mac, Xamarin.iOS or Xamarin.Android application
 

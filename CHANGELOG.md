@@ -1,8 +1,12 @@
+**2.6**  
+Maintenance release.  
+Cloud version: Add iCloud support for iOS.  
+
 **2.5.2**  
-Maintenance release
+Maintenance release.
 
 **2.5.1**  
-Maintenance release
+Maintenance release.
 
 **2.5**  
 Add plugin for environment variables.  
@@ -14,7 +18,7 @@ Add Xamarin.Mac support.
 Bugfixing.  
 
 **2.3.2.1**  
-Maintenance release
+Maintenance release.
 
 **2.3.2**  
 Bugfixing:  

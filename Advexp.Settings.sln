@@ -82,6 +82,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.AzureSettings.Core",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.AzureSettings.ASP.NET", "Samples\AzureSettings\Sample.AzureSettings.ASP.NET\Sample.AzureSettings.ASP.NET.csproj", "{FD07FA76-164D-470D-9CF9-CF6EEF7EC536}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iCloudSettings", "iCloudSettings", "{C21594F7-E327-4FCC-AAAC-8500072E912F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.iCloudSettings.iOS", "Samples\iCloudSettings\IOS\Sample.iCloudSettings.iOS.csproj", "{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -430,6 +434,18 @@ Global
 		{FD07FA76-164D-470D-9CF9-CF6EEF7EC536}.Release|iPhone.Build.0 = Release|Any CPU
 		{FD07FA76-164D-470D-9CF9-CF6EEF7EC536}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{FD07FA76-164D-470D-9CF9-CF6EEF7EC536}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}.Debug|iPhone.Build.0 = Debug|iPhone
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}.Release|Any CPU.Build.0 = Release|iPhone
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}.Release|iPhone.ActiveCfg = Release|iPhone
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}.Release|iPhone.Build.0 = Release|iPhone
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -473,6 +489,8 @@ Global
 		{68741A25-EE37-4A7B-8676-8517C5E40CD3} = {E8D08C40-BF99-4168-A4C1-616C73B80030}
 		{15593047-9FC5-488C-ADC9-F54BD03D1C93} = {2C18D516-A9EC-454F-A1FD-09367EF896EE}
 		{FD07FA76-164D-470D-9CF9-CF6EEF7EC536} = {2C18D516-A9EC-454F-A1FD-09367EF896EE}
+		{C21594F7-E327-4FCC-AAAC-8500072E912F} = {39FCFDDB-4997-4B81-B374-81E9EFD9B5B7}
+		{789E4932-A6F6-4376-8FAC-37FD7A6D6D7D} = {C21594F7-E327-4FCC-AAAC-8500072E912F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9AAF6E85-ABE1-49A6-8754-896867214FBF}

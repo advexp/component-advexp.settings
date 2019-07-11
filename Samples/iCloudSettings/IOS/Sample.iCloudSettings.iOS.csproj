@@ -29,7 +29,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchVerbosity></MtouchVerbosity>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>iOS Provisioning Profile</CodesignProvision>
+    <CodesignProvision>Advexp.Settings iCloud Settings iOS</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -52,7 +52,7 @@
     <IpaMetadata></IpaMetadata>
     <ConsolePause>true</ConsolePause>
     <CodesignExtraArgs></CodesignExtraArgs>
-    <CodesignProvision>iOS Provisioning Profile</CodesignProvision>
+    <CodesignProvision>Advexp.Settings iCloud Settings iOS</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -71,7 +71,7 @@
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <LangVersion>Default</LangVersion>
     <WarningsNotAsErrors></WarningsNotAsErrors>
-    <CodesignProvision>iOS Provisioning Profile</CodesignProvision>
+    <CodesignProvision>Advexp.Settings iCloud Settings iOS</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -85,7 +85,6 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <IOSDebuggerPort>49880</IOSDebuggerPort>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
@@ -93,7 +92,11 @@
     <MtouchVerbosity></MtouchVerbosity>
     <OnDemandResourcesInitialInstallTags></OnDemandResourcesInitialInstallTags>
 <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-<CodesignProvision>iOS Provisioning Profile</CodesignProvision>
+<CodesignProvision>Advexp.Settings iCloud Settings iOS</CodesignProvision>
+<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+<OnDemandResourcesPrefetchOrder></OnDemandResourcesPrefetchOrder>
+<AssemblyName></AssemblyName>
+<OnDemandResourcesPrefetchOrder></OnDemandResourcesPrefetchOrder>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -4,13 +4,9 @@
 <dict>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
-		<string>iCloud.AdvexpSettings.iCloudSettings</string>
+		<string>iCloud.sample.advexpsettings</string>
 	</array>
 	<key>com.apple.developer.ubiquity-kvstore-identifier</key>
 	<string>$(AppIdentifierPrefix)$(CFBundleIdentifier)</string>
-	<key>com.apple.developer.icloud-services</key>
-	<array>
-		<string>CloudKit</string>
-	</array>
 </dict>
 </plist>

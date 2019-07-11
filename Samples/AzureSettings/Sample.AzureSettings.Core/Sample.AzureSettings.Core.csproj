@@ -14,7 +14,7 @@
     <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="4.5.1" />
     <PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.0.3" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.4.0" />
-    <PackageReference Include="Advexp.Settings.Cloud.Evaluation" Version="2.5.2" />
+    <PackageReference Include="Advexp.Settings.Cloud.Evaluation" Version="2.6.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Advexp.AzureKeyVaultSettings.Plugin">

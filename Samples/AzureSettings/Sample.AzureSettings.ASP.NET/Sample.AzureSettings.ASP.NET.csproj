@@ -10,7 +10,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.0.3" />
     <PackageReference Include="Microsoft.Azure.KeyVault" Version="3.0.3" />
-    <PackageReference Include="Advexp.Settings.Cloud.Evaluation" Version="2.5.2" />
+    <PackageReference Include="Advexp.Settings.Cloud.Evaluation" Version="2.6.0" />
   </ItemGroup>
 
   <ItemGroup>

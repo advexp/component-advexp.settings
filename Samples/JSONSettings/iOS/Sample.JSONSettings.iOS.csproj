@@ -80,16 +80,16 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.5.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.6.0\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.5.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.6.0\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
     <Reference Include="SharpSerializer">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.5.2\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.6.0\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.JSONSettings.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.5.2\lib\Plugins\netstandard1.0\Advexp.JSONSettings.Plugin.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.6.0\lib\Plugins\netstandard1.0\Advexp.JSONSettings.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

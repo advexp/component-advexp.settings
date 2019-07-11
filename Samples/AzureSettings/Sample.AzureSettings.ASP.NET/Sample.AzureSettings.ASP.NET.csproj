@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <Reference Include="Advexp.AzureKeyVaultSettings.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.5.2\lib\Plugins\netstandard1.4\Advexp.AzureKeyVaultSettings.Plugin.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.6.0\lib\Plugins\netstandard1.4\Advexp.AzureKeyVaultSettings.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

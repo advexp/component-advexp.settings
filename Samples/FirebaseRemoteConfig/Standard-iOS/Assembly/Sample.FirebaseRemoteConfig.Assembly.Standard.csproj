@@ -10,11 +10,11 @@
     <Compile Remove="Class1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Advexp.Settings.Cloud.Evaluation" Version="2.5.2" />
+    <PackageReference Include="Advexp.Settings.Cloud.Evaluation" Version="2.6.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">
-      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.5.2\lib\Plugins\netstandard1.0\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.6.0\lib\Plugins\netstandard1.0\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

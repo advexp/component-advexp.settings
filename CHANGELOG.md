@@ -1,3 +1,7 @@
+**2.7**  
+Local and Cloud versions:   
+- Add Microsoft.Extensions.Configuration support  
+
 **2.6**  
 Local and Cloud versions:   
 - Maintenance release  

@@ -185,16 +185,16 @@
       <HintPath>..\..\..\..\packages\Xamarin.Facebook.Android.4.38.0\lib\monoandroid81\Xamarin.Facebook.Android.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.6.0\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.7.0\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils">
-      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.6.0\lib\MonoAndroid10\Advexp.Settings.Utils.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.7.0\lib\MonoAndroid10\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
     <Reference Include="SharpSerializer">
-      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.6.0\lib\MonoAndroid10\SharpSerializer.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.7.0\lib\MonoAndroid10\SharpSerializer.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.CognitoSyncSettings.Plugin">
-      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.6.0\lib\Plugins\netstandard1.1\Advexp.CognitoSyncSettings.Plugin.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.7.0\lib\Plugins\netstandard1.1\Advexp.CognitoSyncSettings.Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

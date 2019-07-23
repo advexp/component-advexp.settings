@@ -1,10 +1,11 @@
-###Advexp.Settings 2.6
+###Advexp.Settings 2.7
 
-Cross-platform .NET app settings for .NET Framework, .NET Core, Xamarin.Mac, Xamarin.iOS or Xamarin.Android application
+Cross-platform .NET app settings and configuration for Windows, .NET Core, Xamarin.Mac, Xamarin.iOS or Xamarin.Android with cloud support.
 
 ####Details
 
-Create cross-platform .NET app settings and make them accessible in your .NET Framework, .NET Core, Xamarin.Mac, Xamarin.iOS or Xamarin.Android application natively.  
+Create cross-platform .NET app settings and configuration for Windows, .NET Core, Xamarin.Mac, Xamarin.iOS or Xamarin.Android.  
+Configure your app by using [Microsoft.Extensions.Configuration](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration) library.  
 Save settings to the cloud and sync between iOS devises by using [iCloud](https://developer.apple.com/icloud/) service.  
 Save settings locally or to the cloud and sync them across different devices by using [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service.  
 Remotely configure your mobile application by using [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/).  
@@ -21,12 +22,13 @@ Load cryptographic keys and secrets by using [Microsoft Azure Key Vault](https:/
 - Use [Amazon Cognito Sync](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html) service to save settings to the cloud and sync them across different devices
 - **Xamarin.iOS**, **Xamarin.Android**: Use [Google Firebase Remote Config](https://firebase.google.com/docs/remote-config/) service to remotely configure your mobile application
 - **.NET Framework**, **.NET Core**: Load cryptographic keys and secrets by using [Microsoft Azure Key Vault](https://azure.microsoft.com/en-us/services/key-vault/) service
+- Configure your app by using [Microsoft.Extensions.Configuration](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration) library
 - Use user storage for settings
 - Use any build-in or user-defined types which can be saved as a setting
 - **Xamarin.iOS**: Ability to link settings from Advexp.Settings with settings from the Settings App
 - **Xamarin.iOS**: The possibility of use [InAppSettingsKit](https://www.nuget.org/packages/Xamarin.InAppSettingsKit/) along with Advexp.Settings. Both for creating fully functional GUI of the app settings and for locating them in the Settings App and accessing them from C# code.
 - Use environment variables as settings
-- Use library in NetStandard/PCL projects
+- Use library in .NET Standard projects
 - Save or load settings by using JSON. In this case, the additional NuGet package [Json.NET](https://www.nuget.org/packages/newtonsoft.json) is used
 
 Project home page:
@@ -56,11 +58,6 @@ NuGet package "Advexp.Settings Cloud", full version, you can buy here:
                      Secure = true, 
                      Default = "2009-06-15T13:45:30.0000000Z")]
         public static DateTime LocalSecureSetting {get; set;}
-     
-        // In this case, the automatic setting name in storage will be
-        // "{NamespaceName}.{ClassName}.{FieldName}"
-        [Setting]
-        public static String SettingWithAutoName {get; set;}
     }
 
 
@@ -74,7 +71,6 @@ NuGet package "Advexp.Settings Cloud", full version, you can buy here:
             // Will be saved to NSUserDefaults for iOS and to SharedPreferences for Android
             // For .NET Framework and .NET Core will be saved to Isolated Storage
             Settings.LocalSetting = 5;
-            Settings.SettingWithAutoName = "Data2";
             // Will be saved to Keychain for iOS and to KeyStore for Android
             // For .NET Framework will be saved to Isolated Storage using Data Protection API
             Settings.LocalSecureSetting = DateTime.Now;
@@ -100,6 +96,8 @@ NuGet package "Advexp.Settings Cloud", full version, you can buy here:
 The evaluation version of the Amazon Cognito Sync plugin does not allow specifying the name of the Cognito Sync dataset and uses the name "Advexp.Settings.Evaluation"
 
 In evaluation version of the Google Firebase Remote Config plugin “v2\_AdvexpSettingsEvaluation\_” prefix will be added to setting names. Functions, to specify default values using xml resource (Android) or plist file (iOS) does not implemented. Also *FirebaseRemoteConfigConfiguration.ExpirationDuration* value cannot be changed and function *IFirebaseRemoteConfigPlugin.Fetch(long expirationDuration)* is not implemented. By default, value of expiration duration is 43200 seconds (12 hours).
+
+In Local and Cloud.Evaluation versions of the Microsoft.Extensions.Configuration plugin Azure configuration provider is not supported.
 
 ####Getting Started
 #####Create settings
@@ -139,7 +137,7 @@ Call the appropriate method in order to perform the desired action.
 
 #####Using user-defined types as settings
 
-The library allows the use of any user-defined types which can be saved as settings. User-defined types do not require modification and addition of special attributes. Usage case - CustomObjectTest in TDD projects: <https://bitbucket.org/advexp/component-advexp.settings>. 
+The library allows the use of any user-defined types which can be saved as settings. User-defined types do not require modification and addition of special attributes. Usage case - CustomObjectTest in TDD projects: <https://bitbucket.org/advexp/component-advexp.settings>.  
 
 Settings serialization is done via the [SharpSerializer](http://sharpserializer.com/en/index.html) library.   
 The serializer parameters can be modified by using the following property:  
@@ -276,6 +274,7 @@ These settings are created automatically and cannot be obtained using the API. T
 Examples of using dynamic settings can be seen in the corresponding example (Samples/DynamicSettings) or in the TDD project (TDD/UnitTests/DynamicSettings)
 
 #####Cloud: Syncing settings by using Apple iCloud for iOS
+
 To add this ability, you need to [prepare your app for iCloud development](https://docs.microsoft.com/en-us/xamarin/ios/data-cloud/introduction-to-icloud), add the **Advexp.iCloudSettings.Plugin** assembly to the references and register the plugin:
 
     :::csharp
@@ -381,11 +380,11 @@ To add this ability, you need to add the **Advexp.EnvironmentVariables.Plugin** 
 
 Mark setting by *EnvironmentVariableAttribute* attribute.
 
-For more details, see example in EnvironmentVariables folder.
+For more details, see Sample.EnvironmentVariables.Core example.
 
 #####Saving and loading settings by using JSON
 
-To add this capability, you need to install the [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json) NuGet package in your project, add the **Advexp.JSONSettings.Plugin** assembly to the references, and register the plugin:
+To add this ability, you need to install the [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json) NuGet package in your project, add the **Advexp.JSONSettings.Plugin** assembly to the references, and register the plugin:
 
     :::csharp
 	SettingsBaseConfiguration.
@@ -423,6 +422,34 @@ The JSON Settings plugin parameters may be modified by using the parameter:
 A way of using this plugin may be seen in the component examples: 
 Sample.JSONSettings.Android and Sample.JSONSettings.iOS
 
+#####Configure your app by using Microsoft.Extensions.Configuration library
+
+To add this ability, you need to install the [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/) NuGet package, add the **Advexp.MicrosoftExtensionsConfiguration.Plugin** assembly to the references and register the plugin:
+
+    :::csharp
+    SettingsBaseConfiguration.
+        RegisterSettingsPlugin
+        <
+            IMicrosoftExtensionsConfigurationPlugin,
+            MicrosoftExtensionsConfigurationPlugin
+        >();
+
+Add required configuration providers:
+
+    :::csharp
+    Advexp.MicrosoftExtensionsConfiguration.Plugin.Configuration.ConfigurationBuilder =
+        new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json")
+            .AddEnvironmentVariables()
+            .AddCommandLine(args);
+            
+And mark config params by *MicrosoftExtensionsConfigurationAttribute* attribute.
+
+To bind class to entire configuration section use *MicrosoftExtensionsConfigurationAttribute.BindTo* property.
+
+For more details, see Sample.MicrosoftExtensionsConfiguration.Core example.
+
+In Local and Cloud.Evaluation versions of the Microsoft.Extensions.Configuration plugin Azure configuration provider is not supported. Use [full version](https://advexp.bitbucket.io/) instead.
 
 #####Previous version support and settings naming
 
@@ -584,19 +611,23 @@ All Firebase Remote Config plugin parameters can be set through the *FirebaseRem
 
 .NET Framework  
 .NET Core  
+.NET Standard  
 UWP  
 Xamarin.Mac  
-Xamarin.iOS (Unified)  
+Xamarin.iOS  
 Xamarin.Android
 
-NetStandard / PCL projects
+####Supported 3rd party libraries
+
+[Microsoft.Extensions.Configuration](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration) - configuration in ASP.NET Core  
+[InAppSettingsKit](https://www.nuget.org/packages/Xamarin.InAppSettingsKit) - allows settings to be in-app in addition to being in the Settings app  
 
 ####Supported cloud services
 
 Apple iCloud  - [https://developer.apple.com/icloud/](https://developer.apple.com/icloud/)  
-Amazon Cognito Sync - [http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html)  
+Microsoft Azure Key Vault - [https://azure.microsoft.com/en-us/services/key-vault/](https://azure.microsoft.com/en-us/services/key-vault/)  
 Google Firebase Remote Config - [https://firebase.google.com/docs/remote-config/](https://firebase.google.com/docs/remote-config/)  
-Microsoft Azure Key Vault - [https://azure.microsoft.com/en-us/services/key-vault/](https://azure.microsoft.com/en-us/services/key-vault/)
+Amazon Cognito Sync - [http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html)  
 
 Project home page:  
 <https://advexp.bitbucket.io>

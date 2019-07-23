@@ -49,3 +49,4 @@ Samples/AzureSettings/Sample.AzureSettings.Core/bin
 Samples/EnvironmentVariables/bin
 Samples/AzureSettings/Sample.AzureSettings.ASP.NET/Properties
 Samples/iCloudSettings/IOS/bin/iPhoneSimulator/Debug
+Samples/MicrosoftExtensionsConfiguration/Sample.MicrosoftExtensionsConfiguration.Core/bin

@@ -18,4 +18,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Advexp.MicrosoftExtensionsConfiguration.Plugin">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.7.0\lib\Plugins\netstandard2.0\Advexp.MicrosoftExtensionsConfiguration.Plugin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

@@ -32,7 +32,7 @@ Load cryptographic keys and secrets by using [Microsoft Azure Key Vault](https:/
 - Save or load settings by using JSON. In this case, the additional NuGet package [Json.NET](https://www.nuget.org/packages/newtonsoft.json) is used
 
 Project home page:
-<https://advexp.bitbucket.io>
+<https://advexp.net/settings>
 
 NuGet package “Advexp.Settings Local” you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Local>
@@ -41,10 +41,10 @@ NuGet package “Advexp.Settings Cloud”, evaluation version, you can download 
 <https://www.nuget.org/packages/Advexp.Settings.Cloud.Evaluation>
 
 Samples, Unit Tests and additional information you can find here:  
-<https://bitbucket.org/advexp/component-advexp.settings>
+<https://github.com/advexp/component-advexp.settings>
 
 NuGet package "Advexp.Settings Cloud", full version, you can buy here:
-<https://advexp.bitbucket.io>
+<https://advexp.net/settings>
 
 ##### Example of settings declaration
 
@@ -141,7 +141,7 @@ Call the appropriate method in order to perform the desired action.
 
 ##### Using user-defined types as settings
 
-The library allows the use of any user-defined types which can be saved as settings. User-defined types do not require modification and addition of special attributes. Usage case - CustomObjectTest in TDD projects: <https://bitbucket.org/advexp/component-advexp.settings>.  
+The library allows the use of any user-defined types which can be saved as settings. User-defined types do not require modification and addition of special attributes. Usage case - CustomObjectTest in TDD projects: <https://github.com/advexp/component-advexp.settings>.  
 
 Settings serialization is done via the [SharpSerializer](http://sharpserializer.com/en/index.html) library.   
 The serializer parameters can be modified by using the following property:  
@@ -471,7 +471,7 @@ To bind class to entire configuration section use *MicrosoftExtensionsConfigurat
 
 For more details, see Sample.MicrosoftExtensionsConfiguration.Core example.
 
-In Local and Cloud.Evaluation versions of the Microsoft.Extensions.Configuration plugin Azure configuration provider is not supported. Use [full version](https://advexp.bitbucket.io/) instead.
+In Local and Cloud.Evaluation versions of the Microsoft.Extensions.Configuration plugin Azure configuration provider is not supported. Use [full version](https://advexp.net/settings) instead.
 
 ##### Previous version support and settings naming
 
@@ -517,11 +517,11 @@ Static class. It contains parameters that define the library configuration.
 
 **iOS:** ***class UserDefaultsSerializer*** (Advexp.Settings.dll for iOS)  
 A class that implements a serializer for *NSUserDefaults*. It can be used when it is necessary to gain access to parameters that are not saved in the *NSUserDefaults.StandardUserDefaults* container.  
-Example - ExternalUserDefaultsTest in the iOS TDD project, which can be accessed at <https://bitbucket.org/advexp/component-advexp.settings>
+Example - ExternalUserDefaultsTest in the iOS TDD project, which can be accessed at <https://github.com/advexp/component-advexp.settings>
 
 **Android:** ***class SharedPreferencesSerializer*** (Advexp.Settings.dll for Android)  
 The class that implements the serializer for *SharedPreferences*. It can be applied when it is necessary to access parameters that are not stored in SharedPreferences of the application context.
-Example - ExternalSaredPreferencesTest in the Android TDD project, which can be accessed at <https://bitbucket.org/advexp/component-advexp.settings>
+Example - ExternalSaredPreferencesTest in the Android TDD project, which can be accessed at <https://github.com/advexp/component-advexp.settings>
 
 ***class AdvancedConfiguration*** (Advexp.Settings.Utils.dll)  
 Extended library configuration parameters. Objects of this type belong to the *SettingsBaseConfiguration* class.
@@ -652,7 +652,7 @@ Google Firebase Remote Config - [https://firebase.google.com/docs/remote-config/
 Amazon Cognito Sync - [http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html)  
 
 Project home page:  
-<https://advexp.bitbucket.io>
+<https://advexp.net/settings>
 
 NuGet package “Advexp.Settings Local” you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Local>
@@ -661,10 +661,10 @@ NuGet package “Advexp.Settings Cloud”, evaluation version, you can download 
 <https://www.nuget.org/packages/Advexp.Settings.Cloud.Evaluation>
 
 Samples, Unit Tests and additional information you can find here:  
-<https://bitbucket.org/advexp/component-advexp.settings>
+<https://github.com/advexp/component-advexp.settings>
 
 NuGet package "Advexp.Settings Cloud", full version, you can buy here:  
-<https://advexp.bitbucket.io>
+<https://advexp.net/settings>
 
 
 Please send your questions, suggestions and impressions to <components@advexp.net> with the subject "Advexp.Settings"

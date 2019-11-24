@@ -48,7 +48,7 @@ NuGet package "Advexp.Settings Cloud", full version, you can buy here:
 
 ##### Example of settings declaration
 
-    ```csharp
+```csharp
     class Settings : Advexp.Settings<Settings>
     {
         [Setting(Name = "Local.Setting", Default = 3)]
@@ -59,7 +59,7 @@ NuGet package "Advexp.Settings Cloud", full version, you can buy here:
                      Default = "2009-06-15T13:45:30.0000000Z")]
         public static DateTime LocalSecureSetting {get; set;}
     }
-    ```
+```
 
 
 ##### Example of settings usage

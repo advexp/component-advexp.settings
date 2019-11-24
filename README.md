@@ -36,7 +36,7 @@ Project home page:
 
 NuGet package “Advexp.Settings Local” you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Local>
- 
+
 NuGet package “Advexp.Settings Cloud”, evaluation version, you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Cloud.Evaluation>
 
@@ -48,17 +48,18 @@ NuGet package "Advexp.Settings Cloud", full version, you can buy here:
 
 ##### Example of settings declaration
 
-    :::csharp
+    ```csharp
     class Settings : Advexp.Settings<Settings>
     {
         [Setting(Name = "Local.Setting", Default = 3)]
         public static Int32 LocalSetting {get; set;}
-    
-        [Setting(Name = "Local.SecureSetting", 
-                     Secure = true, 
+
+        [Setting(Name = "Local.SecureSetting",
+                     Secure = true,
                      Default = "2009-06-15T13:45:30.0000000Z")]
         public static DateTime LocalSecureSetting {get; set;}
     }
+    ```
 
 
 ##### Example of settings usage
@@ -74,20 +75,20 @@ NuGet package "Advexp.Settings Cloud", full version, you can buy here:
             // Will be saved to Keychain for iOS and to KeyStore for Android
             // For .NET Framework will be saved to Isolated Storage using Data Protection API
             Settings.LocalSecureSetting = DateTime.Now;
-    
+
             Settings.SaveSettings();
-        
+
             // Dynamic settings
-            
+
             var lds = Settings.
               GetPlugin<Advexp.LocalDynamicSettings.Plugin.ILocalDynamicSettingsPlugin>();
-            
+
             lds.SetSetting("dynamic_setting1", "value1");
             lds.SetSetting("dynamic_setting2", false);
             lds.SetSetting("dynamic_setting3", DateTime.Now);
-    
+
             lds.SaveSettings();
-    
+
             var dt = lds.GetSetting<DateTime>("dynamic_setting3");
         }
     }
@@ -113,12 +114,12 @@ Create a new class with the name "Settings" (for example) and inherit it as foll
 Specify those settings in the definition of this class that are required by your application. They should be accompanied by required attributes:
 
     :::csharp
-    [Setting(Name = "Local.Setting", 
+    [Setting(Name = "Local.Setting",
              Default = 3)]
     public static Int32 LocalSetting {get; set;}
-        
-    [Setting(Name = "Local.SecureSetting", 
-             Secure = true, 
+
+    [Setting(Name = "Local.SecureSetting",
+             Secure = true,
              Default = "2009-06-15T13:45:30.0000000Z")]
     public static DateTime LocalSecureSetting {get; set;}
 
@@ -193,7 +194,7 @@ Load, save or delete all dynamic settings:
     void LoadSettings();
     void SaveSettings();
     void DeleteSettings();
-        
+
 
 Load, save, or delete a dynamic setting with a specific name:
 
@@ -269,7 +270,7 @@ The default order of dynamic settings is determined by the following setting:
 The user-defined order of dynamic settings is determined by the following setting:   
 S\_v2\_{namespace name}\_{class name}\_DynamicSettingsCustomOrder
 
-These settings are created automatically and cannot be obtained using the API. They contain the names of user-defined dynamic settings separated by a comma. The order can be changed using the *IDynamicSettingsPlugin.SetSettingsOrder* method. 
+These settings are created automatically and cannot be obtained using the API. They contain the names of user-defined dynamic settings separated by a comma. The order can be changed using the *IDynamicSettingsPlugin.SetSettingsOrder* method.
 
 Examples of using dynamic settings can be seen in the corresponding example (Samples/DynamicSettings) or in the TDD project (TDD/UnitTests/DynamicSettings)
 
@@ -282,7 +283,7 @@ To add this ability, you need to [prepare your app for iCloud development](https
         RegisterSettingsPlugin<IiCloudSettingsPlugin, iCloudSettingsPlugin>();
 
 Mark settings by *iCloudSettingAttribute* attribute and perform desired action.  
-A way of using this plugin may be seen in the component examples: Sample.iCloudSettings.iOS 
+A way of using this plugin may be seen in the component examples: Sample.iCloudSettings.iOS
 
 #####Cloud: Dynamic settings and Apple iCloud
 
@@ -310,7 +311,7 @@ Then specify the plugin parameters:
         RegionEndpoint = RegionEndpoint.USEast1
     };
 
-    CognitoSyncSettingsConfiguration.Credentials = 
+    CognitoSyncSettingsConfiguration.Credentials =
         new CognitoAWSCredentials("MyIdentityPoolId", RegionEndpoint.USEast1);
 
 Also, you need to assign an authorization token to the relevant plugin parameter:
@@ -328,7 +329,7 @@ The evaluation version of the plugin does not allow specifying the name of the C
 Added to the Amazon Cognito Sync console, dynamic settings can be obtained via *IDynamicSettingsPlugin* interface. This interface can be obtained by casting *ICognitoSyncSettingsPlugin* to *IDynamicSettingsPlugin* interface.
 The following operations for this dynamic settings are available: *Load*, *Save* and *Delete*.
 
-A way of using this plugin may be seen in the component examples: 
+A way of using this plugin may be seen in the component examples:
 Sample.CognitoSyncSettings.Android and Sample.CognitoSyncSettings.iOS as well as TODOList.iOS and TODOList.Android, reflecting the interaction between Amazon Cognito Sync and Advexp.Settings dynamic settings (this example is an adaptation of the example from Amazon)
 
 #####Cloud: Configure mobile app remotely by using Google Firebase Remote Config
@@ -338,10 +339,10 @@ To add this ability, you need to install the Google Firebase Remote Config NuGet
     :::csharp
     SettingsBaseConfiguration.
         RegisterSettingsPlugin<IFirebaseRemoteConfigPlugin, FirebaseRemoteConfigPlugin>();
-        
+
 Next, follow instructions in the Google [Firebase console](https://console.firebase.google.com/u/0/) section Grow -> Remote Config
 
-A way of using this plugin may be seen in the component examples: 
+A way of using this plugin may be seen in the component examples:
 Sample.FirebaseRemoteConfig.Android, Sample.FirebaseRemoteConfig.iOS and Sample.FirebaseRemoteConfig.Standard-iOS
 
 #####Cloud: Dynamic settings and Google Firebase Remote Config
@@ -350,7 +351,7 @@ Dynamic settings added to the Google Firebase console can be obtained via *IDyna
 
 In evaluation version of the Google Firebase Remote Config plugin “v2\_AdvexpSettingsEvaluation\_” prefix will be added to setting names. Functions, to specify default values using xml resource (Android) or plist file (iOS) does not implemented. Also *FirebaseRemoteConfigConfiguration.ExpirationDuration* value cannot be changed and function *IFirebaseRemoteConfigPlugin.Fetch(long expirationDuration)* is not implemented. By default, value of expiration duration is 43200 seconds (12 hours).
 
-A way of using this plugin may be seen in the component examples: 
+A way of using this plugin may be seen in the component examples:
 Sample.FirebaseRemoteConfig.Android, Sample.FirebaseRemoteConfig.iOS and Sample.FirebaseRemoteConfig.Standard-iOS
 
 #####Cloud: Load cryptographic keys and secrets by using Microsoft Azure Key Vault service
@@ -365,7 +366,7 @@ Set authentication callback:
 
     :::csharp
     AzureKeyVaultConfiguration.AuthenticationCallback = authCallback;
-    
+
 You can use *AzureKeyVaultSecretAttribute*, *AzureKeyVaultKeyAttribute* and *AzureKeyVaultCertificateAttribute* as settings attributes to load secrets, keys and certificates respectively.
 
 For more details, see examples in AzureKeyVaultSettings folder.
@@ -419,7 +420,7 @@ The JSON parser parameters may be modified by using the parameter:
 The JSON Settings plugin parameters may be modified by using the parameter:  
 *JSONSettingsConfiguration.PluginSettings*
 
-A way of using this plugin may be seen in the component examples: 
+A way of using this plugin may be seen in the component examples:
 Sample.JSONSettings.Android and Sample.JSONSettings.iOS
 
 #####Configure your app by using Microsoft.Extensions.Configuration library
@@ -442,7 +443,7 @@ Add required configuration providers:
             .AddJsonFile("appsettings.json")
             .AddEnvironmentVariables()
             .AddCommandLine(args);
-            
+
 And mark config params by *MicrosoftExtensionsConfigurationAttribute* attribute.
 
 To bind class to entire configuration section use *MicrosoftExtensionsConfigurationAttribute.BindTo* property.
@@ -458,7 +459,7 @@ During the development process, you need to keep in mind that Advexp.Settings ve
 #####iOS: The relationship between the settings from Settings App and the settings from Advexp.Settings and using the InAppSettingsKit component
 
 In order to link the settings from the Settings App with settings from Advexp.Settings, you need to ensure that the parameter name in the *SettingAttribute* attribute matches the corresponding identifier in Settings.bundle. In this case, it is not possible to set the parameter *Secure = true*, since the setting must be stored in *NSUserDefaults*. When using along with [InAppSettingsKit](https://www.nuget.org/packages/Xamarin.InAppSettingsKit/) component, it is enough to maintain identificator compliance.
-This function is available only for local settings (settings marked by the *SettingAttribute*). 
+This function is available only for local settings (settings marked by the *SettingAttribute*).
 Examples: Sample.LocalSettings.iOS and Sample.InAppSettingsKit.iOS.
 
 #####Description of library classes
@@ -499,7 +500,7 @@ Example - ExternalUserDefaultsTest in the iOS TDD project, which can be accessed
 
 **Android:** ***class SharedPreferencesSerializer*** (Advexp.Settings.dll for Android)  
 The class that implements the serializer for *SharedPreferences*. It can be applied when it is necessary to access parameters that are not stored in SharedPreferences of the application context.
-Example - ExternalSaredPreferencesTest in the Android TDD project, which can be accessed at <https://bitbucket.org/advexp/component-advexp.settings> 
+Example - ExternalSaredPreferencesTest in the Android TDD project, which can be accessed at <https://bitbucket.org/advexp/component-advexp.settings>
 
 ***class AdvancedConfiguration*** (Advexp.Settings.Utils.dll)  
 Extended library configuration parameters. Objects of this type belong to the *SettingsBaseConfiguration* class.
@@ -568,7 +569,7 @@ Implementation of the Firebase Remote Config plugin for NetStandard
 Implementation of the Firebase Remote Config plugin for iOS and Android
 
 ***class FirebaseRemoteConfigSerializer*** (Advexp.FirebaseRemoteConfig.Plugin)   
-Settings serializer for the  Firebase Remote Config service 
+Settings serializer for the  Firebase Remote Config service
 
 #####Library configuration
 
@@ -634,7 +635,7 @@ Project home page:
 
 NuGet package “Advexp.Settings Local” you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Local>
- 
+
 NuGet package “Advexp.Settings Cloud”, evaluation version, you can download from the site:  
 <https://www.nuget.org/packages/Advexp.Settings.Cloud.Evaluation>
 

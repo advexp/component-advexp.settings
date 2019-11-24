@@ -46,7 +46,7 @@ Samples, Unit Tests and additional information you can find here:
 NuGet package "Advexp.Settings Cloud", full version, you can buy here:
 <https://advexp.bitbucket.io>
 
-#####Example of settings declaration
+##### Example of settings declaration
 
     :::csharp
     class Settings : Advexp.Settings<Settings>
@@ -61,7 +61,7 @@ NuGet package "Advexp.Settings Cloud", full version, you can buy here:
     }
 
 
-#####Example of settings usage
+##### Example of settings usage
 
     :::csharp
     class Application

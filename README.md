@@ -1,8 +1,8 @@
-### Advexp.Settings 2.7
+###Advexp.Settings 2.7
 
 Cross-platform .NET app settings and configuration for Windows, .NET Core, Xamarin.Mac, Xamarin.iOS or Xamarin.Android with cloud support.
 
-#### Details
+####Details
 
 Create cross-platform .NET app settings and configuration for Windows, .NET Core, Xamarin.Mac, Xamarin.iOS or Xamarin.Android.  
 Configure your app by using [Microsoft.Extensions.Configuration](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration) library.  

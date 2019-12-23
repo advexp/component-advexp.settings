@@ -37,3 +37,5 @@ Sources/Standard/obj
 Sources/Core/obj
 Sources/Apple/iOS/obj
 Sources/Apple/Mac/obj
+Sources/SharpSerializer/obj
+Bin

@@ -113,11 +113,11 @@
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SharpSerializer\SharpSerializer.csproj">
-      <Project>{559e4972-4fa7-448b-b85a-f2d55b7acef2}</Project>
+      <Project>{89773F26-46F0-4E4C-B516-2929F2AB4FA8}</Project>
       <Name>SharpSerializer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utils\Advexp.Settings.Utils.csproj">
-      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
+      <Project>{B430FD30-04D8-428D-908A-AADD9DDEEE82}</Project>
       <Name>Advexp.Settings.Utils</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ReleaseVersion></ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+    <RootNamespace>Advexp</RootNamespace>
+    <Configurations>Debug;Debug_Component;Release;Release_Component;Release_Component_TDD</Configurations>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <OutputPath>..\..\Bin\Standard\Debug\Advexp.Settings</OutputPath>
+    <DefineConstants>__DEV__;__TDD__;NETSTANDARD1_0;DEBUG;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <IntermediateOutputPath>obj\Debug\netstandard2.0</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <OutputPath>..\..\Bin\Standard\Release\Advexp.Settings</OutputPath>
+    <DefineConstants>__DEV__;__TDD__;NETSTANDARD;NETSTANDARD1_0</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\Release\netstandard2.0</IntermediateOutputPath>
+    <Commandlineparameters></Commandlineparameters>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Properties\LibraryCommonAssemblyInfo.cs">
+      <Link>Properties\LibraryCommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Properties\ProjectCommonAssemblyInfo.cs">
+      <Link>Properties\ProjectCommonAssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharpSerializer\SharpSerializer.csproj" />
+    <ProjectReference Include="..\Utils\Advexp.Settings.Utils.csproj" />
+  </ItemGroup>
+</Project>

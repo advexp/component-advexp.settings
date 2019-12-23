@@ -53,6 +53,56 @@
     <IpaPackageName></IpaPackageName>
     <MtouchVerbosity>2</MtouchVerbosity>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Bin\iOS\Release_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchVerbosity>
+    </MtouchVerbosity>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <Commandlineparameters>
+    </Commandlineparameters>
+    <IpaIncludeArtwork></IpaIncludeArtwork>
+    <LangVersion>Default</LangVersion>
+    <MtouchProfiling></MtouchProfiling>
+    <BuildIpa></BuildIpa>
+    <CodesignEntitlements></CodesignEntitlements>
+    <MtouchArch></MtouchArch>
+    <OptimizePNGs></OptimizePNGs>
+    <NoWarn></NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component_TDD|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Bin\iOS\Release_Component_TDD\Advexp.Settings</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;__TDD__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Component|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Bin\iOS\Debug_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>DEBUG;__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchVerbosity></MtouchVerbosity>
+    <MtouchLink></MtouchLink>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <OnDemandResourcesInitialInstallTags></OnDemandResourcesInitialInstallTags>
+    <OnDemandResourcesInitialInstallTags></OnDemandResourcesInitialInstallTags>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Xamarin.iOS" />
@@ -95,11 +145,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\SharpSerializer\SharpSerializer.csproj">
-      <Project>{89773F26-46F0-4E4C-B516-2929F2AB4FA8}</Project>
+      <Project>{559e4972-4fa7-448b-b85a-f2d55b7acef2}</Project>
       <Name>SharpSerializer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Utils\Advexp.Settings.Utils.csproj">
-      <Project>{B430FD30-04D8-428D-908A-AADD9DDEEE82}</Project>
+      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
       <Name>Advexp.Settings.Utils</Name>
     </ProjectReference>
   </ItemGroup>

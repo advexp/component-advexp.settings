@@ -55,6 +55,54 @@
     <PackageSigningKey></PackageSigningKey>
     <RunWithWarnings>true</RunWithWarnings>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Bin\Mac\Release_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>__UNIFIED__;__DESKTOP__;__MACOS__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <LinkMode>None</LinkMode>
+    <XamMacArch></XamMacArch>
+    <AOTMode>None</AOTMode>
+    <Profiling>false</Profiling>
+    <CodeSignResourceRules></CodeSignResourceRules>
+    <CodeSignResourceRules></CodeSignResourceRules>
+    <ProductDefinition></ProductDefinition>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component_TDD|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Bin\Mac\Release_Component_TDD\Advexp.Settings</OutputPath>
+    <DefineConstants>__UNIFIED__;__DESKTOP__;__MACOS__;__TDD__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <LinkMode>None</LinkMode>
+    <XamMacArch></XamMacArch>
+    <AOTMode>None</AOTMode>
+    <EnableCodeSigning></EnableCodeSigning>
+    <ProductDefinition></ProductDefinition>
+    <ProductDefinition></ProductDefinition>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Component|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Bin\Mac\Debug_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>DEBUG;__UNIFIED__;__DESKTOP__;__MACOS__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler></HttpClientHandler>
+    <LinkMode></LinkMode>
+    <XamMacArch></XamMacArch>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <AOTMode>None</AOTMode>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -95,11 +143,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\SharpSerializer\SharpSerializer.csproj">
-      <Project>{89773F26-46F0-4E4C-B516-2929F2AB4FA8}</Project>
+      <Project>{559E4972-4FA7-448B-B85A-F2D55B7ACEF2}</Project>
       <Name>SharpSerializer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Utils\Advexp.Settings.Utils.csproj">
-      <Project>{B430FD30-04D8-428D-908A-AADD9DDEEE82}</Project>
+      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
       <Name>Advexp.Settings.Utils</Name>
     </ProjectReference>
   </ItemGroup>

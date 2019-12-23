@@ -25,6 +25,32 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component|AnyCPU' ">
+    <DebugType />
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Bin\NetCore\Release_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>__DESKTOP__;__WINDOWS__;NETCOREAPP;NETCOREAPP2_0</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component_TDD|AnyCPU' ">
+    <DebugType />
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Bin\NetCore\Release_Component_TDD\Advexp.Settings</OutputPath>
+    <DefineConstants>__DESKTOP__;__WINDOWS__;__TDD__;NETCOREAPP;NETCOREAPP2_0</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Component|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Bin\NetCore\Debug_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>DEBUG;__DESKTOP__;__WINDOWS__;NETCOREAPP;NETCOREAPP2_0</DefineConstants>
+    <NoWarn></NoWarn>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <NoStdLib>false</NoStdLib>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\Common\Settings.cs" Link="Settings.cs" />
     <Compile Include="..\Properties\ProjectCommonAssemblyInfo.cs">

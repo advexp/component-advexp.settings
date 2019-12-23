@@ -23,6 +23,49 @@
     <IntermediateOutputPath>obj\Release\netstandard2.0</IntermediateOutputPath>
     <Commandlineparameters></Commandlineparameters>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Component_TDD|AnyCPU'">
+    <DebugType />
+    <OutputPath>..\..\Bin\Standard\Release\Advexp.Settings</OutputPath>
+    <DefineConstants>TRACE;__DEV__;__TDD__;RELEASE;NETSTANDARD;NETSTANDARD1_0</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Component|AnyCPU'">
+    <DebugType />
+    <OutputPath>..\..\Bin\Standard\Release\Advexp.Settings</OutputPath>
+    <DefineConstants>TRACE;__DEV__;__TDD__;RELEASE;NETSTANDARD;NETSTANDARD1_0</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component|AnyCPU' ">
+    <IntermediateOutputPath>obj\Release_Component</IntermediateOutputPath>
+    <DebugType></DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Bin\Standard\Release_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>NETSTANDARD;NETSTANDARD1_0</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <NoStdLib>false</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component_TDD|AnyCPU' ">
+    <IntermediateOutputPath>obj\Release_Component_TDD</IntermediateOutputPath>
+    <DebugType></DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Bin\Standard\Release_Component_TDD\Advexp.Settings</OutputPath>
+    <DefineConstants>__TDD__;NETSTANDARD;NETSTANDARD1_0</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <NoStdLib>false</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Component|AnyCPU' ">
+    <IntermediateOutputPath>obj\Debug_Component</IntermediateOutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Bin\Standard\Debug_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>DEBUG;NETSTANDARD;NETSTANDARD1_0</DefineConstants>
+    <NoWarn></NoWarn>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <NoStdLib>false</NoStdLib>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\Properties\LibraryCommonAssemblyInfo.cs">
       <Link>Properties\LibraryCommonAssemblyInfo.cs</Link>

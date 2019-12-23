@@ -34,6 +34,30 @@
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Bin\Windows\ClassicDesktop\Release_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>__DESKTOP__;__WINDOWS__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component_TDD|AnyCPU' ">
+    <OutputPath>..\..\..\Bin\Windows\ClassicDesktop\Release_Component_TDD\Advexp.Settings</OutputPath>
+    <DefineConstants>__DESKTOP__;__WINDOWS__;__TDD__;</DefineConstants>
+    <Optimize>true</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Component|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Bin\Windows\ClassicDesktop\Debug_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>DEBUG;__DESKTOP__;__WINDOWS__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -66,11 +90,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\SharpSerializer\SharpSerializer.csproj">
-      <Project>{89773F26-46F0-4E4C-B516-2929F2AB4FA8}</Project>
+      <Project>{559e4972-4fa7-448b-b85a-f2d55b7acef2}</Project>
       <Name>SharpSerializer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Utils\Advexp.Settings.Utils.csproj">
-      <Project>{B430FD30-04D8-428D-908A-AADD9DDEEE82}</Project>
+      <Project>{97EC8088-8ED4-4294-B3C3-3A06C6F31C68}</Project>
       <Name>Advexp.Settings.Utils</Name>
     </ProjectReference>
   </ItemGroup>

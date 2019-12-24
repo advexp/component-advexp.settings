@@ -7,7 +7,6 @@ using Security;
 
 namespace Advexp
 {
-    // The name AppDelegate is referenced in the MainWindow.xib file.
     static class KeyChainUtils
     {
         /// <summary>

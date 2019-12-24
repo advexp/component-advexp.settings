@@ -1,6 +1,7 @@
 using System;
 using Security;
 using System.Text;
+
 // only in paid version of plugin or local library
 // or dev version
 #if !__PLUGIN__ || !__EVALUATION__ || __DEV__
@@ -117,7 +118,6 @@ namespace Advexp
                     Error: Could not save account to KeyChain -- iOS 10 #128
                     https://github.com/xamarin/Xamarin.Auth/issues/128 
                     https://bugzilla.xamarin.com/show_bug.cgi?id=43514
-                    sb.AppendLine("");
                 */
                 if ((int)eCode == -34018)
                 {
@@ -198,16 +198,8 @@ namespace Advexp
         {
         }
 
-
-
-
-
         #endregion
     }
 }
-
-
-
-
 
 #endif // !__PLUGIN__ || !__EVALUATION__ || __DEV__

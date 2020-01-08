@@ -39,3 +39,4 @@ Sources/Apple/iOS/obj
 Sources/Apple/Mac/obj
 Sources/SharpSerializer/obj
 Bin
+Samples/DynamicSettings/iOS/obj

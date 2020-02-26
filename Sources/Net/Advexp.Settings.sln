@@ -1,0 +1,103 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{ABF873DC-90C5-46C5-A1DF-1ACE45022035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advexp.Settings.iOS", "Apple\iOS\Advexp.Settings.iOS.csproj", "{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{94D152F4-922C-40CC-A745-53B99A2DB9B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advexp.Settings.Windows.ClassicDesktop", "Windows\ClassicDesktop\Advexp.Settings.Windows.ClassicDesktop.csproj", "{506A28B8-FDCC-4FC4-9EEB-600B544D1067}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advexp.Settings.Windows.UWP", "Windows\UWP\Advexp.Settings.Windows.UWP.csproj", "{17BB55BD-31DE-497A-A8AC-A081886380E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advexp.Settings.Android", "Android\Advexp.Settings.Android.csproj", "{29EB96CB-9287-4740-AEE3-859265DD32BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advexp.Settings.Mac", "Apple\Mac\Advexp.Settings.Mac.csproj", "{5B31F9C1-9795-4172-B65F-E40D627B7E54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apple", "Apple", "{834BB17D-9A3D-44E3-A05E-C4EDD4FEC641}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Android", "Android", "{38D0E0F9-2DDC-41B4-A447-13BD3EF30D3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET Core", ".NET Core", "{95AAD587-2808-4ECB-ADBA-F16473342304}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET Standard", ".NET Standard", "{DE2F2DBE-CA12-4D20-B143-70676C49959A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advexp.Settings.Core", "Core\Advexp.Settings.Core.csproj", "{FA4DB599-8B5E-4D28-B405-EDE32DD0CE27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advexp.Settings", "Standard\Advexp.Settings.csproj", "{730FB362-949F-4AC5-B59E-98E3782101DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advexp.Settings.Utils", "Utils\Advexp.Settings.Utils.csproj", "{B430FD30-04D8-428D-908A-AADD9DDEEE82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpSerializer", "SharpSerializer\SharpSerializer.csproj", "{89773F26-46F0-4E4C-B516-2929F2AB4FA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Release_Component|Any CPU = Release_Component|Any CPU
+		Release_Component_TDD|Any CPU = Release_Component_TDD|Any CPU
+		Debug_Component|Any CPU = Debug_Component|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{506A28B8-FDCC-4FC4-9EEB-600B544D1067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{506A28B8-FDCC-4FC4-9EEB-600B544D1067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{506A28B8-FDCC-4FC4-9EEB-600B544D1067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{506A28B8-FDCC-4FC4-9EEB-600B544D1067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17BB55BD-31DE-497A-A8AC-A081886380E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17BB55BD-31DE-497A-A8AC-A081886380E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17BB55BD-31DE-497A-A8AC-A081886380E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17BB55BD-31DE-497A-A8AC-A081886380E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29EB96CB-9287-4740-AEE3-859265DD32BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29EB96CB-9287-4740-AEE3-859265DD32BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29EB96CB-9287-4740-AEE3-859265DD32BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29EB96CB-9287-4740-AEE3-859265DD32BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B31F9C1-9795-4172-B65F-E40D627B7E54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B31F9C1-9795-4172-B65F-E40D627B7E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B31F9C1-9795-4172-B65F-E40D627B7E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B31F9C1-9795-4172-B65F-E40D627B7E54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA4DB599-8B5E-4D28-B405-EDE32DD0CE27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA4DB599-8B5E-4D28-B405-EDE32DD0CE27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA4DB599-8B5E-4D28-B405-EDE32DD0CE27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA4DB599-8B5E-4D28-B405-EDE32DD0CE27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{730FB362-949F-4AC5-B59E-98E3782101DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{730FB362-949F-4AC5-B59E-98E3782101DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{730FB362-949F-4AC5-B59E-98E3782101DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{730FB362-949F-4AC5-B59E-98E3782101DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B430FD30-04D8-428D-908A-AADD9DDEEE82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B430FD30-04D8-428D-908A-AADD9DDEEE82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B430FD30-04D8-428D-908A-AADD9DDEEE82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B430FD30-04D8-428D-908A-AADD9DDEEE82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89773F26-46F0-4E4C-B516-2929F2AB4FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89773F26-46F0-4E4C-B516-2929F2AB4FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89773F26-46F0-4E4C-B516-2929F2AB4FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89773F26-46F0-4E4C-B516-2929F2AB4FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DBF0F3DD-904A-462F-A24C-83BAEABC4D94} = {834BB17D-9A3D-44E3-A05E-C4EDD4FEC641}
+		{506A28B8-FDCC-4FC4-9EEB-600B544D1067} = {94D152F4-922C-40CC-A745-53B99A2DB9B5}
+		{17BB55BD-31DE-497A-A8AC-A081886380E0} = {94D152F4-922C-40CC-A745-53B99A2DB9B5}
+		{29EB96CB-9287-4740-AEE3-859265DD32BC} = {38D0E0F9-2DDC-41B4-A447-13BD3EF30D3A}
+		{5B31F9C1-9795-4172-B65F-E40D627B7E54} = {834BB17D-9A3D-44E3-A05E-C4EDD4FEC641}
+		{FA4DB599-8B5E-4D28-B405-EDE32DD0CE27} = {95AAD587-2808-4ECB-ADBA-F16473342304}
+		{730FB362-949F-4AC5-B59E-98E3782101DB} = {DE2F2DBE-CA12-4D20-B143-70676C49959A}
+		{B430FD30-04D8-428D-908A-AADD9DDEEE82} = {ABF873DC-90C5-46C5-A1DF-1ACE45022035}
+		{89773F26-46F0-4E4C-B516-2929F2AB4FA8} = {ABF873DC-90C5-46C5-A1DF-1ACE45022035}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30860D6F-9B0C-44E6-B99F-08C7F7F3BB4C}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		description = Settings for Windows, iOS or Android application
+		version = 
+		outputpath = Bin
+	EndGlobalSection
+EndGlobal

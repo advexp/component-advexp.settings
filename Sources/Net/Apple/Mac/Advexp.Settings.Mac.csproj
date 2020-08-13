@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B31F9C1-9795-4172-B65F-E40D627B7E54}</ProjectGuid>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Advexp</RootNamespace>
+    <AssemblyName>Advexp.Settings</AssemblyName>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <ReleaseVersion></ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+    <UseXamMacFullFramework>true</UseXamMacFullFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Bin\Mac\Debug\Advexp.Settings</OutputPath>
+    <DefineConstants>__UNIFIED__;__DESKTOP__;__MACOS__;DEBUG;__DEV__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler></HttpClientHandler>
+    <LinkMode></LinkMode>
+    <XamMacArch></XamMacArch>
+    <AOTMode>None</AOTMode>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Bin\Mac\Release\Advexp.Settings</OutputPath>
+    <DefineConstants>__UNIFIED__;__DESKTOP__;__MACOS__;__DEV__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <UseSGen>false</UseSGen>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler></HttpClientHandler>
+    <LinkMode></LinkMode>
+    <XamMacArch></XamMacArch>
+    <AOTMode>None</AOTMode>
+    <PackagingExtraArgs></PackagingExtraArgs>
+    <PackagingExtraArgs></PackagingExtraArgs>
+    <CodeSignProvision></CodeSignProvision>
+    <CodeSignProvision></CodeSignProvision>
+    <PackageSigningKey></PackageSigningKey>
+    <RunWithWarnings>true</RunWithWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Bin\Mac\Release_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>__UNIFIED__;__DESKTOP__;__MACOS__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <LinkMode>None</LinkMode>
+    <XamMacArch></XamMacArch>
+    <AOTMode>None</AOTMode>
+    <Profiling>false</Profiling>
+    <CodeSignResourceRules></CodeSignResourceRules>
+    <CodeSignResourceRules></CodeSignResourceRules>
+    <ProductDefinition></ProductDefinition>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component_TDD|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Bin\Mac\Release_Component_TDD\Advexp.Settings</OutputPath>
+    <DefineConstants>__UNIFIED__;__DESKTOP__;__MACOS__;__TDD__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <LinkMode>None</LinkMode>
+    <XamMacArch></XamMacArch>
+    <AOTMode>None</AOTMode>
+    <EnableCodeSigning></EnableCodeSigning>
+    <ProductDefinition></ProductDefinition>
+    <ProductDefinition></ProductDefinition>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Component|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Bin\Mac\Debug_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>DEBUG;__UNIFIED__;__DESKTOP__;__MACOS__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler></HttpClientHandler>
+    <LinkMode></LinkMode>
+    <XamMacArch></XamMacArch>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <AOTMode>None</AOTMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="ModuleInitializer.cs" />
+    <Compile Include="PlatformHelpers.cs" />
+    <Compile Include="..\..\Properties\LibraryCommonAssemblyInfo.cs">
+      <Link>Properties\LibraryCommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\Settings.cs">
+      <Link>Settings.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\KeyChainSerializer.cs">
+      <Link>KeyChainSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\ISettingsSerializerImpl.cs">
+      <Link>ISettingsSerializerImpl.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\UserDefaultsSerializer.cs">
+      <Link>UserDefaultsSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\KeychainUtils.cs">
+      <Link>KeychainUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\ObjectExtensions.cs">
+      <Link>ObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\NSObjectExtensions.cs">
+      <Link>NSObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Properties\ProjectCommonAssemblyInfo.cs">
+      <Link>Properties\ProjectCommonAssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SharpSerializer\SharpSerializer.csproj">
+      <Project>{9D6593E1-D30D-4FF3-B928-782398C71382}</Project>
+      <Name>SharpSerializer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utils\Advexp.Settings.Utils.csproj">
+      <Project>{4D3828C1-B060-48DF-9240-D28A33A6059D}</Project>
+      <Name>Advexp.Settings.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+</Project>

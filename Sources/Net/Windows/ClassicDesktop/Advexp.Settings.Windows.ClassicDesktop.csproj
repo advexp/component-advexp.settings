@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{506A28B8-FDCC-4FC4-9EEB-600B544D1067}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Advexp</RootNamespace>
+    <AssemblyName>Advexp.Settings</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ReleaseVersion>
+    </ReleaseVersion>
+    <TargetFrameworkProfile />
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Bin\Windows\ClassicDesktop\Debug\Advexp.Settings</OutputPath>
+    <DefineConstants>DEBUG;__DESKTOP__;__WINDOWS__;__DEV__;__TDD__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Bin\Windows\ClassicDesktop\Release\Advexp.Settings</OutputPath>
+    <DefineConstants>__DESKTOP__;__WINDOWS__;__DEV__;__TDD__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Bin\Windows\ClassicDesktop\Release_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>__DESKTOP__;__WINDOWS__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Component_TDD|AnyCPU' ">
+    <OutputPath>..\..\..\Bin\Windows\ClassicDesktop\Release_Component_TDD\Advexp.Settings</OutputPath>
+    <DefineConstants>__DESKTOP__;__WINDOWS__;__TDD__;</DefineConstants>
+    <Optimize>true</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Component|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Bin\Windows\ClassicDesktop\Debug_Component\Advexp.Settings</OutputPath>
+    <DefineConstants>DEBUG;__DESKTOP__;__WINDOWS__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Properties\LibraryCommonAssemblyInfo.cs">
+      <Link>Properties\LibraryCommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\IsolatedStorageSerializer.cs">
+      <Link>IsolatedStorageSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\Settings.cs">
+      <Link>Settings.cs</Link>
+    </Compile>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="DPAPIIsolatedStorageSerializer.cs" />
+    <Compile Include="ISettingsSerializerImpl.cs" />
+    <Compile Include="ModuleInitializer.cs" />
+    <Compile Include="PlatformHelpers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\Properties\ProjectCommonAssemblyInfo.cs">
+      <Link>Properties\ProjectCommonAssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SharpSerializer\SharpSerializer.csproj">
+      <Project>{9D6593E1-D30D-4FF3-B928-782398C71382}</Project>
+      <Name>SharpSerializer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utils\Advexp.Settings.Utils.csproj">
+      <Project>{4D3828C1-B060-48DF-9240-D28A33A6059D}</Project>
+      <Name>Advexp.Settings.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

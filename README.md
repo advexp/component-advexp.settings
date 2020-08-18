@@ -149,7 +149,7 @@ The serializer parameters can be modified by using the following property:
 
 ##### Save, load and delete settings
 
-Library users can specify their own method for storing, loading or deleting settings by using the *ISettingsSerializer* interface and the *SerializerAttribute* attribute.
+Library users can specify their own method for storing, loading or deleting settings by using the *ISettingsSerializer* interface and the *SerializerAttribute* attribute or the *MethodSerializerAttribute* attribute.
 
 ##### Priorities for saving, loading, or deleting settings
 
@@ -489,6 +489,18 @@ Examples: Sample.LocalSettings.iOS and Sample.InAppSettingsKit.iOS.
 
 ***interface ISettingsSerializer*** (Advexp.Settings.Utils.dll)  
 It describes the serializer interface.
+
+***class MethodSerializerAttribute*** (Advexp.Settings.Utils.dll)  
+Arbitrary class methods can be used as a serializer.
+
+Method prototypes are:  
+*bool Load(string settingName, bool secure, out object value);*  
+Returns true if downloaded successfully, otherwise false  
+*void Save(string settingName, bool secure, object value);*  
+*void Delete(string settingName, bool secure);*  
+*void Contains(string settingName, bool secure);*  
+*void Synchronize();*  
+This attribute can be applied to a class or to a member of a class.
 
 ***class SerializerAttribute*** (Advexp.Settings.Utils.dll)  
 The attribute specifies the serializer type that must be applied to a setting or to a class with settings.
